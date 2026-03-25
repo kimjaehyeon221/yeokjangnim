@@ -1645,10 +1645,10 @@ class MapTab extends StatelessWidget {
         .map(
           (s) => CircleMarker(
             point: LatLng(s.lat, s.lng),
-            radius: s.got ? 6 : 3.5,
-            color: s.got ? const Color(0xDD1B3A6B) : const Color(0x4D1A1510),
-            borderStrokeWidth: s.got ? 1.5 : 0.5,
-            borderColor: s.got ? const Color(0xFFF5F0E8) : const Color(0x441A1510),
+            radius: s.got ? 7.2 : 4.0,
+            color: s.got ? const Color(0xDD1B3A6B) : Colors.transparent,
+            borderStrokeWidth: s.got ? 2.0 : 1.2,
+            borderColor: s.got ? const Color(0xFFF5F0E8) : AC.ink4,
           ),
         )
         .toList(growable: false);
@@ -1682,7 +1682,7 @@ class MapTab extends StatelessWidget {
                 child: FlutterMap(
                   options: MapOptions(
                     initialCenter: LatLng(36.85, 127.95),
-                    initialZoom: 8.9,
+                    initialZoom: 9.2,
                     minZoom: 5,
                     maxZoom: 18,
                   ),
@@ -1710,9 +1710,9 @@ class MapTab extends StatelessWidget {
               children: [
                 _Legend(color: AC.stamp, label: '찍은 역'),
                 const SizedBox(width: 16),
-                _Legend(color: AC.paper3, label: '미방문', bordered: true),
+                _Legend(color: Colors.transparent, label: '미방문', bordered: true, borderColor: AC.ink4),
                 const Spacer(),
-                Text('OpenStreetMap · 핀치로 확대', style: TextStyle(fontSize: 11, color: AC.ink4)),
+                Text('채움=찍은 역 · 빈 원=미방문', style: TextStyle(fontSize: 11, color: AC.ink4)),
               ],
             ),
           ),
@@ -1724,12 +1724,20 @@ class MapTab extends StatelessWidget {
 }
 
 class _Legend extends StatelessWidget {
-  final Color color; final String label; final bool bordered;
-  const _Legend({required this.color, required this.label, this.bordered = false});
+  final Color color;
+  final String label;
+  final bool bordered;
+  final Color borderColor;
+  const _Legend({
+    required this.color,
+    required this.label,
+    this.bordered = false,
+    this.borderColor = AC.border,
+  });
   @override
   Widget build(BuildContext context) => Row(children: [
     Container(width: 9, height: 9, decoration: BoxDecoration(color: color, shape: BoxShape.circle,
-      border: bordered ? Border.all(color: AC.border) : null)),
+      border: bordered ? Border.all(color: borderColor) : null)),
     const SizedBox(width: 5),
     Text(label, style: TextStyle(fontSize: 11, color: AC.ink3)),
   ]);
@@ -1747,44 +1755,140 @@ class MeTab extends StatelessWidget {
       // 프로필
       Container(padding: const EdgeInsets.fromLTRB(18, 20, 18, 14),
         decoration: BoxDecoration(border: Border(bottom: BorderSide(color: AC.border))),
-        child: Row(children: [
-          Container(width: 52, height: 52,
-            decoration: BoxDecoration(shape: BoxShape.circle, color: AC.stampDim,
-              border: Border.all(color: AC.stamp, width: 2)),
-            child: const Center(child: Text('🧳', style: TextStyle(fontSize: 26)))),
-          const SizedBox(width: 13),
-          Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-            Text('${state.nickname}님', style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w700, color: AC.ink)),
-            const SizedBox(height: 2),
-            Text('전국 역을 모으는 중', style: TextStyle(fontSize: 11, color: AC.ink3)),
-          ]),
-          const Spacer(),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.end,
-            children: [
-              OutlinedButton(onPressed: () async {
-                await context.read<AppState>().signOut();
-                if (!context.mounted) return;
-                Navigator.pushAndRemoveUntil(
-                  context,
-                  MaterialPageRoute(builder: (_) => const LoginScreen()),
-                  (_) => false,
+        child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+          Row(children: [
+            GestureDetector(
+              onTap: () async {
+                const icons = ['🧳', '🚉', '🚆', '🚊', '🗺️', '⭐', '✨', '🧡', '💛', '💚', '💙', '❤️'];
+                await showDialog<void>(
+                  context: context,
+                  builder: (ctx) => AlertDialog(
+                    title: const Text('프로필 아이콘'),
+                    content: SingleChildScrollView(
+                      child: Wrap(
+                        spacing: 10,
+                        runSpacing: 10,
+                        children: [
+                          for (final ic in icons)
+                            InkWell(
+                              onTap: () async {
+                                await state.setProfileIcon(ic);
+                                if (!ctx.mounted) return;
+                                Navigator.pop(ctx);
+                              },
+                              borderRadius: BorderRadius.circular(8),
+                              child: Container(
+                                padding: const EdgeInsets.all(6),
+                                decoration: BoxDecoration(
+                                  color: ic == state.profileIcon ? AC.stampDim : Colors.transparent,
+                                  shape: BoxShape.circle,
+                                ),
+                                child: Text(ic, style: const TextStyle(fontSize: 22)),
+                              ),
+                            )
+                        ],
+                      ),
+                    ),
+                  ),
                 );
               },
-                style: OutlinedButton.styleFrom(padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
-                  side: const BorderSide(color: AC.border), shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)), minimumSize: Size.zero),
-                child: Text('로그아웃', style: TextStyle(fontSize: 12, color: AC.ink3))),
-              TextButton(
-                onPressed: () => _confirmDeleteAccount(context),
-                style: TextButton.styleFrom(
-                  padding: const EdgeInsets.only(top: 4),
-                  minimumSize: Size.zero,
-                  tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+              child: Container(
+                width: 52,
+                height: 52,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: AC.stampDim,
+                  border: Border.all(color: AC.stamp, width: 2),
                 ),
-                child: Text('회원 탈퇴', style: TextStyle(fontSize: 11, color: AC.ink4)),
+                child: Center(
+                  child: Text(state.profileIcon, style: const TextStyle(fontSize: 26)),
+                ),
               ),
-            ],
-          ),
+            ),
+            const SizedBox(width: 13),
+            Expanded(
+              child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+                Text('${state.nickname}님',
+                  style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w700, color: AC.ink)),
+                const SizedBox(height: 2),
+                Text('전국 역을 모으는 중', style: TextStyle(fontSize: 11, color: AC.ink3)),
+              ]),
+            ),
+            OutlinedButton(
+              onPressed: () async {
+                final ctrl = TextEditingController(text: state.nickname);
+                await showDialog<void>(
+                  context: context,
+                  builder: (ctx) => AlertDialog(
+                    title: const Text('닉네임 변경'),
+                    content: TextField(
+                      controller: ctrl,
+                      maxLength: 20,
+                      decoration: const InputDecoration(
+                        hintText: '닉네임',
+                      ),
+                    ),
+                    actions: [
+                      TextButton(
+                        onPressed: () => Navigator.pop(ctx),
+                        child: const Text('취소'),
+                      ),
+                      ElevatedButton(
+                        onPressed: () async {
+                          await state.saveNickname(ctrl.text.trim());
+                          if (!ctx.mounted) return;
+                          Navigator.pop(ctx);
+                        },
+                        style: ElevatedButton.styleFrom(backgroundColor: AC.stamp, foregroundColor: AC.paper),
+                        child: const Text('저장'),
+                      ),
+                    ],
+                  ),
+                );
+                ctrl.dispose();
+              },
+              style: OutlinedButton.styleFrom(
+                padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                side: const BorderSide(color: AC.border),
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+                minimumSize: Size.zero,
+              ),
+              child: Text('닉네임 변경',
+                style: TextStyle(fontSize: 12, color: AC.ink3)),
+            ),
+          ]),
+          const SizedBox(height: 12),
+          Row(children: [
+            Expanded(
+              child: OutlinedButton(
+                onPressed: () async {
+                  await context.read<AppState>().signOut();
+                  if (!context.mounted) return;
+                  Navigator.pushAndRemoveUntil(
+                    context,
+                    MaterialPageRoute(builder: (_) => const LoginScreen()),
+                    (_) => false,
+                  );
+                },
+                style: OutlinedButton.styleFrom(
+                  padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
+                  side: const BorderSide(color: AC.border),
+                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+                ),
+                child: Text('로그아웃', style: TextStyle(fontSize: 12, color: AC.ink3)),
+              ),
+            ),
+            const SizedBox(width: 10),
+            TextButton(
+              onPressed: () => _confirmDeleteAccount(context),
+              style: TextButton.styleFrom(
+                padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 10),
+                minimumSize: Size.zero,
+                tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+              ),
+              child: Text('회원 탈퇴', style: TextStyle(fontSize: 11, color: AC.ink4)),
+            ),
+          ]),
         ])),
       Padding(
         padding: const EdgeInsets.fromLTRB(18, 8, 18, 8),

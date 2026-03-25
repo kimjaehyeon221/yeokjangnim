@@ -40,6 +40,9 @@ class StationDistance {
 
 class AppState extends ChangeNotifier {
   String nickname = '철도인';
+  /// 프로필 '사진'을 DB에 저장하기 위한 스키마가 아직 없어서,
+  /// 배포 위험을 줄이기 위해 이모지 아이콘 형태로 저장합니다. (로컬 유지)
+  String profileIcon = '🧳';
   List<Station> stations = [];
   Set<int> stampedIds = {};
   Map<int, DateTime> stampDates = {};
@@ -50,11 +53,18 @@ class AppState extends ChangeNotifier {
   final List<Badge> _recentUnlockedBadges = [];
   static const _pendingStampsKey = 'pending_stamps_v1';
   static const _pendingBadgesKey = 'pending_badges_v1';
+  static const _prefsProfileIconKey = 'profile_icon_v1';
 
   // 초기화
   Future<void> init() async {
     isLoading = true;
     notifyListeners();
+
+    // 프로필 아이콘(로컬 저장) 로드
+    try {
+      final prefs = await SharedPreferences.getInstance();
+      profileIcon = prefs.getString(_prefsProfileIconKey) ?? profileIcon;
+    } catch (_) {}
 
     // 공공데이터 API로 역 로드 (실패 시 샘플 데이터)
     try {
@@ -360,6 +370,16 @@ class AppState extends ChangeNotifier {
     }
   }
 
+  /// 프로필 아이콘 선택 저장 (로컬 SharedPreferences)
+  Future<void> setProfileIcon(String icon) async {
+    profileIcon = icon;
+    notifyListeners();
+    try {
+      final prefs = await SharedPreferences.getInstance();
+      await prefs.setString(_prefsProfileIconKey, icon);
+    } catch (_) {}
+  }
+
   Future<void> syncProfileFromRemote() async {
     if (userId == null) return;
 
@@ -654,6 +674,7 @@ class AppState extends ChangeNotifier {
     userId = null;
     profileReady = false;
     nickname = '철도인';
+    profileIcon = '🧳';
     stampedIds.clear();
     stampDates.clear();
     lastStampError = null;
