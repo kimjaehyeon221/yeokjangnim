@@ -1,0 +1,10902 @@
+[
+  {
+    "id": 99434,
+    "name": "청량리(서울시립대입구)",
+    "en": "Cheongnyangni (University of Seoul)",
+    "line": "1호선",
+    "icon": "🏛️",
+    "region": "서울",
+    "lat": 37.580148,
+    "lng": 127.045063
+  },
+  {
+    "id": 80687,
+    "name": "제기동",
+    "en": "Jegidong",
+    "line": "1호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.578116,
+    "lng": 127.034902
+  },
+  {
+    "id": 20453,
+    "name": "신설동",
+    "en": "Sinseoldong",
+    "line": "1호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.576117,
+    "lng": 127.02471
+  },
+  {
+    "id": 746,
+    "name": "동묘앞",
+    "en": "Dongmyo",
+    "line": "1호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.573265,
+    "lng": 127.016459
+  },
+  {
+    "id": 227,
+    "name": "동대문",
+    "en": "Dongdaemun",
+    "line": "1호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.571646,
+    "lng": 127.01069
+  },
+  {
+    "id": 61670,
+    "name": "종로5가",
+    "en": "Jongno 5(o)ga",
+    "line": "1호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.570971,
+    "lng": 127.0019
+  },
+  {
+    "id": 97287,
+    "name": "종로3가",
+    "en": "Jongno 3(sam)ga",
+    "line": "1호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.570429,
+    "lng": 126.992095
+  },
+  {
+    "id": 68037,
+    "name": "종각",
+    "en": "Jonggak",
+    "line": "1호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.570203,
+    "lng": 126.983116
+  },
+  {
+    "id": 43371,
+    "name": "시청",
+    "en": "City Hall",
+    "line": "1호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.565211,
+    "lng": 126.977207
+  },
+  {
+    "id": 92241,
+    "name": "서울역",
+    "en": "Seoul Station",
+    "line": "1호선",
+    "icon": "🏛️",
+    "region": "서울",
+    "lat": 37.55585,
+    "lng": 126.972103
+  },
+  {
+    "id": 95386,
+    "name": "시청",
+    "en": "City Hall",
+    "line": "2호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.563534,
+    "lng": 126.975271
+  },
+  {
+    "id": 90192,
+    "name": "을지로입구",
+    "en": "Euljiro 1(il)ga",
+    "line": "2호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.565998,
+    "lng": 126.982569
+  },
+  {
+    "id": 39415,
+    "name": "을지로3가",
+    "en": "Euljiro 3(sam)ga",
+    "line": "2호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.566292,
+    "lng": 126.990873
+  },
+  {
+    "id": 10867,
+    "name": "을지로4가",
+    "en": "Euljiro 4(sa)ga",
+    "line": "2호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.566611,
+    "lng": 126.997622
+  },
+  {
+    "id": 17263,
+    "name": "동대문역사문화공원(DDP)",
+    "en": "Dongdaemun History & Culture Park",
+    "line": "2호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.565609,
+    "lng": 127.009083
+  },
+  {
+    "id": 51196,
+    "name": "신당",
+    "en": "Sindang",
+    "line": "2호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.565675,
+    "lng": 127.0194259
+  },
+  {
+    "id": 40166,
+    "name": "상왕십리",
+    "en": "Sangwangsimni",
+    "line": "2호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.564444,
+    "lng": 127.029322
+  },
+  {
+    "id": 27898,
+    "name": "왕십리(성동구청)",
+    "en": "Wangsimni",
+    "line": "2호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.561289,
+    "lng": 127.0370615
+  },
+  {
+    "id": 53621,
+    "name": "한양대",
+    "en": "Hanyang Univ.",
+    "line": "2호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.555758,
+    "lng": 127.0436594
+  },
+  {
+    "id": 6431,
+    "name": "뚝섬",
+    "en": "Ttukseom",
+    "line": "2호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.54718,
+    "lng": 127.047413
+  },
+  {
+    "id": 2758,
+    "name": "성수",
+    "en": "Seongsu",
+    "line": "2호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.544628,
+    "lng": 127.055983
+  },
+  {
+    "id": 96461,
+    "name": "건대입구",
+    "en": "Konkuk Univ.",
+    "line": "2호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.540408,
+    "lng": 127.069231
+  },
+  {
+    "id": 22781,
+    "name": "구의(광진구청)",
+    "en": "Guui (Gwangjin-gu Office)",
+    "line": "2호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.537157,
+    "lng": 127.0862124
+  },
+  {
+    "id": 83234,
+    "name": "강변(동서울터미널)",
+    "en": "Gangbyeon (Dongseoul Bus Terminal)",
+    "line": "2호선",
+    "icon": "🏛️",
+    "region": "서울",
+    "lat": 37.535161,
+    "lng": 127.094684
+  },
+  {
+    "id": 12856,
+    "name": "잠실나루",
+    "en": "Jamsillaru",
+    "line": "2호선",
+    "icon": "🏟️",
+    "region": "서울",
+    "lat": 37.520688,
+    "lng": 127.103836
+  },
+  {
+    "id": 46774,
+    "name": "잠실(송파구청)",
+    "en": "Jamsil (Songpa-gu Office)",
+    "line": "2호선",
+    "icon": "🏟️",
+    "region": "서울",
+    "lat": 37.513305,
+    "lng": 127.100129
+  },
+  {
+    "id": 4100,
+    "name": "잠실새내",
+    "en": "Jamsilsaenae",
+    "line": "2호선",
+    "icon": "🏟️",
+    "region": "서울",
+    "lat": 37.511653,
+    "lng": 127.086224
+  },
+  {
+    "id": 50533,
+    "name": "종합운동장",
+    "en": "Sports Complex",
+    "line": "2호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.511128,
+    "lng": 127.073841
+  },
+  {
+    "id": 23807,
+    "name": "삼성(무역센터)",
+    "en": "Samseong (World Trade Center Seoul)",
+    "line": "2호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.508827,
+    "lng": 127.063203
+  },
+  {
+    "id": 22702,
+    "name": "선릉",
+    "en": "Seolleung",
+    "line": "2호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.504477,
+    "lng": 127.048974
+  },
+  {
+    "id": 38921,
+    "name": "역삼",
+    "en": "Yeoksam",
+    "line": "2호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.500658,
+    "lng": 127.03643
+  },
+  {
+    "id": 55022,
+    "name": "강남",
+    "en": "Gangnam",
+    "line": "2호선",
+    "icon": "💼",
+    "region": "서울",
+    "lat": 37.49805,
+    "lng": 127.02795
+  },
+  {
+    "id": 11589,
+    "name": "교대(법원·검찰청)",
+    "en": "Seoul Nat'l Univ. of Education (Court & Public Prosecutor's Office)",
+    "line": "2호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.493957,
+    "lng": 127.014431
+  },
+  {
+    "id": 37333,
+    "name": "서초",
+    "en": "Seocho",
+    "line": "2호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.49191,
+    "lng": 127.007685
+  },
+  {
+    "id": 85700,
+    "name": "방배",
+    "en": "Bangbae",
+    "line": "2호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.481469,
+    "lng": 126.997627
+  },
+  {
+    "id": 21709,
+    "name": "사당",
+    "en": "Sadang",
+    "line": "2호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.476536,
+    "lng": 126.981631
+  },
+  {
+    "id": 25994,
+    "name": "낙성대(강감찬)",
+    "en": "Nakseongdae",
+    "line": "2호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.47713,
+    "lng": 126.963583
+  },
+  {
+    "id": 37587,
+    "name": "서울대입구(관악구청)",
+    "en": "Seoul Nat‘l Univ. (Gwanak-gu Office)",
+    "line": "2호선",
+    "icon": "🏛️",
+    "region": "서울",
+    "lat": 37.481233,
+    "lng": 126.952745
+  },
+  {
+    "id": 99057,
+    "name": "봉천",
+    "en": "Bongcheon",
+    "line": "2호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.482416,
+    "lng": 126.941696
+  },
+  {
+    "id": 81993,
+    "name": "신림",
+    "en": "Sillim",
+    "line": "2호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.484216,
+    "lng": 126.929573
+  },
+  {
+    "id": 51525,
+    "name": "신대방",
+    "en": "Sindaebang",
+    "line": "2호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.487604,
+    "lng": 126.913479
+  },
+  {
+    "id": 55854,
+    "name": "구로디지털단지",
+    "en": "Guro Digital Complex",
+    "line": "2호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.4852931,
+    "lng": 126.901456
+  },
+  {
+    "id": 49413,
+    "name": "대림(구로구청)",
+    "en": "Daerim (Guro-gu Office)",
+    "line": "2호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.4932826,
+    "lng": 126.8949793
+  },
+  {
+    "id": 73254,
+    "name": "신도림",
+    "en": "Sindorim",
+    "line": "2호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.508815,
+    "lng": 126.891222
+  },
+  {
+    "id": 36772,
+    "name": "문래",
+    "en": "Mullae",
+    "line": "2호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.517993,
+    "lng": 126.894766
+  },
+  {
+    "id": 51020,
+    "name": "영등포구청",
+    "en": "Yeongdeungpo-gu Office",
+    "line": "2호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.525766,
+    "lng": 126.896627
+  },
+  {
+    "id": 71365,
+    "name": "당산",
+    "en": "Dangsan",
+    "line": "2호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.534807,
+    "lng": 126.902611
+  },
+  {
+    "id": 99308,
+    "name": "합정",
+    "en": "Hapjeong",
+    "line": "2호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.550025,
+    "lng": 126.914557
+  },
+  {
+    "id": 40679,
+    "name": "홍대입구",
+    "en": "Hongik Univ.",
+    "line": "2호선",
+    "icon": "🎸",
+    "region": "서울",
+    "lat": 37.556748,
+    "lng": 126.923643
+  },
+  {
+    "id": 51998,
+    "name": "신촌(지하)",
+    "en": "Sinchon",
+    "line": "2호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.555153,
+    "lng": 126.93689
+  },
+  {
+    "id": 83686,
+    "name": "이대",
+    "en": "Ewha Womans Univ.",
+    "line": "2호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.556734,
+    "lng": 126.945897
+  },
+  {
+    "id": 85946,
+    "name": "아현",
+    "en": "Ahyeon",
+    "line": "2호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.557407,
+    "lng": 126.956079
+  },
+  {
+    "id": 51330,
+    "name": "충정로(경기대입구)",
+    "en": "Chungjeongno (Kyonggi Univ.)",
+    "line": "2호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.559742,
+    "lng": 126.964455
+  },
+  {
+    "id": 48597,
+    "name": "용답",
+    "en": "Yongdap",
+    "line": "2호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.562066,
+    "lng": 127.05087863
+  },
+  {
+    "id": 48507,
+    "name": "신답",
+    "en": "Sindap",
+    "line": "2호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.569847,
+    "lng": 127.047048
+  },
+  {
+    "id": 96813,
+    "name": "용두(동대문구청)",
+    "en": "Yongdu (Dongdaemun-gu Office)",
+    "line": "2호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.574012,
+    "lng": 127.03811
+  },
+  {
+    "id": 50228,
+    "name": "신설동",
+    "en": "Sinseoldong",
+    "line": "2호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.574653,
+    "lng": 127.025158
+  },
+  {
+    "id": 73130,
+    "name": "도림천",
+    "en": "Dorimcheon",
+    "line": "2호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.5145589,
+    "lng": 126.882586
+  },
+  {
+    "id": 56328,
+    "name": "양천구청",
+    "en": "Yangcheon-gu Office",
+    "line": "2호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.5123294,
+    "lng": 126.865593
+  },
+  {
+    "id": 38918,
+    "name": "신정네거리",
+    "en": "Sinjeongnegeori",
+    "line": "2호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.520218,
+    "lng": 126.852849
+  },
+  {
+    "id": 18855,
+    "name": "지축",
+    "en": "Jichuk",
+    "line": "3호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.648151,
+    "lng": 126.913751
+  },
+  {
+    "id": 99037,
+    "name": "구파발",
+    "en": "Gupabal",
+    "line": "3호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.636612,
+    "lng": 126.918827
+  },
+  {
+    "id": 1712,
+    "name": "연신내",
+    "en": "Yeonsinnae",
+    "line": "3호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.619295,
+    "lng": 126.920959
+  },
+  {
+    "id": 46895,
+    "name": "불광",
+    "en": "Bulgwang",
+    "line": "3호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.610154,
+    "lng": 126.930183
+  },
+  {
+    "id": 69392,
+    "name": "녹번",
+    "en": "Nokbeon",
+    "line": "3호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.600882,
+    "lng": 126.935758
+  },
+  {
+    "id": 22631,
+    "name": "홍제",
+    "en": "Hongje",
+    "line": "3호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.588851,
+    "lng": 126.944092
+  },
+  {
+    "id": 65268,
+    "name": "무악재",
+    "en": "Muakjae",
+    "line": "3호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.582658,
+    "lng": 126.950131
+  },
+  {
+    "id": 8838,
+    "name": "독립문",
+    "en": "Dongnimmun",
+    "line": "3호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.574534,
+    "lng": 126.957902
+  },
+  {
+    "id": 6306,
+    "name": "경복궁(정부서울청사)",
+    "en": "Gyeongbokgung (Government Complex-Seoul)",
+    "line": "3호선",
+    "icon": "🏛️",
+    "region": "서울",
+    "lat": 37.575844,
+    "lng": 126.973576
+  },
+  {
+    "id": 27648,
+    "name": "안국",
+    "en": "Anguk",
+    "line": "3호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.576562,
+    "lng": 126.98547
+  },
+  {
+    "id": 6563,
+    "name": "종로3가",
+    "en": "Jongno 3(sam)ga",
+    "line": "3호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.571537,
+    "lng": 126.991837
+  },
+  {
+    "id": 82125,
+    "name": "을지로3가",
+    "en": "Euljiro 3(sam)ga",
+    "line": "3호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.566299,
+    "lng": 126.992616
+  },
+  {
+    "id": 21236,
+    "name": "충무로",
+    "en": "Chungmuro",
+    "line": "3호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.561382,
+    "lng": 126.994173
+  },
+  {
+    "id": 25639,
+    "name": "동대입구",
+    "en": "Dongguk Univ.",
+    "line": "3호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.55906,
+    "lng": 127.005273
+  },
+  {
+    "id": 38244,
+    "name": "약수",
+    "en": "Yaksu",
+    "line": "3호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.554554,
+    "lng": 127.010858
+  },
+  {
+    "id": 57285,
+    "name": "금호",
+    "en": "Geumho",
+    "line": "3호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.548269,
+    "lng": 127.015785
+  },
+  {
+    "id": 5825,
+    "name": "옥수",
+    "en": "Oksu",
+    "line": "3호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.541653,
+    "lng": 127.017303
+  },
+  {
+    "id": 78266,
+    "name": "압구정",
+    "en": "Apgujeong",
+    "line": "3호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.526169,
+    "lng": 127.028502
+  },
+  {
+    "id": 30824,
+    "name": "신사",
+    "en": "Sinsa",
+    "line": "3호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.516438,
+    "lng": 127.020247
+  },
+  {
+    "id": 94957,
+    "name": "잠원",
+    "en": "Jamwon",
+    "line": "3호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.512989,
+    "lng": 127.011613
+  },
+  {
+    "id": 32848,
+    "name": "고속터미널",
+    "en": "Express Bus Terminal",
+    "line": "3호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.504953,
+    "lng": 127.004916
+  },
+  {
+    "id": 15602,
+    "name": "교대(법원·검찰청)",
+    "en": "Seoul Nat'l Univ. of Education (Court & Public Prosecutor's Office)",
+    "line": "3호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.49306,
+    "lng": 127.013796
+  },
+  {
+    "id": 50432,
+    "name": "남부터미널(예술의전당)",
+    "en": "Nambu Bus Terminal (Seoul Arts Center)",
+    "line": "3호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.48494,
+    "lng": 127.016289
+  },
+  {
+    "id": 15320,
+    "name": "양재(서초구청)",
+    "en": "Yangjae (Seocho-gu Office)",
+    "line": "3호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.48458,
+    "lng": 127.03423
+  },
+  {
+    "id": 58672,
+    "name": "매봉",
+    "en": "Maebong",
+    "line": "3호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.487114,
+    "lng": 127.046907
+  },
+  {
+    "id": 70070,
+    "name": "도곡",
+    "en": "Dogok",
+    "line": "3호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.491129,
+    "lng": 127.055694
+  },
+  {
+    "id": 917,
+    "name": "대치",
+    "en": "Daechi",
+    "line": "3호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.494601,
+    "lng": 127.063449
+  },
+  {
+    "id": 19909,
+    "name": "학여울",
+    "en": "Hangnyeoul",
+    "line": "3호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.496787,
+    "lng": 127.0708601
+  },
+  {
+    "id": 59995,
+    "name": "대청",
+    "en": "Daecheong",
+    "line": "3호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.493607,
+    "lng": 127.079526
+  },
+  {
+    "id": 27009,
+    "name": "일원",
+    "en": "Irwon",
+    "line": "3호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.48389,
+    "lng": 127.08416
+  },
+  {
+    "id": 66774,
+    "name": "수서",
+    "en": "Suseo",
+    "line": "3호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.4875,
+    "lng": 127.101924
+  },
+  {
+    "id": 56537,
+    "name": "가락시장",
+    "en": "Garak Market",
+    "line": "3호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.492318,
+    "lng": 127.1177
+  },
+  {
+    "id": 94818,
+    "name": "경찰병원",
+    "en": "National Police Hospital",
+    "line": "3호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.495754,
+    "lng": 127.124198
+  },
+  {
+    "id": 46575,
+    "name": "오금",
+    "en": "Ogeum",
+    "line": "3호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.502288,
+    "lng": 127.128344
+  },
+  {
+    "id": 11306,
+    "name": "불암산",
+    "en": "Danggogae",
+    "line": "4호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.67009,
+    "lng": 127.079004
+  },
+  {
+    "id": 34403,
+    "name": "상계",
+    "en": "Sanggye",
+    "line": "4호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.660576,
+    "lng": 127.073199
+  },
+  {
+    "id": 36236,
+    "name": "노원",
+    "en": "Nowon",
+    "line": "4호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.656274,
+    "lng": 127.063183
+  },
+  {
+    "id": 60467,
+    "name": "창동",
+    "en": "Changdong",
+    "line": "4호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.653315,
+    "lng": 127.048304
+  },
+  {
+    "id": 96795,
+    "name": "쌍문",
+    "en": "Ssangmun",
+    "line": "4호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.648274,
+    "lng": 127.034381
+  },
+  {
+    "id": 5392,
+    "name": "수유(강북구청)",
+    "en": "Suyu (Gangbuk-gu Office)",
+    "line": "4호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.637727,
+    "lng": 127.025371
+  },
+  {
+    "id": 23351,
+    "name": "미아(서울사이버대학)",
+    "en": "Mia (Seoul Cyber Univ.)",
+    "line": "4호선",
+    "icon": "🏛️",
+    "region": "서울",
+    "lat": 37.626435,
+    "lng": 127.026151
+  },
+  {
+    "id": 84765,
+    "name": "미아사거리",
+    "en": "Miasageori",
+    "line": "4호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.613276,
+    "lng": 127.030083
+  },
+  {
+    "id": 75163,
+    "name": "길음",
+    "en": "Gireum",
+    "line": "4호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.603387,
+    "lng": 127.025053
+  },
+  {
+    "id": 57361,
+    "name": "성신여대입구(돈암)",
+    "en": "Sungshin Women's Univ. (Donam)",
+    "line": "4호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.592882,
+    "lng": 127.016908
+  },
+  {
+    "id": 87110,
+    "name": "한성대입구(삼선교)",
+    "en": "Hansung Univ. (Samseongyo)",
+    "line": "4호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.58838,
+    "lng": 127.005951
+  },
+  {
+    "id": 76584,
+    "name": "혜화",
+    "en": "Hyehwa",
+    "line": "4호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.582116,
+    "lng": 127.001929
+  },
+  {
+    "id": 41116,
+    "name": "동대문",
+    "en": "Dongdaemun",
+    "line": "4호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.57099,
+    "lng": 127.00925
+  },
+  {
+    "id": 12346,
+    "name": "동대문역사문화공원(DDP)",
+    "en": "Dongdaemun History & Culture Park",
+    "line": "4호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.565141,
+    "lng": 127.007808
+  },
+  {
+    "id": 22628,
+    "name": "충무로",
+    "en": "Chungmuro",
+    "line": "4호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.561352,
+    "lng": 126.994573
+  },
+  {
+    "id": 84025,
+    "name": "명동",
+    "en": "Myeongdong",
+    "line": "4호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.560955,
+    "lng": 126.986271
+  },
+  {
+    "id": 36518,
+    "name": "회현(남대문시장)",
+    "en": "Hoehyeon (Namdaemun Market)",
+    "line": "4호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.558698,
+    "lng": 126.978346
+  },
+  {
+    "id": 96934,
+    "name": "서울역",
+    "en": "Seoul Station",
+    "line": "4호선",
+    "icon": "🏛️",
+    "region": "서울",
+    "lat": 37.553172,
+    "lng": 126.972706
+  },
+  {
+    "id": 69087,
+    "name": "숙대입구(갈월)",
+    "en": "Sookmyung Women's Univ. (Garwol)",
+    "line": "4호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.5447834,
+    "lng": 126.9721
+  },
+  {
+    "id": 46080,
+    "name": "삼각지(전쟁기념관)",
+    "en": "Samgakji",
+    "line": "4호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.534457,
+    "lng": 126.972992
+  },
+  {
+    "id": 14823,
+    "name": "신용산",
+    "en": "Sinyongsan",
+    "line": "4호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.52919,
+    "lng": 126.96858
+  },
+  {
+    "id": 92526,
+    "name": "이촌(국립중앙박물관)",
+    "en": "Ichon (National Museum of Korea)",
+    "line": "4호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.52919,
+    "lng": 126.9679818
+  },
+  {
+    "id": 26312,
+    "name": "동작(현충원)",
+    "en": "Dongjak (Seoul National Cemetery)",
+    "line": "4호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.503567,
+    "lng": 126.980171
+  },
+  {
+    "id": 70292,
+    "name": "총신대입구(이수)",
+    "en": "Chongshin Univ. (Isu)",
+    "line": "4호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.487521,
+    "lng": 126.982309
+  },
+  {
+    "id": 85719,
+    "name": "사당",
+    "en": "Sadang",
+    "line": "4호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.476263,
+    "lng": 126.981636
+  },
+  {
+    "id": 95278,
+    "name": "남태령",
+    "en": "Namtaeryeong",
+    "line": "4호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.464339,
+    "lng": 126.989081
+  },
+  {
+    "id": 25571,
+    "name": "방화",
+    "en": "Banghwa",
+    "line": "5호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.577669,
+    "lng": 126.812822
+  },
+  {
+    "id": 97376,
+    "name": "개화산",
+    "en": "Gaehwasan",
+    "line": "5호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.572458,
+    "lng": 126.806838
+  },
+  {
+    "id": 76773,
+    "name": "김포공항",
+    "en": "Gimpo Int'l Airport",
+    "line": "5호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.56217,
+    "lng": 126.801273
+  },
+  {
+    "id": 34399,
+    "name": "송정",
+    "en": "Songjeong",
+    "line": "5호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.561201,
+    "lng": 126.812052
+  },
+  {
+    "id": 21945,
+    "name": "마곡",
+    "en": "Magok",
+    "line": "5호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.55865,
+    "lng": 126.837693
+  },
+  {
+    "id": 49211,
+    "name": "발산",
+    "en": "Balsan",
+    "line": "5호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.562182,
+    "lng": 126.82693
+  },
+  {
+    "id": 25029,
+    "name": "우장산",
+    "en": "Ujangsan",
+    "line": "5호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.548864,
+    "lng": 126.83633
+  },
+  {
+    "id": 98833,
+    "name": "화곡",
+    "en": "Hwagok",
+    "line": "5호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.541585,
+    "lng": 126.840436
+  },
+  {
+    "id": 2631,
+    "name": "까치산",
+    "en": "Kkachisan",
+    "line": "5호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.53221,
+    "lng": 126.846466
+  },
+  {
+    "id": 67176,
+    "name": "신정(은행정)",
+    "en": "Sinjeong (Eunhaengjeong)",
+    "line": "5호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.525001,
+    "lng": 126.856176
+  },
+  {
+    "id": 75929,
+    "name": "목동",
+    "en": "Mokdong",
+    "line": "5호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.526088,
+    "lng": 126.864296
+  },
+  {
+    "id": 41060,
+    "name": "오목교(목동운동장앞)",
+    "en": "Omokgyo (Mokdong Stadium)",
+    "line": "5호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.524557,
+    "lng": 126.875049
+  },
+  {
+    "id": 35516,
+    "name": "양평",
+    "en": "Yangpyeong",
+    "line": "5호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.525614,
+    "lng": 126.886177
+  },
+  {
+    "id": 14799,
+    "name": "영등포구청",
+    "en": "Yeongdeungpo-gu Office",
+    "line": "5호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.524209,
+    "lng": 126.895022
+  },
+  {
+    "id": 35504,
+    "name": "영등포시장",
+    "en": "Yeongdeungpo Market",
+    "line": "5호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.52276,
+    "lng": 126.905143
+  },
+  {
+    "id": 17455,
+    "name": "신길",
+    "en": "Singil",
+    "line": "5호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.51763,
+    "lng": 126.914886
+  },
+  {
+    "id": 77782,
+    "name": "여의도",
+    "en": "Yeouido",
+    "line": "5호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.521678,
+    "lng": 126.924318
+  },
+  {
+    "id": 79315,
+    "name": "여의나루",
+    "en": "Yeouinaru",
+    "line": "5호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.527045,
+    "lng": 126.932807
+  },
+  {
+    "id": 61841,
+    "name": "마포",
+    "en": "Mapo",
+    "line": "5호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.539718,
+    "lng": 126.946043
+  },
+  {
+    "id": 61071,
+    "name": "공덕",
+    "en": "Gongdeok",
+    "line": "5호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.544005,
+    "lng": 126.951058
+  },
+  {
+    "id": 69751,
+    "name": "애오개",
+    "en": "Aeogae",
+    "line": "5호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.553592,
+    "lng": 126.956733
+  },
+  {
+    "id": 21533,
+    "name": "충정로(경기대입구)",
+    "en": "Chungjeongno (Kyonggi Univ.)",
+    "line": "5호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.560061,
+    "lng": 126.962783
+  },
+  {
+    "id": 48193,
+    "name": "서대문",
+    "en": "Seodaemun",
+    "line": "5호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.565812,
+    "lng": 126.966639
+  },
+  {
+    "id": 37170,
+    "name": "광화문(세종문화회관)",
+    "en": "Gwanghwamun(Sejong Center for the Performing Arts)",
+    "line": "5호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.571645,
+    "lng": 126.976568
+  },
+  {
+    "id": 16810,
+    "name": "종로3가(탑골공원)",
+    "en": "Jongno 3(sam)ga (Tapgol Park)",
+    "line": "5호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.572546,
+    "lng": 126.990447
+  },
+  {
+    "id": 91377,
+    "name": "을지로4가",
+    "en": "Euljiro 4(sa)ga",
+    "line": "5호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.56728,
+    "lng": 126.998127
+  },
+  {
+    "id": 98992,
+    "name": "동대문역사문화공원(DDP)",
+    "en": "Dongdaemun History & Culture Park",
+    "line": "5호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.564682,
+    "lng": 127.00533
+  },
+  {
+    "id": 11036,
+    "name": "청구",
+    "en": "Cheonggu",
+    "line": "5호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.560237,
+    "lng": 127.01379
+  },
+  {
+    "id": 71948,
+    "name": "신금호",
+    "en": "Singeumho",
+    "line": "5호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.554504,
+    "lng": 127.020403
+  },
+  {
+    "id": 31997,
+    "name": "행당",
+    "en": "Haengdang",
+    "line": "5호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.557297,
+    "lng": 127.029482
+  },
+  {
+    "id": 28493,
+    "name": "왕십리(성동구청)",
+    "en": "Wangsimni",
+    "line": "5호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.56197,
+    "lng": 127.037264
+  },
+  {
+    "id": 98142,
+    "name": "마장",
+    "en": "Majang",
+    "line": "5호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.566066,
+    "lng": 127.042921
+  },
+  {
+    "id": 47801,
+    "name": "답십리",
+    "en": "Dapsimni",
+    "line": "5호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.566833,
+    "lng": 127.05266
+  },
+  {
+    "id": 76532,
+    "name": "장한평",
+    "en": "Janghanpyeong",
+    "line": "5호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.561438,
+    "lng": 127.064601
+  },
+  {
+    "id": 78878,
+    "name": "군자(능동)",
+    "en": "Gunja (Neungdong)",
+    "line": "5호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.557102,
+    "lng": 127.079559
+  },
+  {
+    "id": 21905,
+    "name": "아차산(어린이대공원후문)",
+    "en": "Achasan (Rear Entrance to Seoul Children's Grand Park)",
+    "line": "5호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.552005,
+    "lng": 127.089609
+  },
+  {
+    "id": 85911,
+    "name": "광나루(장신대)",
+    "en": "Gwangnaru (Presbyterian College & Theological Seminary)",
+    "line": "5호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.545301,
+    "lng": 127.103478
+  },
+  {
+    "id": 72542,
+    "name": "천호(풍납토성)",
+    "en": "Cheonho (Pungnaptoseong)",
+    "line": "5호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.538566,
+    "lng": 127.123539
+  },
+  {
+    "id": 99030,
+    "name": "강동",
+    "en": "Gangdong",
+    "line": "5호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.53581,
+    "lng": 127.13249
+  },
+  {
+    "id": 52005,
+    "name": "길동",
+    "en": "Gildong",
+    "line": "5호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.538022,
+    "lng": 127.140085
+  },
+  {
+    "id": 48016,
+    "name": "굽은다리(강동구민회관앞)",
+    "en": "Gubeundari (Gangdong Community Center )",
+    "line": "5호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.545442,
+    "lng": 127.142844
+  },
+  {
+    "id": 71305,
+    "name": "명일",
+    "en": "Myeongil",
+    "line": "5호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.551317,
+    "lng": 127.144002
+  },
+  {
+    "id": 99861,
+    "name": "고덕",
+    "en": "Godeok",
+    "line": "5호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.555002,
+    "lng": 127.154214
+  },
+  {
+    "id": 0,
+    "name": "상일동",
+    "en": "Sangildong",
+    "line": "5호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.556714,
+    "lng": 127.166381
+  },
+  {
+    "id": 44701,
+    "name": "강일",
+    "en": "Gangil",
+    "line": "5호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.557521,
+    "lng": 127.176018
+  },
+  {
+    "id": 52603,
+    "name": "미사",
+    "en": "Misa",
+    "line": "5호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.56309,
+    "lng": 127.192954
+  },
+  {
+    "id": 43110,
+    "name": "하남풍산",
+    "en": "Hanam Pungsan",
+    "line": "5호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.552201,
+    "lng": 127.203897
+  },
+  {
+    "id": 3187,
+    "name": "하남시청(덕풍∙신장)",
+    "en": "Hanam City Hall (Deokpung&Sinjang)",
+    "line": "5호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.541723,
+    "lng": 127.206901
+  },
+  {
+    "id": 26727,
+    "name": "하남검단산",
+    "en": "Hanam Geomdansan",
+    "line": "5호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.539729,
+    "lng": 127.223427
+  },
+  {
+    "id": 34885,
+    "name": "둔촌동",
+    "en": "Dunchondong",
+    "line": "5호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.527787,
+    "lng": 127.136219
+  },
+  {
+    "id": 77621,
+    "name": "올림픽공원(한국체대)",
+    "en": "Olympic Park (Korea National Sport Univ.)",
+    "line": "5호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.516217,
+    "lng": 127.130957
+  },
+  {
+    "id": 16066,
+    "name": "방이",
+    "en": "Bangi",
+    "line": "5호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.508752,
+    "lng": 127.126054
+  },
+  {
+    "id": 34963,
+    "name": "오금",
+    "en": "Ogeum",
+    "line": "5호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.502228,
+    "lng": 127.127701
+  },
+  {
+    "id": 86006,
+    "name": "개롱",
+    "en": "Gaerong",
+    "line": "5호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.498097,
+    "lng": 127.134817
+  },
+  {
+    "id": 42138,
+    "name": "거여",
+    "en": "Geoyeo",
+    "line": "5호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.493208,
+    "lng": 127.143983
+  },
+  {
+    "id": 64359,
+    "name": "마천",
+    "en": "Macheon",
+    "line": "5호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.494972,
+    "lng": 127.152784
+  },
+  {
+    "id": 39825,
+    "name": "응암",
+    "en": "Eungam",
+    "line": "6호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.59859,
+    "lng": 126.915583
+  },
+  {
+    "id": 37694,
+    "name": "역촌",
+    "en": "Yeokchon",
+    "line": "6호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.60605,
+    "lng": 126.922764
+  },
+  {
+    "id": 50370,
+    "name": "불광",
+    "en": "Bulgwang",
+    "line": "6호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.610919,
+    "lng": 126.929504
+  },
+  {
+    "id": 4051,
+    "name": "독바위",
+    "en": "Dokbawi",
+    "line": "6호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.618413,
+    "lng": 126.933035
+  },
+  {
+    "id": 93231,
+    "name": "연신내",
+    "en": "Yeonsinnae",
+    "line": "6호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.618483,
+    "lng": 126.920403
+  },
+  {
+    "id": 98228,
+    "name": "구산",
+    "en": "Gusan",
+    "line": "6호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.611196,
+    "lng": 126.9172519
+  },
+  {
+    "id": 95951,
+    "name": "새절(신사)",
+    "en": "Saejeol (Sinsa)",
+    "line": "6호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.591148,
+    "lng": 126.913613
+  },
+  {
+    "id": 85098,
+    "name": "증산(명지대앞)",
+    "en": "Jeungsan (Myongji Univ.)",
+    "line": "6호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.583989,
+    "lng": 126.909785
+  },
+  {
+    "id": 48273,
+    "name": "디지털미디어시티",
+    "en": "Digital Media City",
+    "line": "6호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.5760805,
+    "lng": 126.901343
+  },
+  {
+    "id": 84472,
+    "name": "월드컵경기장(성산)",
+    "en": "World Cup Stadium (Seongsan)",
+    "line": "6호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.569439,
+    "lng": 126.899077
+  },
+  {
+    "id": 74006,
+    "name": "마포구청",
+    "en": "Mapo-gu Office",
+    "line": "6호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.563529,
+    "lng": 126.903356
+  },
+  {
+    "id": 80942,
+    "name": "망원",
+    "en": "Mangwon",
+    "line": "6호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.556031,
+    "lng": 126.910129
+  },
+  {
+    "id": 95143,
+    "name": "합정",
+    "en": "Hapjeong",
+    "line": "6호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.549033,
+    "lng": 126.913546
+  },
+  {
+    "id": 75104,
+    "name": "상수",
+    "en": "Sangsu",
+    "line": "6호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.547704,
+    "lng": 126.92292
+  },
+  {
+    "id": 69144,
+    "name": "광흥창(서강)",
+    "en": "Gwangheungchang (Seogang)",
+    "line": "6호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.547464,
+    "lng": 126.931971
+  },
+  {
+    "id": 87535,
+    "name": "대흥(서강대앞)",
+    "en": "Daeheung (Sogang Univ.)",
+    "line": "6호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.547732,
+    "lng": 126.942214
+  },
+  {
+    "id": 19315,
+    "name": "공덕",
+    "en": "Gongdeok",
+    "line": "6호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.543592,
+    "lng": 126.951664
+  },
+  {
+    "id": 46657,
+    "name": "효창공원앞",
+    "en": "Hyochang Park",
+    "line": "6호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.539279,
+    "lng": 126.961348
+  },
+  {
+    "id": 6908,
+    "name": "삼각지(전쟁기념관)",
+    "en": "Samgakji",
+    "line": "6호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.535563,
+    "lng": 126.973996
+  },
+  {
+    "id": 720,
+    "name": "녹사평(용산구청)",
+    "en": "Noksapyeong (Yongsan-gu Office)",
+    "line": "6호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.53469,
+    "lng": 126.98665
+  },
+  {
+    "id": 95945,
+    "name": "이태원",
+    "en": "Itaewon",
+    "line": "6호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.534485,
+    "lng": 126.994369
+  },
+  {
+    "id": 32625,
+    "name": "한강진",
+    "en": "Hangangjin",
+    "line": "6호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.53956,
+    "lng": 127.001729
+  },
+  {
+    "id": 93325,
+    "name": "버티고개",
+    "en": "Beotigogae",
+    "line": "6호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.547933,
+    "lng": 127.006948
+  },
+  {
+    "id": 61390,
+    "name": "약수",
+    "en": "Yaksu",
+    "line": "6호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.554087,
+    "lng": 127.010237
+  },
+  {
+    "id": 64250,
+    "name": "청구",
+    "en": "Cheonggu",
+    "line": "6호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.560221,
+    "lng": 127.013776
+  },
+  {
+    "id": 87936,
+    "name": "신당",
+    "en": "Sindang",
+    "line": "6호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.566174,
+    "lng": 127.016158
+  },
+  {
+    "id": 58128,
+    "name": "동묘앞",
+    "en": "Dongmyo",
+    "line": "6호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.572275,
+    "lng": 127.015666
+  },
+  {
+    "id": 55571,
+    "name": "창신",
+    "en": "Changsin",
+    "line": "6호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.579772,
+    "lng": 127.015246
+  },
+  {
+    "id": 39490,
+    "name": "보문",
+    "en": "Bomun",
+    "line": "6호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.585293,
+    "lng": 127.019377
+  },
+  {
+    "id": 12556,
+    "name": "안암(고대병원앞)",
+    "en": "Anam (Korea Univ. Hospital)",
+    "line": "6호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.586261,
+    "lng": 127.02903
+  },
+  {
+    "id": 50917,
+    "name": "고려대(종암)",
+    "en": "Korea Univ. (Jongam)",
+    "line": "6호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.59034,
+    "lng": 127.03626
+  },
+  {
+    "id": 42042,
+    "name": "월곡(동덕여대)",
+    "en": "Wolgok (Dongduk Women's Univ.)",
+    "line": "6호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.60192,
+    "lng": 127.041492
+  },
+  {
+    "id": 89254,
+    "name": "상월곡(한국과학기술연구원)",
+    "en": "Sangwolgok(KIST)",
+    "line": "6호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.606392,
+    "lng": 127.048509
+  },
+  {
+    "id": 36916,
+    "name": "돌곶이",
+    "en": "Dolgoji",
+    "line": "6호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.610522,
+    "lng": 127.056419
+  },
+  {
+    "id": 64836,
+    "name": "석계",
+    "en": "Seokgye",
+    "line": "6호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.614937,
+    "lng": 127.065922
+  },
+  {
+    "id": 60956,
+    "name": "태릉입구",
+    "en": "Taereung",
+    "line": "6호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.617319,
+    "lng": 127.074741
+  },
+  {
+    "id": 82210,
+    "name": "화랑대(서울여대입구)",
+    "en": "Hwarangdae (Seoul Women's Univ.)",
+    "line": "6호선",
+    "icon": "🏛️",
+    "region": "서울",
+    "lat": 37.619875,
+    "lng": 127.084106
+  },
+  {
+    "id": 83541,
+    "name": "봉화산(서울의료원)",
+    "en": "Bonghwasan (Seoul Medical Center)",
+    "line": "6호선",
+    "icon": "🏛️",
+    "region": "서울",
+    "lat": 37.617429,
+    "lng": 127.0912326
+  },
+  {
+    "id": 69959,
+    "name": "신내",
+    "en": "Sinnae",
+    "line": "6호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.612571,
+    "lng": 127.104326
+  },
+  {
+    "id": 93629,
+    "name": "장암",
+    "en": "Jangam",
+    "line": "7호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.70015,
+    "lng": 127.053126
+  },
+  {
+    "id": 8000,
+    "name": "도봉산",
+    "en": "Dobongsan",
+    "line": "7호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.689131,
+    "lng": 127.046548
+  },
+  {
+    "id": 85762,
+    "name": "수락산",
+    "en": "Suraksan",
+    "line": "7호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.677804,
+    "lng": 127.055314
+  },
+  {
+    "id": 50259,
+    "name": "마들",
+    "en": "Madeul",
+    "line": "7호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.664985,
+    "lng": 127.057701
+  },
+  {
+    "id": 96353,
+    "name": "노원",
+    "en": "Nowon",
+    "line": "7호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.654478,
+    "lng": 127.060555
+  },
+  {
+    "id": 98869,
+    "name": "중계",
+    "en": "Junggye",
+    "line": "7호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.645052,
+    "lng": 127.064084
+  },
+  {
+    "id": 33309,
+    "name": "하계",
+    "en": "Hagye",
+    "line": "7호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.636363,
+    "lng": 127.067999
+  },
+  {
+    "id": 75199,
+    "name": "공릉(서울과학기술대)",
+    "en": "Gongneung (Seoul National Univ. of Science & Technology)",
+    "line": "7호선",
+    "icon": "🏛️",
+    "region": "서울",
+    "lat": 37.625642,
+    "lng": 127.072969
+  },
+  {
+    "id": 97700,
+    "name": "태릉입구",
+    "en": "Taereung",
+    "line": "7호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.618519,
+    "lng": 127.075361
+  },
+  {
+    "id": 74857,
+    "name": "먹골",
+    "en": "Meokgol",
+    "line": "7호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.610638,
+    "lng": 127.077719
+  },
+  {
+    "id": 46198,
+    "name": "중화",
+    "en": "Junghwa",
+    "line": "7호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.602604,
+    "lng": 127.079254
+  },
+  {
+    "id": 70024,
+    "name": "상봉",
+    "en": "Sangbong",
+    "line": "7호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.595673,
+    "lng": 127.085708
+  },
+  {
+    "id": 33478,
+    "name": "면목",
+    "en": "Myeonmok",
+    "line": "7호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.588671,
+    "lng": 127.087503
+  },
+  {
+    "id": 34035,
+    "name": "사가정",
+    "en": "Sagajeong",
+    "line": "7호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.580912,
+    "lng": 127.088502
+  },
+  {
+    "id": 92957,
+    "name": "용마산(용마폭포공원)",
+    "en": "Yongmasan",
+    "line": "7호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.573752,
+    "lng": 127.086802
+  },
+  {
+    "id": 29062,
+    "name": "중곡",
+    "en": "Junggok",
+    "line": "7호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.565877,
+    "lng": 127.084291
+  },
+  {
+    "id": 27089,
+    "name": "군자(능동)",
+    "en": "Gunja (Neungdong)",
+    "line": "7호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.557151,
+    "lng": 127.079484
+  },
+  {
+    "id": 73221,
+    "name": "어린이대공원(세종대)",
+    "en": "Children's Grand Park (Sejong Univ.)",
+    "line": "7호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.547962,
+    "lng": 127.07465
+  },
+  {
+    "id": 89897,
+    "name": "건대입구",
+    "en": "Konkuk Univ.",
+    "line": "7호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.540882,
+    "lng": 127.071103
+  },
+  {
+    "id": 22576,
+    "name": "자양(뚝섬한강공원)",
+    "en": "Jayang (Ttukseom Hangang Park)",
+    "line": "7호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.531558,
+    "lng": 127.066714
+  },
+  {
+    "id": 15017,
+    "name": "청담",
+    "en": "Cheongdam",
+    "line": "7호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.519097,
+    "lng": 127.051851
+  },
+  {
+    "id": 61990,
+    "name": "강남구청",
+    "en": "Gangnam-gu Office",
+    "line": "7호선",
+    "icon": "💼",
+    "region": "서울",
+    "lat": 37.517185,
+    "lng": 127.04122
+  },
+  {
+    "id": 56366,
+    "name": "학동",
+    "en": "Hakdong",
+    "line": "7호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.514262,
+    "lng": 127.031738
+  },
+  {
+    "id": 93205,
+    "name": "논현",
+    "en": "Nonhyeon",
+    "line": "7호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.511108,
+    "lng": 127.021385
+  },
+  {
+    "id": 84764,
+    "name": "반포",
+    "en": "Banpo",
+    "line": "7호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.508171,
+    "lng": 127.011717
+  },
+  {
+    "id": 13836,
+    "name": "고속터미널",
+    "en": "Express Bus Terminal",
+    "line": "7호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.503387,
+    "lng": 127.005055
+  },
+  {
+    "id": 78776,
+    "name": "내방",
+    "en": "Naebang",
+    "line": "7호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.48764,
+    "lng": 126.993541
+  },
+  {
+    "id": 15396,
+    "name": "총신대입구(이수)",
+    "en": "Isu",
+    "line": "7호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.485258,
+    "lng": 126.981766
+  },
+  {
+    "id": 23865,
+    "name": "남성",
+    "en": "Namseong",
+    "line": "7호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.484688,
+    "lng": 126.971108
+  },
+  {
+    "id": 40006,
+    "name": "숭실대입구(살피재)",
+    "en": "Soongsil Univ. (Salpijae)",
+    "line": "7호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.496258,
+    "lng": 126.953649
+  },
+  {
+    "id": 75672,
+    "name": "상도",
+    "en": "Sangdo",
+    "line": "7호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.50279,
+    "lng": 126.947949
+  },
+  {
+    "id": 1528,
+    "name": "장승배기",
+    "en": "Jangseungbaegi",
+    "line": "7호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.504845,
+    "lng": 126.939025
+  },
+  {
+    "id": 37346,
+    "name": "신대방삼거리",
+    "en": "Sindaebangsamgeori",
+    "line": "7호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.499717,
+    "lng": 126.928218
+  },
+  {
+    "id": 52748,
+    "name": "보라매",
+    "en": "Boramae",
+    "line": "7호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.499916,
+    "lng": 126.920112
+  },
+  {
+    "id": 39108,
+    "name": "신풍",
+    "en": "Sinpung",
+    "line": "7호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.500107,
+    "lng": 126.909806
+  },
+  {
+    "id": 61175,
+    "name": "대림(구로구청)",
+    "en": "Daerim (Guro-gu Office)",
+    "line": "7호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.492984,
+    "lng": 126.896997
+  },
+  {
+    "id": 41863,
+    "name": "남구로",
+    "en": "Namguro",
+    "line": "7호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.486181,
+    "lng": 126.887372
+  },
+  {
+    "id": 86,
+    "name": "가산디지털단지",
+    "en": "Gasan Digital Complex",
+    "line": "7호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.480376,
+    "lng": 126.882704
+  },
+  {
+    "id": 18852,
+    "name": "철산",
+    "en": "Cheolsan",
+    "line": "7호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.47616,
+    "lng": 126.868217
+  },
+  {
+    "id": 80407,
+    "name": "광명사거리",
+    "en": "Gwangmyeongsageori",
+    "line": "7호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.47927,
+    "lng": 126.854854
+  },
+  {
+    "id": 86288,
+    "name": "천왕",
+    "en": "Cheonwang",
+    "line": "7호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.486699,
+    "lng": 126.838684
+  },
+  {
+    "id": 50096,
+    "name": "온수(성공회대입구)",
+    "en": "Onsu (Sungkonghoe Univ.)",
+    "line": "7호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.492059,
+    "lng": 126.823294
+  },
+  {
+    "id": 50453,
+    "name": "암사역사공원",
+    "en": "Amsa History Park",
+    "line": "8호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.557167,
+    "lng": 127.137556
+  },
+  {
+    "id": 42075,
+    "name": "암사",
+    "en": "Amsa",
+    "line": "8호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.550127,
+    "lng": 127.127521
+  },
+  {
+    "id": 69090,
+    "name": "천호(풍납토성)",
+    "en": "Cheonho (Pungnaptoseong)",
+    "line": "8호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.53792,
+    "lng": 127.123179
+  },
+  {
+    "id": 17047,
+    "name": "강동구청",
+    "en": "Gangdong-gu Office",
+    "line": "8호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.530348,
+    "lng": 127.120461
+  },
+  {
+    "id": 93009,
+    "name": "몽촌토성(평화의문)",
+    "en": "Mongchontoseong (World Peace Gate)",
+    "line": "8호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.517692,
+    "lng": 127.11274
+  },
+  {
+    "id": 57785,
+    "name": "잠실(송파구청)",
+    "en": "Jamsil (Songpa-gu Office)",
+    "line": "8호선",
+    "icon": "🏟️",
+    "region": "서울",
+    "lat": 37.514649,
+    "lng": 127.104267
+  },
+  {
+    "id": 24204,
+    "name": "석촌",
+    "en": "Seokchon",
+    "line": "8호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.505396,
+    "lng": 127.106995
+  },
+  {
+    "id": 46317,
+    "name": "송파",
+    "en": "Songpa",
+    "line": "8호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.49978,
+    "lng": 127.11212
+  },
+  {
+    "id": 97270,
+    "name": "가락시장",
+    "en": "Garak Market",
+    "line": "8호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.493004,
+    "lng": 127.118279
+  },
+  {
+    "id": 29912,
+    "name": "문정",
+    "en": "Munjeong",
+    "line": "8호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.485931,
+    "lng": 127.122473
+  },
+  {
+    "id": 44537,
+    "name": "장지",
+    "en": "Jangji",
+    "line": "8호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.478609,
+    "lng": 127.126229
+  },
+  {
+    "id": 9610,
+    "name": "복정",
+    "en": "Bokjeong",
+    "line": "8호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.471016,
+    "lng": 127.126746
+  },
+  {
+    "id": 92684,
+    "name": "남위례",
+    "en": "Namwirye",
+    "line": "8호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.462839,
+    "lng": 127.139047
+  },
+  {
+    "id": 3138,
+    "name": "산성",
+    "en": "Sanseong",
+    "line": "8호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.456886,
+    "lng": 127.149927
+  },
+  {
+    "id": 55000,
+    "name": "남한산성입구(성남법원·검찰청)",
+    "en": "Namhansanseong(Seongnam Court & Public Prosecutor's Office)",
+    "line": "8호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.451568,
+    "lng": 127.159845
+  },
+  {
+    "id": 67646,
+    "name": "단대오거리",
+    "en": "Dandaeogeori",
+    "line": "8호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.445057,
+    "lng": 127.156735
+  },
+  {
+    "id": 93270,
+    "name": "신흥",
+    "en": "Sinheung",
+    "line": "8호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.440952,
+    "lng": 127.14759
+  },
+  {
+    "id": 96370,
+    "name": "수진",
+    "en": "Sujin",
+    "line": "8호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.437575,
+    "lng": 127.140936
+  },
+  {
+    "id": 58321,
+    "name": "모란",
+    "en": "Moran",
+    "line": "8호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.433988,
+    "lng": 127.129921
+  },
+  {
+    "id": 17885,
+    "name": "판교역",
+    "en": "Pangyo",
+    "line": "경강선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.394798,
+    "lng": 127.111135
+  },
+  {
+    "id": 8209,
+    "name": "이매역",
+    "en": "Imae",
+    "line": "경강선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.394736,
+    "lng": 127.127048
+  },
+  {
+    "id": 83932,
+    "name": "삼동역",
+    "en": "Samdong",
+    "line": "경강선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.408731,
+    "lng": 127.203447
+  },
+  {
+    "id": 89409,
+    "name": "경기광주역",
+    "en": "GyeonggiGwangju",
+    "line": "경강선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.398974,
+    "lng": 127.253201
+  },
+  {
+    "id": 61196,
+    "name": "초월역",
+    "en": "Chowol",
+    "line": "경강선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.373389,
+    "lng": 127.299996
+  },
+  {
+    "id": 85687,
+    "name": "곤지암역",
+    "en": "Gonjiam",
+    "line": "경강선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.350525,
+    "lng": 127.346186
+  },
+  {
+    "id": 85136,
+    "name": "신둔도예촌역",
+    "en": "Sindundoyechon",
+    "line": "경강선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.315499,
+    "lng": 127.405251
+  },
+  {
+    "id": 2234,
+    "name": "이천역",
+    "en": "Icheon",
+    "line": "경강선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.264222,
+    "lng": 127.442135
+  },
+  {
+    "id": 99543,
+    "name": "부발역",
+    "en": "Bubal",
+    "line": "경강선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.260411,
+    "lng": 127.490303
+  },
+  {
+    "id": 18460,
+    "name": "세종대왕릉역",
+    "en": "Sejongdaewangneung",
+    "line": "경강선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.293636,
+    "lng": 127.570764
+  },
+  {
+    "id": 38530,
+    "name": "여주역",
+    "en": "Yeoju",
+    "line": "경강선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.282881,
+    "lng": 127.628571
+  },
+  {
+    "id": 97607,
+    "name": "성남역",
+    "en": "Seongnam",
+    "line": "경강선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.394709,
+    "lng": 127.11949
+  },
+  {
+    "id": 97040,
+    "name": "남영역",
+    "en": "Namyeong",
+    "line": "경부선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.540597,
+    "lng": 126.971171
+  },
+  {
+    "id": 28383,
+    "name": "용산역",
+    "en": "Yongsan",
+    "line": "경부선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.52989,
+    "lng": 126.964775
+  },
+  {
+    "id": 22294,
+    "name": "노량진역",
+    "en": "Noryangjin",
+    "line": "경부선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.514072,
+    "lng": 126.941671
+  },
+  {
+    "id": 52299,
+    "name": "대방역",
+    "en": "Daebang",
+    "line": "경부선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.513392,
+    "lng": 126.926407
+  },
+  {
+    "id": 79409,
+    "name": "영등포역",
+    "en": "Yeongdeungpo",
+    "line": "경부선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.515756,
+    "lng": 126.907411
+  },
+  {
+    "id": 24314,
+    "name": "신도림역",
+    "en": "Sindorim",
+    "line": "경부선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.508983,
+    "lng": 126.891513
+  },
+  {
+    "id": 28639,
+    "name": "신길역",
+    "en": "Singil",
+    "line": "경부선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.517018,
+    "lng": 126.917743
+  },
+  {
+    "id": 15037,
+    "name": "구로역",
+    "en": "Guro",
+    "line": "경부선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.503178,
+    "lng": 126.882037
+  },
+  {
+    "id": 24210,
+    "name": "가산디지털단지역",
+    "en": "Gasan Digital Complex",
+    "line": "경부선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.481568,
+    "lng": 126.882628
+  },
+  {
+    "id": 98669,
+    "name": "금천구청역",
+    "en": "Geumcheon-gu Office",
+    "line": "경부선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.45576,
+    "lng": 126.894344
+  },
+  {
+    "id": 2981,
+    "name": "석수역",
+    "en": "Seoksu",
+    "line": "경부선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.435161,
+    "lng": 126.902233
+  },
+  {
+    "id": 90708,
+    "name": "관악역",
+    "en": "Gwanak",
+    "line": "경부선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.419578,
+    "lng": 126.908476
+  },
+  {
+    "id": 97764,
+    "name": "안양역",
+    "en": "Anyang",
+    "line": "경부선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.401929,
+    "lng": 126.922647
+  },
+  {
+    "id": 77902,
+    "name": "명학역",
+    "en": "Myeonghak",
+    "line": "경부선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.384435,
+    "lng": 126.935579
+  },
+  {
+    "id": 4630,
+    "name": "금정역",
+    "en": "Geumjeong",
+    "line": "경부선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.371957,
+    "lng": 126.943411
+  },
+  {
+    "id": 94562,
+    "name": "군포역",
+    "en": "Gunpo",
+    "line": "경부선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.353732,
+    "lng": 126.948517
+  },
+  {
+    "id": 7227,
+    "name": "의왕역",
+    "en": "Uiwang",
+    "line": "경부선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.320648,
+    "lng": 126.948099
+  },
+  {
+    "id": 57425,
+    "name": "성균관대역",
+    "en": "Sungkyunkwan Univ.",
+    "line": "경부선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.300344,
+    "lng": 126.970861
+  },
+  {
+    "id": 65177,
+    "name": "화서역",
+    "en": "Hwaseo",
+    "line": "경부선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.28399,
+    "lng": 126.989581
+  },
+  {
+    "id": 25003,
+    "name": "수원역",
+    "en": "Suwon",
+    "line": "경부선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.266162,
+    "lng": 126.999821
+  },
+  {
+    "id": 4024,
+    "name": "독산역",
+    "en": "Doksan",
+    "line": "경부선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.465994,
+    "lng": 126.889508
+  },
+  {
+    "id": 76762,
+    "name": "세류역",
+    "en": "Seryu",
+    "line": "경부선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.244102,
+    "lng": 127.013772
+  },
+  {
+    "id": 55301,
+    "name": "병점역",
+    "en": "Byeongjeom",
+    "line": "경부선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.206821,
+    "lng": 127.033268
+  },
+  {
+    "id": 88533,
+    "name": "세마역",
+    "en": "Sema",
+    "line": "경부선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.187288,
+    "lng": 127.043279
+  },
+  {
+    "id": 24676,
+    "name": "오산대역",
+    "en": "Osan College",
+    "line": "경부선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.169401,
+    "lng": 127.063081
+  },
+  {
+    "id": 99761,
+    "name": "오산역",
+    "en": "Osan",
+    "line": "경부선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.145472,
+    "lng": 127.066708
+  },
+  {
+    "id": 36290,
+    "name": "진위역",
+    "en": "Jinwi",
+    "line": "경부선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.109771,
+    "lng": 127.062342
+  },
+  {
+    "id": 69992,
+    "name": "송탄역",
+    "en": "Songtan",
+    "line": "경부선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.075376,
+    "lng": 127.054397
+  },
+  {
+    "id": 22861,
+    "name": "서정리역",
+    "en": "Seojeong-ri",
+    "line": "경부선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.056459,
+    "lng": 127.052844
+  },
+  {
+    "id": 88652,
+    "name": "평택지제역",
+    "en": "PyeongtaekJije",
+    "line": "경부선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.018822,
+    "lng": 127.070269
+  },
+  {
+    "id": 49535,
+    "name": "평택역",
+    "en": "Pyeongtaek",
+    "line": "경부선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 36.990559,
+    "lng": 127.085496
+  },
+  {
+    "id": 83830,
+    "name": "성환역",
+    "en": "Seonghwan",
+    "line": "경부선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 36.915781,
+    "lng": 127.127007
+  },
+  {
+    "id": 58867,
+    "name": "직산역",
+    "en": "Jiksan",
+    "line": "경부선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 36.870921,
+    "lng": 127.143774
+  },
+  {
+    "id": 72951,
+    "name": "두정역",
+    "en": "Dujeong",
+    "line": "경부선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 36.833791,
+    "lng": 127.148905
+  },
+  {
+    "id": 65904,
+    "name": "당정역",
+    "en": "Dangjeong",
+    "line": "경부선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.34338,
+    "lng": 126.948388
+  },
+  {
+    "id": 62225,
+    "name": "서동탄역",
+    "en": "Seodongtan",
+    "line": "경부선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.195675,
+    "lng": 127.051893
+  },
+  {
+    "id": 85453,
+    "name": "광명역",
+    "en": "Gwangmyeong",
+    "line": "경부선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.415995,
+    "lng": 126.884523
+  },
+  {
+    "id": 57188,
+    "name": "천안역",
+    "en": "Cheonan",
+    "line": "경부선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 36.810238,
+    "lng": 127.146417
+  },
+  {
+    "id": 91540,
+    "name": "용산역",
+    "en": "Yongsan",
+    "line": "경원선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.52989,
+    "lng": 126.964775
+  },
+  {
+    "id": 62301,
+    "name": "이촌역",
+    "en": "Ichon",
+    "line": "경원선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.522476,
+    "lng": 126.973816
+  },
+  {
+    "id": 6781,
+    "name": "서빙고역",
+    "en": "Seobinggo",
+    "line": "경원선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.51961,
+    "lng": 126.988358
+  },
+  {
+    "id": 60190,
+    "name": "한남역",
+    "en": "Hannam",
+    "line": "경원선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.529361,
+    "lng": 127.008984
+  },
+  {
+    "id": 59750,
+    "name": "옥수역",
+    "en": "Oksu",
+    "line": "경원선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.540514,
+    "lng": 127.018698
+  },
+  {
+    "id": 90920,
+    "name": "응봉역",
+    "en": "Eungbong",
+    "line": "경원선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.550433,
+    "lng": 127.034824
+  },
+  {
+    "id": 5221,
+    "name": "왕십리역",
+    "en": "Wangsimni",
+    "line": "경원선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.561728,
+    "lng": 127.038405
+  },
+  {
+    "id": 44512,
+    "name": "청량리역",
+    "en": "Cheongnyangni",
+    "line": "경원선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.580543,
+    "lng": 127.048077
+  },
+  {
+    "id": 48124,
+    "name": "회기역",
+    "en": "Hoegi",
+    "line": "경원선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.589602,
+    "lng": 127.057936
+  },
+  {
+    "id": 4946,
+    "name": "외대앞역",
+    "en": "Hankuk Univ. of Foreign Studies",
+    "line": "경원선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.596157,
+    "lng": 127.063572
+  },
+  {
+    "id": 21120,
+    "name": "신이문역",
+    "en": "Sinimun",
+    "line": "경원선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.601829,
+    "lng": 127.067347
+  },
+  {
+    "id": 99622,
+    "name": "석계역",
+    "en": "Seokgye",
+    "line": "경원선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.615206,
+    "lng": 127.065594
+  },
+  {
+    "id": 77691,
+    "name": "광운대역",
+    "en": "Kwangwoon Univ.",
+    "line": "경원선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.623635,
+    "lng": 127.061975
+  },
+  {
+    "id": 80803,
+    "name": "월계역",
+    "en": "Wolgye",
+    "line": "경원선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.633114,
+    "lng": 127.058835
+  },
+  {
+    "id": 55257,
+    "name": "녹천역",
+    "en": "Nokcheon",
+    "line": "경원선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.644599,
+    "lng": 127.051406
+  },
+  {
+    "id": 69644,
+    "name": "창동역",
+    "en": "Chang-dong",
+    "line": "경원선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.653181,
+    "lng": 127.047663
+  },
+  {
+    "id": 66776,
+    "name": "방학역",
+    "en": "Banghak",
+    "line": "경원선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.667471,
+    "lng": 127.044295
+  },
+  {
+    "id": 4212,
+    "name": "도봉역",
+    "en": "Dobong",
+    "line": "경원선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.679441,
+    "lng": 127.045521
+  },
+  {
+    "id": 85051,
+    "name": "도봉산역",
+    "en": "Dobongsan",
+    "line": "경원선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.689603,
+    "lng": 127.046047
+  },
+  {
+    "id": 95961,
+    "name": "망월사역",
+    "en": "Mangwolsa",
+    "line": "경원선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.710499,
+    "lng": 127.047361
+  },
+  {
+    "id": 63338,
+    "name": "회룡역",
+    "en": "Hoeryong",
+    "line": "경원선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.724037,
+    "lng": 127.047319
+  },
+  {
+    "id": 43311,
+    "name": "의정부역",
+    "en": "Uijeongbu",
+    "line": "경원선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.73873,
+    "lng": 127.045891
+  },
+  {
+    "id": 43351,
+    "name": "가능역",
+    "en": "Ganeung",
+    "line": "경원선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.748362,
+    "lng": 127.044251
+  },
+  {
+    "id": 91857,
+    "name": "녹양역",
+    "en": "Nogyang",
+    "line": "경원선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.759416,
+    "lng": 127.042272
+  },
+  {
+    "id": 31234,
+    "name": "양주역",
+    "en": "Yangju",
+    "line": "경원선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.774281,
+    "lng": 127.044719
+  },
+  {
+    "id": 85180,
+    "name": "덕계역",
+    "en": "Deokgye",
+    "line": "경원선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.818761,
+    "lng": 127.056676
+  },
+  {
+    "id": 27868,
+    "name": "덕정역",
+    "en": "Deokjeong",
+    "line": "경원선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.843216,
+    "lng": 127.061511
+  },
+  {
+    "id": 59596,
+    "name": "지행역",
+    "en": "Jihaeng",
+    "line": "경원선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.892361,
+    "lng": 127.055734
+  },
+  {
+    "id": 35979,
+    "name": "동두천중앙역",
+    "en": "Dongducheon jungang",
+    "line": "경원선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.901818,
+    "lng": 127.056528
+  },
+  {
+    "id": 18559,
+    "name": "보산역",
+    "en": "Bosan",
+    "line": "경원선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.914268,
+    "lng": 127.057134
+  },
+  {
+    "id": 78906,
+    "name": "동두천역",
+    "en": "Dongducheon",
+    "line": "경원선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.927569,
+    "lng": 127.054825
+  },
+  {
+    "id": 69368,
+    "name": "소요산역",
+    "en": "Soyosan",
+    "line": "경원선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.948608,
+    "lng": 127.061007
+  },
+  {
+    "id": 69016,
+    "name": "청산역",
+    "en": "Cheongsan",
+    "line": "경원선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.995138,
+    "lng": 127.074097
+  },
+  {
+    "id": 7050,
+    "name": "전곡역",
+    "en": "Jeongok",
+    "line": "경원선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 38.024041,
+    "lng": 127.071913
+  },
+  {
+    "id": 31530,
+    "name": "연천역",
+    "en": "Yeoncheon",
+    "line": "경원선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 38.100485,
+    "lng": 127.07368
+  },
+  {
+    "id": 20460,
+    "name": "청량리역",
+    "en": "Cheongnyangni",
+    "line": "경의중앙",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.580043,
+    "lng": 127.047588
+  },
+  {
+    "id": 56533,
+    "name": "회기역",
+    "en": "Hoegi",
+    "line": "경의중앙",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.589802,
+    "lng": 127.057936
+  },
+  {
+    "id": 77473,
+    "name": "광운대역",
+    "en": "Kwangwoon Univ.",
+    "line": "경의중앙",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.623635,
+    "lng": 127.061975
+  },
+  {
+    "id": 11881,
+    "name": "중랑역",
+    "en": "Jungnang",
+    "line": "경의중앙",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.594948,
+    "lng": 127.076152
+  },
+  {
+    "id": 43892,
+    "name": "상봉역",
+    "en": "Sangbong",
+    "line": "경의중앙",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.596754,
+    "lng": 127.085553
+  },
+  {
+    "id": 32975,
+    "name": "망우역",
+    "en": "Mangu",
+    "line": "경의중앙",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.599288,
+    "lng": 127.092318
+  },
+  {
+    "id": 76877,
+    "name": "양원역",
+    "en": "Yangwon",
+    "line": "경의중앙",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 36.963729,
+    "lng": 129.091321
+  },
+  {
+    "id": 4529,
+    "name": "구리역",
+    "en": "Guri",
+    "line": "경의중앙",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.60326,
+    "lng": 127.143373
+  },
+  {
+    "id": 62366,
+    "name": "도농역",
+    "en": "Donong",
+    "line": "경의중앙",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.608756,
+    "lng": 127.161105
+  },
+  {
+    "id": 60788,
+    "name": "양정역",
+    "en": "Yangjeong",
+    "line": "경의중앙",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.604269,
+    "lng": 127.194602
+  },
+  {
+    "id": 12102,
+    "name": "덕소역",
+    "en": "Deokso",
+    "line": "경의중앙",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.586892,
+    "lng": 127.208835
+  },
+  {
+    "id": 70409,
+    "name": "도심역",
+    "en": "Dosim",
+    "line": "경의중앙",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.579628,
+    "lng": 127.222798
+  },
+  {
+    "id": 8672,
+    "name": "팔당역",
+    "en": "Paldang",
+    "line": "경의중앙",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.547321,
+    "lng": 127.243896
+  },
+  {
+    "id": 61898,
+    "name": "운길산역",
+    "en": "Ungilsan",
+    "line": "경의중앙",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.554659,
+    "lng": 127.310089
+  },
+  {
+    "id": 67006,
+    "name": "양수역",
+    "en": "Yangsu",
+    "line": "경의중앙",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.545998,
+    "lng": 127.328948
+  },
+  {
+    "id": 41314,
+    "name": "신원역",
+    "en": "Sinwon",
+    "line": "경의중앙",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.525921,
+    "lng": 127.372745
+  },
+  {
+    "id": 33368,
+    "name": "국수역",
+    "en": "Guksu",
+    "line": "경의중앙",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.516171,
+    "lng": 127.399402
+  },
+  {
+    "id": 31820,
+    "name": "아신역",
+    "en": "Asin",
+    "line": "경의중앙",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.513954,
+    "lng": 127.443238
+  },
+  {
+    "id": 88170,
+    "name": "오빈역",
+    "en": "Obin",
+    "line": "경의중앙",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.506061,
+    "lng": 127.474053
+  },
+  {
+    "id": 97356,
+    "name": "양평역",
+    "en": "Yangpyeong",
+    "line": "경의중앙",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.492674,
+    "lng": 127.491858
+  },
+  {
+    "id": 32504,
+    "name": "원덕역",
+    "en": "Wondeok",
+    "line": "경의중앙",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.468585,
+    "lng": 127.547468
+  },
+  {
+    "id": 30116,
+    "name": "용문역",
+    "en": "Yongmun",
+    "line": "경의중앙",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.482085,
+    "lng": 127.594251
+  },
+  {
+    "id": 21417,
+    "name": "지평역",
+    "en": "jipyeong",
+    "line": "경의중앙",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.476496,
+    "lng": 127.629681
+  },
+  {
+    "id": 69813,
+    "name": "서울역(경의선)",
+    "en": "Seoul station",
+    "line": "경의중앙",
+    "icon": "🏛️",
+    "region": "기타",
+    "lat": 37.556713,
+    "lng": 126.97138700000001
+  },
+  {
+    "id": 94206,
+    "name": "신촌역",
+    "en": "Sinchon",
+    "line": "경의중앙",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.559768,
+    "lng": 126.942308
+  },
+  {
+    "id": 2527,
+    "name": "효창공원앞역",
+    "en": "hyochang park",
+    "line": "경의중앙",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.538789,
+    "lng": 126.962339
+  },
+  {
+    "id": 76968,
+    "name": "공덕역",
+    "en": "Gongdeok",
+    "line": "경의중앙",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.542611,
+    "lng": 126.952134
+  },
+  {
+    "id": 43145,
+    "name": "서강대역",
+    "en": "Sogang Univ",
+    "line": "경의중앙",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.552132,
+    "lng": 126.935389
+  },
+  {
+    "id": 72049,
+    "name": "홍대입구역",
+    "en": "Hongik Univ.",
+    "line": "경의중앙",
+    "icon": "🎸",
+    "region": "기타",
+    "lat": 37.55758,
+    "lng": 126.926833
+  },
+  {
+    "id": 67407,
+    "name": "가좌역",
+    "en": "Gajwa",
+    "line": "경의중앙",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.568611,
+    "lng": 126.914841
+  },
+  {
+    "id": 81847,
+    "name": "디지털미디어시티역",
+    "en": "Digital Media City",
+    "line": "경의중앙",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.577964,
+    "lng": 126.900421
+  },
+  {
+    "id": 48807,
+    "name": "수색역",
+    "en": "Susaek",
+    "line": "경의중앙",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.580855,
+    "lng": 126.895681
+  },
+  {
+    "id": 11497,
+    "name": "한국항공대",
+    "en": "Korea Aerospace Univ.",
+    "line": "경의중앙",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.603102,
+    "lng": 126.868291
+  },
+  {
+    "id": 66555,
+    "name": "강매역",
+    "en": "Gangmae",
+    "line": "경의중앙",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.612396,
+    "lng": 126.844537
+  },
+  {
+    "id": 23641,
+    "name": "행신역",
+    "en": "Haengsin",
+    "line": "경의중앙",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.612125,
+    "lng": 126.834063
+  },
+  {
+    "id": 51494,
+    "name": "능곡역",
+    "en": "Neunggok",
+    "line": "경의중앙",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.618741,
+    "lng": 126.820845
+  },
+  {
+    "id": 63346,
+    "name": "곡산역",
+    "en": "Goksan",
+    "line": "경의중앙",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.645729,
+    "lng": 126.801877
+  },
+  {
+    "id": 93252,
+    "name": "백마역",
+    "en": "Baengma",
+    "line": "경의중앙",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.658346,
+    "lng": 126.794401
+  },
+  {
+    "id": 9226,
+    "name": "풍산역",
+    "en": "Pungsan",
+    "line": "경의중앙",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.672173,
+    "lng": 126.786355
+  },
+  {
+    "id": 83268,
+    "name": "일산역",
+    "en": "Ilsan",
+    "line": "경의중앙",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.682231,
+    "lng": 126.769521
+  },
+  {
+    "id": 32184,
+    "name": "탄현역",
+    "en": "Tanhyeon",
+    "line": "경의중앙",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.694114,
+    "lng": 126.761075
+  },
+  {
+    "id": 70489,
+    "name": "야당역",
+    "en": "Yadang",
+    "line": "경의중앙",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.712749,
+    "lng": 126.761535
+  },
+  {
+    "id": 67963,
+    "name": "운정역",
+    "en": "Unjeong",
+    "line": "경의중앙",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.725441000000004,
+    "lng": 126.767076
+  },
+  {
+    "id": 73071,
+    "name": "금릉역",
+    "en": "Geumneung",
+    "line": "경의중앙",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.751295,
+    "lng": 126.765401
+  },
+  {
+    "id": 76546,
+    "name": "금촌역",
+    "en": "Geumchon",
+    "line": "경의중앙",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.766106,
+    "lng": 126.774515
+  },
+  {
+    "id": 86377,
+    "name": "월롱역",
+    "en": "Wollong",
+    "line": "경의중앙",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.796201,
+    "lng": 126.792574
+  },
+  {
+    "id": 7099,
+    "name": "파주역",
+    "en": "Paju",
+    "line": "경의중앙",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.815391,
+    "lng": 126.792426
+  },
+  {
+    "id": 32003,
+    "name": "문산역",
+    "en": "Munsan",
+    "line": "경의중앙",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.854565,
+    "lng": 126.787531
+  },
+  {
+    "id": 37458,
+    "name": "임진강역",
+    "en": "Imjingang",
+    "line": "경의중앙",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.888364,
+    "lng": 126.746777
+  },
+  {
+    "id": 56539,
+    "name": "운천역",
+    "en": "Uncheon",
+    "line": "경의중앙",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.880008,
+    "lng": 126.769713
+  },
+  {
+    "id": 20909,
+    "name": "대곡역",
+    "en": "Daegok",
+    "line": "경의중앙",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.631629,
+    "lng": 126.810225
+  },
+  {
+    "id": 28402,
+    "name": "개봉역",
+    "en": "Gaebong",
+    "line": "경인선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.494698,
+    "lng": 126.858504
+  },
+  {
+    "id": 52350,
+    "name": "오류동역",
+    "en": "Oryu-dong",
+    "line": "경인선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.4944,
+    "lng": 126.844551
+  },
+  {
+    "id": 42621,
+    "name": "역곡역",
+    "en": "Yeokgok",
+    "line": "경인선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.48514,
+    "lng": 126.811622
+  },
+  {
+    "id": 73000,
+    "name": "부천역",
+    "en": "Bucheon",
+    "line": "경인선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.484066,
+    "lng": 126.782779
+  },
+  {
+    "id": 8131,
+    "name": "송내역",
+    "en": "Songnae",
+    "line": "경인선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.487626,
+    "lng": 126.753045
+  },
+  {
+    "id": 8518,
+    "name": "부평역",
+    "en": "Bupyeong",
+    "line": "경인선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.489457,
+    "lng": 126.724584
+  },
+  {
+    "id": 9977,
+    "name": "백운역",
+    "en": "Baegun",
+    "line": "경인선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.483301,
+    "lng": 126.707179
+  },
+  {
+    "id": 73495,
+    "name": "동암역",
+    "en": "Dongam",
+    "line": "경인선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.470835,
+    "lng": 126.703016
+  },
+  {
+    "id": 59914,
+    "name": "주안역",
+    "en": "Juan",
+    "line": "경인선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.465041,
+    "lng": 126.680702
+  },
+  {
+    "id": 2910,
+    "name": "제물포역",
+    "en": "Jemulpo",
+    "line": "경인선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.466809,
+    "lng": 126.657165
+  },
+  {
+    "id": 17118,
+    "name": "동인천역",
+    "en": "Dongincheon",
+    "line": "경인선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.475414,
+    "lng": 126.632598
+  },
+  {
+    "id": 98923,
+    "name": "인천역",
+    "en": "Incheon",
+    "line": "경인선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.476364,
+    "lng": 126.616936
+  },
+  {
+    "id": 2844,
+    "name": "구일역",
+    "en": "Guil",
+    "line": "경인선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.495973,
+    "lng": 126.869201
+  },
+  {
+    "id": 12926,
+    "name": "부개역",
+    "en": "Bugae",
+    "line": "경인선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.488479,
+    "lng": 126.740549
+  },
+  {
+    "id": 6733,
+    "name": "간석역",
+    "en": "Ganseok",
+    "line": "경인선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.464689,
+    "lng": 126.693408
+  },
+  {
+    "id": 47099,
+    "name": "도원역",
+    "en": "Dowon",
+    "line": "경인선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.468604,
+    "lng": 126.642824
+  },
+  {
+    "id": 26506,
+    "name": "온수역",
+    "en": "Onsu",
+    "line": "경인선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.492267,
+    "lng": 126.823399
+  },
+  {
+    "id": 89443,
+    "name": "중동역",
+    "en": "Jung-dong",
+    "line": "경인선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.486664,
+    "lng": 126.764474
+  },
+  {
+    "id": 31569,
+    "name": "도화역",
+    "en": "Dohwa",
+    "line": "경인선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.466154,
+    "lng": 126.66846
+  },
+  {
+    "id": 49859,
+    "name": "소사역",
+    "en": "Sosa",
+    "line": "경인선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.482755,
+    "lng": 126.795654
+  },
+  {
+    "id": 61319,
+    "name": "망우역",
+    "en": "Mangu",
+    "line": "경춘선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.599988,
+    "lng": 127.092031
+  },
+  {
+    "id": 94239,
+    "name": "신내역",
+    "en": "Sinnae",
+    "line": "경춘선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.612855,
+    "lng": 127.103277
+  },
+  {
+    "id": 74420,
+    "name": "갈매역",
+    "en": "Galmae",
+    "line": "경춘선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.634135,
+    "lng": 127.114803
+  },
+  {
+    "id": 99395,
+    "name": "별내역",
+    "en": "Byeollae",
+    "line": "경춘선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.642221,
+    "lng": 127.127208
+  },
+  {
+    "id": 29072,
+    "name": "퇴계원역",
+    "en": "Toegyewon",
+    "line": "경춘선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.648316,
+    "lng": 127.143858
+  },
+  {
+    "id": 69897,
+    "name": "사릉역",
+    "en": "Sareung",
+    "line": "경춘선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.651145,
+    "lng": 127.176839
+  },
+  {
+    "id": 62109,
+    "name": "금곡역",
+    "en": "Geumgok",
+    "line": "경춘선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.637414,
+    "lng": 127.207931
+  },
+  {
+    "id": 6878,
+    "name": "평내호평역",
+    "en": "PyeongnaeHopyeong",
+    "line": "경춘선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.653229,
+    "lng": 127.244452
+  },
+  {
+    "id": 6897,
+    "name": "천마산역",
+    "en": "Cheonmasan",
+    "line": "경춘선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.658995,
+    "lng": 127.285731
+  },
+  {
+    "id": 74236,
+    "name": "마석역",
+    "en": "Maseok",
+    "line": "경춘선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.652328,
+    "lng": 127.311713
+  },
+  {
+    "id": 81618,
+    "name": "대성리역",
+    "en": "Daeseong-ri",
+    "line": "경춘선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.683909,
+    "lng": 127.379165
+  },
+  {
+    "id": 91827,
+    "name": "청평역",
+    "en": "Cheongpyeong",
+    "line": "경춘선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.735484,
+    "lng": 127.426541
+  },
+  {
+    "id": 46396,
+    "name": "상천역",
+    "en": "Sangcheon",
+    "line": "경춘선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.770305,
+    "lng": 127.4542
+  },
+  {
+    "id": 51113,
+    "name": "가평역",
+    "en": "Gapyeong",
+    "line": "경춘선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.814515,
+    "lng": 127.510693
+  },
+  {
+    "id": 7979,
+    "name": "굴봉산역",
+    "en": "Gulbongsan",
+    "line": "경춘선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.832086,
+    "lng": 127.557732
+  },
+  {
+    "id": 61373,
+    "name": "백양리역",
+    "en": "Baegyang-ri",
+    "line": "경춘선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.830881,
+    "lng": 127.589085
+  },
+  {
+    "id": 14917,
+    "name": "강촌역",
+    "en": "Gangchon",
+    "line": "경춘선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.805728,
+    "lng": 127.634054
+  },
+  {
+    "id": 73291,
+    "name": "김유정역",
+    "en": "Gimyujeong",
+    "line": "경춘선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.818475,
+    "lng": 127.714302
+  },
+  {
+    "id": 51026,
+    "name": "남춘천역",
+    "en": "Namchuncheon",
+    "line": "경춘선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.864071,
+    "lng": 127.723761
+  },
+  {
+    "id": 20970,
+    "name": "춘천역",
+    "en": "Chuncheon",
+    "line": "경춘선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.884391,
+    "lng": 127.716603
+  },
+  {
+    "id": 51025,
+    "name": "녹동",
+    "en": "Nokdong",
+    "line": "광주1",
+    "icon": "🚇",
+    "region": "광주",
+    "lat": 35.107028,
+    "lng": 126.933932
+  },
+  {
+    "id": 68160,
+    "name": "소태",
+    "en": "Sotae",
+    "line": "광주1",
+    "icon": "🚇",
+    "region": "광주",
+    "lat": 35.124108,
+    "lng": 126.932013
+  },
+  {
+    "id": 78319,
+    "name": "학동증심사입구",
+    "en": "Hak-dong·Jeungsimsa",
+    "line": "광주1",
+    "icon": "🚇",
+    "region": "광주",
+    "lat": 35.133023,
+    "lng": 126.928382
+  },
+  {
+    "id": 23306,
+    "name": "남광주",
+    "en": "Namgwangju",
+    "line": "광주1",
+    "icon": "🚇",
+    "region": "광주",
+    "lat": 35.1389849,
+    "lng": 126.92318
+  },
+  {
+    "id": 83207,
+    "name": "문화전당(구도청)",
+    "en": "Culture Center (Former Provincial office)",
+    "line": "광주1",
+    "icon": "🚇",
+    "region": "광주",
+    "lat": 35.14661,
+    "lng": 126.92005
+  },
+  {
+    "id": 63553,
+    "name": "금남로4가",
+    "en": "Geumnamno 4(sa)-ga",
+    "line": "광주1",
+    "icon": "🚇",
+    "region": "광주",
+    "lat": 35.150976,
+    "lng": 126.914446
+  },
+  {
+    "id": 52736,
+    "name": "금남로5가",
+    "en": "Geumnamno 5(o)-ga",
+    "line": "광주1",
+    "icon": "🚇",
+    "region": "광주",
+    "lat": 35.153658,
+    "lng": 126.910033
+  },
+  {
+    "id": 38877,
+    "name": "양동시장",
+    "en": "Yangdong Market",
+    "line": "광주1",
+    "icon": "🚇",
+    "region": "광주",
+    "lat": 35.154176,
+    "lng": 126.901089
+  },
+  {
+    "id": 97327,
+    "name": "돌고개",
+    "en": "Dolgogae",
+    "line": "광주1",
+    "icon": "🚇",
+    "region": "광주",
+    "lat": 35.152047,
+    "lng": 126.895637
+  },
+  {
+    "id": 57503,
+    "name": "농성",
+    "en": "Nongseong",
+    "line": "광주1",
+    "icon": "🚇",
+    "region": "광주",
+    "lat": 35.153363,
+    "lng": 126.883973
+  },
+  {
+    "id": 78367,
+    "name": "화정",
+    "en": "Hwajeong",
+    "line": "광주1",
+    "icon": "🚇",
+    "region": "광주",
+    "lat": 35.152085,
+    "lng": 126.876698
+  },
+  {
+    "id": 59315,
+    "name": "쌍촌",
+    "en": "Ssangchon",
+    "line": "광주1",
+    "icon": "🚇",
+    "region": "광주",
+    "lat": 35.151793,
+    "lng": 126.869519
+  },
+  {
+    "id": 9431,
+    "name": "운천",
+    "en": "Uncheon",
+    "line": "광주1",
+    "icon": "🚇",
+    "region": "광주",
+    "lat": 35.150486,
+    "lng": 126.858694
+  },
+  {
+    "id": 71254,
+    "name": "상무",
+    "en": "Sangmu",
+    "line": "광주1",
+    "icon": "🚇",
+    "region": "광주",
+    "lat": 35.146784,
+    "lng": 126.848641
+  },
+  {
+    "id": 20599,
+    "name": "김대중컨벤션센터(마륵)",
+    "en": "Kim Daejung Convention Center (Mareuk)",
+    "line": "광주1",
+    "icon": "🚇",
+    "region": "광주",
+    "lat": 35.143214,
+    "lng": 126.841442
+  },
+  {
+    "id": 73646,
+    "name": "공항",
+    "en": "Airport",
+    "line": "광주1",
+    "icon": "🚇",
+    "region": "광주",
+    "lat": 35.144179,
+    "lng": 126.81153
+  },
+  {
+    "id": 75140,
+    "name": "송정공원",
+    "en": "Songjeong Park",
+    "line": "광주1",
+    "icon": "🚇",
+    "region": "광주",
+    "lat": 35.143565,
+    "lng": 126.799245
+  },
+  {
+    "id": 99492,
+    "name": "광주송정역",
+    "en": "GwangjuSongjeong Station",
+    "line": "광주1",
+    "icon": "🚇",
+    "region": "광주",
+    "lat": 35.137529,
+    "lng": 126.791488
+  },
+  {
+    "id": 70099,
+    "name": "도산",
+    "en": "Dosan",
+    "line": "광주1",
+    "icon": "🚇",
+    "region": "광주",
+    "lat": 35.131713,
+    "lng": 126.787942
+  },
+  {
+    "id": 37195,
+    "name": "평동",
+    "en": "Pyeong-dong",
+    "line": "광주1",
+    "icon": "🚇",
+    "region": "광주",
+    "lat": 35.1247,
+    "lng": 126.769586
+  },
+  {
+    "id": 69130,
+    "name": "양촌역",
+    "en": "Yangchon",
+    "line": "김포도시철도",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.641639,
+    "lng": 126.614694
+  },
+  {
+    "id": 8829,
+    "name": "구래역",
+    "en": "Gurae",
+    "line": "김포도시철도",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.645354,
+    "lng": 126.6285
+  },
+  {
+    "id": 5316,
+    "name": "마산역",
+    "en": "Masan",
+    "line": "김포도시철도",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.640606,
+    "lng": 126.643944
+  },
+  {
+    "id": 61682,
+    "name": "장기역",
+    "en": "Janggi",
+    "line": "김포도시철도",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.644028,
+    "lng": 126.669
+  },
+  {
+    "id": 5176,
+    "name": "운양역",
+    "en": "Unyang",
+    "line": "김포도시철도",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.653861,
+    "lng": 126.683833
+  },
+  {
+    "id": 73775,
+    "name": "걸포북변역",
+    "en": "Geolpo Bukbyeon",
+    "line": "김포도시철도",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.631639,
+    "lng": 126.70575
+  },
+  {
+    "id": 21774,
+    "name": "사우역",
+    "en": "Sau(Gimpo City Hall)",
+    "line": "김포도시철도",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.620361,
+    "lng": 126.719722
+  },
+  {
+    "id": 9027,
+    "name": "풍무역",
+    "en": "Pungmu",
+    "line": "김포도시철도",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.612333,
+    "lng": 126.732583
+  },
+  {
+    "id": 34802,
+    "name": "고촌역",
+    "en": "Gochon",
+    "line": "김포도시철도",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.60125,
+    "lng": 126.770361
+  },
+  {
+    "id": 339,
+    "name": "김포공항역",
+    "en": "Gimpo Int‘l Airport",
+    "line": "김포도시철도",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.562309,
+    "lng": 126.801833
+  },
+  {
+    "id": 15142,
+    "name": "구미역",
+    "en": "Gumi",
+    "line": "대경선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 36.1282,
+    "lng": 128.331
+  },
+  {
+    "id": 64146,
+    "name": "사곡역",
+    "en": "Sagok",
+    "line": "대경선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 36.098508,
+    "lng": 128.356416
+  },
+  {
+    "id": 53720,
+    "name": "왜관역",
+    "en": "Waegwan",
+    "line": "대경선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 35.991821,
+    "lng": 128.400391
+  },
+  {
+    "id": 31708,
+    "name": "서대구역",
+    "en": "Seodaegu",
+    "line": "대경선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 35.881734,
+    "lng": 128.540121
+  },
+  {
+    "id": 22474,
+    "name": "대구역",
+    "en": "Daegu",
+    "line": "대경선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 35.876,
+    "lng": 128.5961
+  },
+  {
+    "id": 89971,
+    "name": "동대구역",
+    "en": "Dongdaegu",
+    "line": "대경선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 35.8791,
+    "lng": 128.628652
+  },
+  {
+    "id": 25783,
+    "name": "경산역",
+    "en": "Gyeongsan",
+    "line": "대경선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 35.8192,
+    "lng": 128.7276
+  },
+  {
+    "id": 81907,
+    "name": "설화명곡",
+    "en": "SeolhwaMyeonggok",
+    "line": "대구1",
+    "icon": "🚇",
+    "region": "대구",
+    "lat": 35.7986179,
+    "lng": 128.4893927
+  },
+  {
+    "id": 55039,
+    "name": "화원",
+    "en": "Hwawon",
+    "line": "대구1",
+    "icon": "🚇",
+    "region": "대구",
+    "lat": 35.804349,
+    "lng": 128.500409
+  },
+  {
+    "id": 70477,
+    "name": "대곡(정부대구청사)",
+    "en": "Daegok\r\n(Central Government Office-Daegu)",
+    "line": "대구1",
+    "icon": "🚇",
+    "region": "대구",
+    "lat": 35.809571,
+    "lng": 128.51257
+  },
+  {
+    "id": 42817,
+    "name": "진천",
+    "en": "Jincheon",
+    "line": "대구1",
+    "icon": "🚇",
+    "region": "대구",
+    "lat": 35.813815,
+    "lng": 128.522374
+  },
+  {
+    "id": 4351,
+    "name": "월배",
+    "en": "Wolbae",
+    "line": "대구1",
+    "icon": "🚇",
+    "region": "대구",
+    "lat": 35.816123,
+    "lng": 128.530119
+  },
+  {
+    "id": 46817,
+    "name": "상인",
+    "en": "Sangin",
+    "line": "대구1",
+    "icon": "🚇",
+    "region": "대구",
+    "lat": 35.8188583,
+    "lng": 128.5375588
+  },
+  {
+    "id": 33160,
+    "name": "월촌",
+    "en": "Wolchon",
+    "line": "대구1",
+    "icon": "🚇",
+    "region": "대구",
+    "lat": 35.823695,
+    "lng": 128.545465
+  },
+  {
+    "id": 90085,
+    "name": "송현",
+    "en": "Songhyeon",
+    "line": "대구1",
+    "icon": "🚇",
+    "region": "대구",
+    "lat": 35.831092,
+    "lng": 128.551755
+  },
+  {
+    "id": 1633,
+    "name": "서부정류장(관문시장)",
+    "en": "Seobu Bus Terminal\r\n(Gwanmun Market)",
+    "line": "대구1",
+    "icon": "🚇",
+    "region": "대구",
+    "lat": 35.8373375,
+    "lng": 128.5570702
+  },
+  {
+    "id": 53990,
+    "name": "대명",
+    "en": "Daemyeong",
+    "line": "대구1",
+    "icon": "🚇",
+    "region": "대구",
+    "lat": 35.8392924,
+    "lng": 128.5652846
+  },
+  {
+    "id": 89259,
+    "name": "안지랑",
+    "en": "Anjirang",
+    "line": "대구1",
+    "icon": "🚇",
+    "region": "대구",
+    "lat": 35.8392,
+    "lng": 128.574
+  },
+  {
+    "id": 35297,
+    "name": "현충로",
+    "en": "Hyeonchungno",
+    "line": "대구1",
+    "icon": "🚇",
+    "region": "대구",
+    "lat": 35.84072,
+    "lng": 128.58085
+  },
+  {
+    "id": 59603,
+    "name": "영대병원",
+    "en": "Yeungnam University Hospital",
+    "line": "대구1",
+    "icon": "🚇",
+    "region": "대구",
+    "lat": 35.8442516,
+    "lng": 128.5882407
+  },
+  {
+    "id": 1547,
+    "name": "교대",
+    "en": "National University of Education",
+    "line": "대구1",
+    "icon": "🚇",
+    "region": "대구",
+    "lat": 35.8510953,
+    "lng": 128.590643
+  },
+  {
+    "id": 55285,
+    "name": "명덕(2.28민주운동기념회관)",
+    "en": "Myeongdeok\r\n(The 2‧28 Movement for Democracy museum)",
+    "line": "대구1",
+    "icon": "🚇",
+    "region": "대구",
+    "lat": 35.857382,
+    "lng": 128.59088
+  },
+  {
+    "id": 88152,
+    "name": "반월당",
+    "en": "Banwoldang",
+    "line": "대구1",
+    "icon": "🚇",
+    "region": "대구",
+    "lat": 35.86389,
+    "lng": 128.593312
+  },
+  {
+    "id": 6848,
+    "name": "중앙로",
+    "en": "Jungangno",
+    "line": "대구1",
+    "icon": "🚇",
+    "region": "대구",
+    "lat": 35.870873,
+    "lng": 128.593888
+  },
+  {
+    "id": 79258,
+    "name": "대구역",
+    "en": "Daegu Station",
+    "line": "대구1",
+    "icon": "🚇",
+    "region": "대구",
+    "lat": 35.876379,
+    "lng": 128.596919
+  },
+  {
+    "id": 49366,
+    "name": "칠성시장",
+    "en": "Chilseong Market",
+    "line": "대구1",
+    "icon": "🚇",
+    "region": "대구",
+    "lat": 35.876159,
+    "lng": 128.604885
+  },
+  {
+    "id": 85177,
+    "name": "신천(경북대입구)",
+    "en": "Sincheon\r\n(Kyungpook Nat’l Univ.)",
+    "line": "대구1",
+    "icon": "🚇",
+    "region": "대구",
+    "lat": 35.874527,
+    "lng": 128.617244
+  },
+  {
+    "id": 62955,
+    "name": "동대구역",
+    "en": "Dongdaegu Station",
+    "line": "대구1",
+    "icon": "🚇",
+    "region": "대구",
+    "lat": 35.877626,
+    "lng": 128.627152
+  },
+  {
+    "id": 60790,
+    "name": "동구청(큰고개)",
+    "en": "Dong-gu Office\r\n(Keungogae)",
+    "line": "대구1",
+    "icon": "🚇",
+    "region": "대구",
+    "lat": 35.884485,
+    "lng": 128.632295
+  },
+  {
+    "id": 94150,
+    "name": "아양교(대구국제공항입구)",
+    "en": "Ayanggyo\r\n(Daegu Int’l Airport)",
+    "line": "대구1",
+    "icon": "🚇",
+    "region": "대구",
+    "lat": 35.887208,
+    "lng": 128.639572
+  },
+  {
+    "id": 84364,
+    "name": "동촌(동촌유원지)",
+    "en": "Dongchon\r\n(Dongchon Resort)",
+    "line": "대구1",
+    "icon": "🚇",
+    "region": "대구",
+    "lat": 35.886039,
+    "lng": 128.650455
+  },
+  {
+    "id": 48191,
+    "name": "해안",
+    "en": "Haean",
+    "line": "대구1",
+    "icon": "🚇",
+    "region": "대구",
+    "lat": 35.883765,
+    "lng": 128.659079
+  },
+  {
+    "id": 5435,
+    "name": "방촌",
+    "en": "Bangchon",
+    "line": "대구1",
+    "icon": "🚇",
+    "region": "대구",
+    "lat": 35.879929,
+    "lng": 128.669767
+  },
+  {
+    "id": 26670,
+    "name": "용계",
+    "en": "Yonggye",
+    "line": "대구1",
+    "icon": "🚇",
+    "region": "대구",
+    "lat": 35.876256,
+    "lng": 128.681414
+  },
+  {
+    "id": 402,
+    "name": "율하",
+    "en": "Yulha",
+    "line": "대구1",
+    "icon": "🚇",
+    "region": "대구",
+    "lat": 35.869751,
+    "lng": 128.692775
+  },
+  {
+    "id": 18814,
+    "name": "신기",
+    "en": "Singi",
+    "line": "대구1",
+    "icon": "🚇",
+    "region": "대구",
+    "lat": 35.866761,
+    "lng": 128.701724
+  },
+  {
+    "id": 31387,
+    "name": "반야월",
+    "en": "Banyawol",
+    "line": "대구1",
+    "icon": "🚇",
+    "region": "대구",
+    "lat": 35.865948,
+    "lng": 128.713663
+  },
+  {
+    "id": 32529,
+    "name": "각산",
+    "en": "Gaksan",
+    "line": "대구1",
+    "icon": "🚇",
+    "region": "대구",
+    "lat": 35.867852,
+    "lng": 128.723843
+  },
+  {
+    "id": 33526,
+    "name": "안심(혁신도시·첨복단지)",
+    "en": "Ansim\r\n(Innovation city · High-techMedical Complex)",
+    "line": "대구1",
+    "icon": "🚇",
+    "region": "대구",
+    "lat": 35.8712,
+    "lng": 128.7338
+  },
+  {
+    "id": 97674,
+    "name": "대구한의대병원",
+    "en": "Daegu Haany University Hospital",
+    "line": "대구1",
+    "icon": "🚇",
+    "region": "대구",
+    "lat": 35.8717089,
+    "lng": 128.7508237
+  },
+  {
+    "id": 85709,
+    "name": "부호(경일대·호산대)",
+    "en": "Buho(Kyungil University･Hosan University)",
+    "line": "대구1",
+    "icon": "🚇",
+    "region": "대구",
+    "lat": 35.9002809,
+    "lng": 128.8031144
+  },
+  {
+    "id": 4338,
+    "name": "하양(대구가톨릭대)",
+    "en": "Hayang(Daegu Catholic University)",
+    "line": "대구1",
+    "icon": "🚇",
+    "region": "대구",
+    "lat": 35.9094258,
+    "lng": 128.8175403
+  },
+  {
+    "id": 19324,
+    "name": "문양",
+    "en": "Munyang",
+    "line": "대구2",
+    "icon": "🚇",
+    "region": "대구",
+    "lat": 35.86414313,
+    "lng": 128.4370043
+  },
+  {
+    "id": 76501,
+    "name": "다사",
+    "en": "Dasa",
+    "line": "대구2",
+    "icon": "🚇",
+    "region": "대구",
+    "lat": 35.86495301,
+    "lng": 128.4582876
+  },
+  {
+    "id": 27675,
+    "name": "대실",
+    "en": "Daesil",
+    "line": "대구2",
+    "icon": "🚇",
+    "region": "대구",
+    "lat": 35.8573333,
+    "lng": 128.4656264
+  },
+  {
+    "id": 75992,
+    "name": "강창",
+    "en": "Gangchang",
+    "line": "대구2",
+    "icon": "🚇",
+    "region": "대구",
+    "lat": 35.8531116,
+    "lng": 128.4789997
+  },
+  {
+    "id": 72583,
+    "name": "계명대",
+    "en": "Keimyung Univ.",
+    "line": "대구2",
+    "icon": "🚇",
+    "region": "대구",
+    "lat": 35.85146491,
+    "lng": 128.491969
+  },
+  {
+    "id": 51773,
+    "name": "성서산업단지",
+    "en": "Seongseo Industrial Complex",
+    "line": "대구2",
+    "icon": "🚇",
+    "region": "대구",
+    "lat": 35.8518236,
+    "lng": 128.5071662
+  },
+  {
+    "id": 98396,
+    "name": "이곡",
+    "en": "Igok",
+    "line": "대구2",
+    "icon": "🚇",
+    "region": "대구",
+    "lat": 35.85062003,
+    "lng": 128.5157686
+  },
+  {
+    "id": 33216,
+    "name": "용산(서부법원․검찰청입구)",
+    "en": "Yongsan\r\n(Seobu Branch Court‧Seobu Prosecutor's Office)",
+    "line": "대구2",
+    "icon": "🚇",
+    "region": "대구",
+    "lat": 35.84912,
+    "lng": 128.5287686
+  },
+  {
+    "id": 41570,
+    "name": "죽전",
+    "en": "Jukjeon",
+    "line": "대구2",
+    "icon": "🚇",
+    "region": "대구",
+    "lat": 35.8503505,
+    "lng": 128.537089
+  },
+  {
+    "id": 63117,
+    "name": "감삼",
+    "en": "Gamsam",
+    "line": "대구2",
+    "icon": "🚇",
+    "region": "대구",
+    "lat": 35.8543251,
+    "lng": 128.547905
+  },
+  {
+    "id": 92485,
+    "name": "두류",
+    "en": "Duryu",
+    "line": "대구2",
+    "icon": "🚇",
+    "region": "대구",
+    "lat": 35.8572405,
+    "lng": 128.555509
+  },
+  {
+    "id": 98154,
+    "name": "내당",
+    "en": "Naedang",
+    "line": "대구2",
+    "icon": "🚇",
+    "region": "대구",
+    "lat": 35.860194,
+    "lng": 128.564593
+  },
+  {
+    "id": 56900,
+    "name": "반고개",
+    "en": "Bangogae",
+    "line": "대구2",
+    "icon": "🚇",
+    "region": "대구",
+    "lat": 35.8623,
+    "lng": 128.572817
+  },
+  {
+    "id": 62403,
+    "name": "청라언덕",
+    "en": "Cheongna Hill",
+    "line": "대구2",
+    "icon": "🚇",
+    "region": "대구",
+    "lat": 35.865,
+    "lng": 128.58232271
+  },
+  {
+    "id": 82473,
+    "name": "반월당",
+    "en": "Banwoldang",
+    "line": "대구2",
+    "icon": "🚇",
+    "region": "대구",
+    "lat": 35.865592,
+    "lng": 128.593334
+  },
+  {
+    "id": 97587,
+    "name": "경대병원",
+    "en": "Kyungpook Nat'l Univ. Hosp.",
+    "line": "대구2",
+    "icon": "🚇",
+    "region": "대구",
+    "lat": 35.863102,
+    "lng": 128.60316
+  },
+  {
+    "id": 58309,
+    "name": "대구은행(대구교육청)",
+    "en": "Daegu Bank\r\n(Daegu Metropolitan Office Of Education)",
+    "line": "대구2",
+    "icon": "🚇",
+    "region": "대구",
+    "lat": 35.859868,
+    "lng": 128.613975
+  },
+  {
+    "id": 68092,
+    "name": "범어",
+    "en": "Beomeo",
+    "line": "대구2",
+    "icon": "🚇",
+    "region": "대구",
+    "lat": 35.8591,
+    "lng": 128.6257
+  },
+  {
+    "id": 15267,
+    "name": "수성구청(KBS)",
+    "en": "Suseong-gu Office\r\n(KBS)",
+    "line": "대구2",
+    "icon": "🚇",
+    "region": "대구",
+    "lat": 35.85874022,
+    "lng": 128.6359517
+  },
+  {
+    "id": 69630,
+    "name": "만촌",
+    "en": "Manchon",
+    "line": "대구2",
+    "icon": "🚇",
+    "region": "대구",
+    "lat": 35.858841,
+    "lng": 128.644951
+  },
+  {
+    "id": 30497,
+    "name": "담티(수성대·대륜)",
+    "en": "Damti\r\n(Polytechnic Collegeㆍ Daeryun Middle & High School)",
+    "line": "대구2",
+    "icon": "🚇",
+    "region": "대구",
+    "lat": 35.854841,
+    "lng": 128.654151
+  },
+  {
+    "id": 44935,
+    "name": "연호",
+    "en": "Yeonho",
+    "line": "대구2",
+    "icon": "🚇",
+    "region": "대구",
+    "lat": 35.8465,
+    "lng": 128.67185
+  },
+  {
+    "id": 81520,
+    "name": "수성알파시티(삼성라이온즈파크)",
+    "en": "Suseong Alpha City\r\n(Samsung Lions Park)",
+    "line": "대구2",
+    "icon": "🚇",
+    "region": "대구",
+    "lat": 35.842718,
+    "lng": 128.67999
+  },
+  {
+    "id": 81202,
+    "name": "고산",
+    "en": "Gosan",
+    "line": "대구2",
+    "icon": "🚇",
+    "region": "대구",
+    "lat": 35.842955,
+    "lng": 128.69335
+  },
+  {
+    "id": 94792,
+    "name": "신매",
+    "en": "Sinmae",
+    "line": "대구2",
+    "icon": "🚇",
+    "region": "대구",
+    "lat": 35.8408,
+    "lng": 128.705
+  },
+  {
+    "id": 4222,
+    "name": "사월",
+    "en": "Sawol",
+    "line": "대구2",
+    "icon": "🚇",
+    "region": "대구",
+    "lat": 35.837066,
+    "lng": 128.715173
+  },
+  {
+    "id": 16875,
+    "name": "정평",
+    "en": "Jeongpyeong",
+    "line": "대구2",
+    "icon": "🚇",
+    "region": "대구",
+    "lat": 35.83407,
+    "lng": 128.728695
+  },
+  {
+    "id": 13231,
+    "name": "임당",
+    "en": "Imdang",
+    "line": "대구2",
+    "icon": "🚇",
+    "region": "대구",
+    "lat": 35.834131,
+    "lng": 128.741076
+  },
+  {
+    "id": 12583,
+    "name": "영남대",
+    "en": "Yeungnam University",
+    "line": "대구2",
+    "icon": "🚇",
+    "region": "대구",
+    "lat": 35.836373,
+    "lng": 128.752966
+  },
+  {
+    "id": 11819,
+    "name": "칠곡경대병원",
+    "en": "Chilgok Kyungpook \r\nNat‘l Univ. Medical Center",
+    "line": "대구3",
+    "icon": "🚇",
+    "region": "대구",
+    "lat": 35.95838748,
+    "lng": 128.5598908
+  },
+  {
+    "id": 99313,
+    "name": "학정",
+    "en": "Hakjeong",
+    "line": "대구3",
+    "icon": "🚇",
+    "region": "대구",
+    "lat": 35.95155512,
+    "lng": 128.5591934
+  },
+  {
+    "id": 81209,
+    "name": "팔거(국립농관원통계청)",
+    "en": "Palgeo(NAQS · KOSTAT)",
+    "line": "대구3",
+    "icon": "🚇",
+    "region": "대구",
+    "lat": 35.94404716,
+    "lng": 128.5583366
+  },
+  {
+    "id": 79619,
+    "name": "동천",
+    "en": "Dongcheon",
+    "line": "대구3",
+    "icon": "🚇",
+    "region": "대구",
+    "lat": 35.93770658,
+    "lng": 128.556683
+  },
+  {
+    "id": 72040,
+    "name": "칠곡운암",
+    "en": "Chilgok·Unam",
+    "line": "대구3",
+    "icon": "🚇",
+    "region": "대구",
+    "lat": 35.93145534,
+    "lng": 128.5545305
+  },
+  {
+    "id": 73778,
+    "name": "구암(과학대보건대입구)",
+    "en": "Guam\r\n(Taegu Science Univ.\r\n·Daegu Health College)",
+    "line": "대구3",
+    "icon": "🚇",
+    "region": "대구",
+    "lat": 35.92574223,
+    "lng": 128.5503415
+  },
+  {
+    "id": 59616,
+    "name": "태전",
+    "en": "Taejeon",
+    "line": "대구3",
+    "icon": "🚇",
+    "region": "대구",
+    "lat": 35.9196172,
+    "lng": 128.547388
+  },
+  {
+    "id": 55778,
+    "name": "매천",
+    "en": "Maecheon",
+    "line": "대구3",
+    "icon": "🚇",
+    "region": "대구",
+    "lat": 35.91265,
+    "lng": 128.5434
+  },
+  {
+    "id": 96128,
+    "name": "매천시장",
+    "en": "Maecheon Market",
+    "line": "대구3",
+    "icon": "🚇",
+    "region": "대구",
+    "lat": 35.90443,
+    "lng": 128.545755
+  },
+  {
+    "id": 47470,
+    "name": "팔달",
+    "en": "Paldal",
+    "line": "대구3",
+    "icon": "🚇",
+    "region": "대구",
+    "lat": 35.89777,
+    "lng": 128.5468
+  },
+  {
+    "id": 82052,
+    "name": "공단",
+    "en": "Gongdan",
+    "line": "대구3",
+    "icon": "🚇",
+    "region": "대구",
+    "lat": 35.892,
+    "lng": 128.5536
+  },
+  {
+    "id": 43475,
+    "name": "만평",
+    "en": "Manpyeong",
+    "line": "대구3",
+    "icon": "🚇",
+    "region": "대구",
+    "lat": 35.889893,
+    "lng": 128.561002
+  },
+  {
+    "id": 51642,
+    "name": "팔달시장",
+    "en": "Paldal Market",
+    "line": "대구3",
+    "icon": "🚇",
+    "region": "대구",
+    "lat": 35.88883085,
+    "lng": 128.5678716
+  },
+  {
+    "id": 2717,
+    "name": "원대",
+    "en": "Wondae",
+    "line": "대구3",
+    "icon": "🚇",
+    "region": "대구",
+    "lat": 35.887886,
+    "lng": 128.574392
+  },
+  {
+    "id": 21921,
+    "name": "북구청(DGB대구은행파크)",
+    "en": "Buk-gu Office\r\n(DGB Daegu Bank Park)",
+    "line": "대구3",
+    "icon": "🚇",
+    "region": "대구",
+    "lat": 35.88381395,
+    "lng": 128.5814483
+  },
+  {
+    "id": 65540,
+    "name": "달성공원",
+    "en": "Dalseong Park",
+    "line": "대구3",
+    "icon": "🚇",
+    "region": "대구",
+    "lat": 35.87573001,
+    "lng": 128.5821218
+  },
+  {
+    "id": 20160,
+    "name": "서문시장(동산병원)",
+    "en": "Seomun Market\r\n(Dongsan Hospital)",
+    "line": "대구3",
+    "icon": "🚇",
+    "region": "대구",
+    "lat": 35.86966429,
+    "lng": 128.582241
+  },
+  {
+    "id": 52578,
+    "name": "청라언덕(신남)",
+    "en": "Cheongna Hill\r\n(sinnam)",
+    "line": "대구3",
+    "icon": "🚇",
+    "region": "대구",
+    "lat": 35.86419437,
+    "lng": 128.5823758
+  },
+  {
+    "id": 2474,
+    "name": "남산(계명네거리)",
+    "en": "Namsan\r\n(Gyemyeongnegeori)",
+    "line": "대구3",
+    "icon": "🚇",
+    "region": "대구",
+    "lat": 35.85668979,
+    "lng": 128.5834576
+  },
+  {
+    "id": 73544,
+    "name": "명덕(2·28민주운동기념회관)",
+    "en": "Myeongdeok\r\n(2·28Democracy Movement Hall)",
+    "line": "대구3",
+    "icon": "🚇",
+    "region": "대구",
+    "lat": 35.85694518,
+    "lng": 128.5900469
+  },
+  {
+    "id": 49825,
+    "name": "건들바위",
+    "en": "Geondeulbawi",
+    "line": "대구3",
+    "icon": "🚇",
+    "region": "대구",
+    "lat": 35.85538252,
+    "lng": 128.5996903
+  },
+  {
+    "id": 65479,
+    "name": "대봉교",
+    "en": "Daebonggyo",
+    "line": "대구3",
+    "icon": "🚇",
+    "region": "대구",
+    "lat": 35.85499783,
+    "lng": 128.6063685
+  },
+  {
+    "id": 256,
+    "name": "수성시장",
+    "en": "Suseong Market",
+    "line": "대구3",
+    "icon": "🚇",
+    "region": "대구",
+    "lat": 35.85431676,
+    "lng": 128.6160292
+  },
+  {
+    "id": 6824,
+    "name": "수성구민운동장",
+    "en": "Suseong District Stadium",
+    "line": "대구3",
+    "icon": "🚇",
+    "region": "대구",
+    "lat": 35.85240979,
+    "lng": 128.6251246
+  },
+  {
+    "id": 99939,
+    "name": "어린이세상",
+    "en": "Children's World",
+    "line": "대구3",
+    "icon": "🚇",
+    "region": "대구",
+    "lat": 35.84516989,
+    "lng": 128.6244677
+  },
+  {
+    "id": 94312,
+    "name": "황금",
+    "en": "Hwanggeum",
+    "line": "대구3",
+    "icon": "🚇",
+    "region": "대구",
+    "lat": 35.83907838,
+    "lng": 128.6239185
+  },
+  {
+    "id": 83347,
+    "name": "수성못(TBC)",
+    "en": "Suseongmot(TBC)",
+    "line": "대구3",
+    "icon": "🚇",
+    "region": "대구",
+    "lat": 35.83135605,
+    "lng": 128.6232167
+  },
+  {
+    "id": 11803,
+    "name": "지산",
+    "en": "Jisan",
+    "line": "대구3",
+    "icon": "🚇",
+    "region": "대구",
+    "lat": 35.82515322,
+    "lng": 128.6319513
+  },
+  {
+    "id": 66492,
+    "name": "범물",
+    "en": "Beommul",
+    "line": "대구3",
+    "icon": "🚇",
+    "region": "대구",
+    "lat": 35.82083917,
+    "lng": 128.6401127
+  },
+  {
+    "id": 82831,
+    "name": "용지",
+    "en": "Yongji",
+    "line": "대구3",
+    "icon": "🚇",
+    "region": "대구",
+    "lat": 35.8182678,
+    "lng": 128.6465345
+  },
+  {
+    "id": 60289,
+    "name": "판암",
+    "en": "Panam",
+    "line": "대전1",
+    "icon": "🚇",
+    "region": "대전",
+    "lat": 36.316896,
+    "lng": 127.458264
+  },
+  {
+    "id": 66376,
+    "name": "신흥",
+    "en": "Sinheung",
+    "line": "대전1",
+    "icon": "🚇",
+    "region": "대전",
+    "lat": 36.319652,
+    "lng": 127.448792
+  },
+  {
+    "id": 78608,
+    "name": "대동",
+    "en": "Dae-dong",
+    "line": "대전1",
+    "icon": "🚇",
+    "region": "대전",
+    "lat": 36.329532,
+    "lng": 127.442848
+  },
+  {
+    "id": 99689,
+    "name": "대전",
+    "en": "Daejeon",
+    "line": "대전1",
+    "icon": "🚇",
+    "region": "대전",
+    "lat": 36.331583,
+    "lng": 127.433118
+  },
+  {
+    "id": 97617,
+    "name": "중앙로",
+    "en": "Jungangno",
+    "line": "대전1",
+    "icon": "🚇",
+    "region": "대전",
+    "lat": 36.328664,
+    "lng": 127.425842
+  },
+  {
+    "id": 45786,
+    "name": "중구청",
+    "en": "Jung-gu Office",
+    "line": "대전1",
+    "icon": "🚇",
+    "region": "대전",
+    "lat": 36.324831,
+    "lng": 127.419627
+  },
+  {
+    "id": 90477,
+    "name": "서대전네거리",
+    "en": "Seodaejeon negeori",
+    "line": "대전1",
+    "icon": "🚇",
+    "region": "대전",
+    "lat": 36.322416,
+    "lng": 127.412518
+  },
+  {
+    "id": 37389,
+    "name": "오룡",
+    "en": "Oryong",
+    "line": "대전1",
+    "icon": "🚇",
+    "region": "대전",
+    "lat": 36.328582,
+    "lng": 127.405046
+  },
+  {
+    "id": 99160,
+    "name": "용문",
+    "en": "Yongmun",
+    "line": "대전1",
+    "icon": "🚇",
+    "region": "대전",
+    "lat": 36.338252,
+    "lng": 127.393317
+  },
+  {
+    "id": 15665,
+    "name": "탄방",
+    "en": "Tanbang",
+    "line": "대전1",
+    "icon": "🚇",
+    "region": "대전",
+    "lat": 36.34544,
+    "lng": 127.384603
+  },
+  {
+    "id": 57462,
+    "name": "시청",
+    "en": "City Hall",
+    "line": "대전1",
+    "icon": "🚇",
+    "region": "대전",
+    "lat": 36.351673,
+    "lng": 127.386739
+  },
+  {
+    "id": 8850,
+    "name": "정부청사",
+    "en": "Government  Complex Daejeon",
+    "line": "대전1",
+    "icon": "🚇",
+    "region": "대전",
+    "lat": 36.357661,
+    "lng": 127.381047
+  },
+  {
+    "id": 68148,
+    "name": "갈마",
+    "en": "Galma",
+    "line": "대전1",
+    "icon": "🚇",
+    "region": "대전",
+    "lat": 36.357522,
+    "lng": 127.372632
+  },
+  {
+    "id": 8861,
+    "name": "월평",
+    "en": "Wolpyeong",
+    "line": "대전1",
+    "icon": "🚇",
+    "region": "대전",
+    "lat": 36.358272,
+    "lng": 127.364382
+  },
+  {
+    "id": 7090,
+    "name": "갑천",
+    "en": "Gapcheon",
+    "line": "대전1",
+    "icon": "🚇",
+    "region": "대전",
+    "lat": 36.354578,
+    "lng": 127.354467
+  },
+  {
+    "id": 96897,
+    "name": "유성온천",
+    "en": "Yuseong Spa",
+    "line": "대전1",
+    "icon": "🚇",
+    "region": "대전",
+    "lat": 36.353689,
+    "lng": 127.341524
+  },
+  {
+    "id": 99510,
+    "name": "구암",
+    "en": "Guam",
+    "line": "대전1",
+    "icon": "🚇",
+    "region": "대전",
+    "lat": 36.356605,
+    "lng": 127.33083
+  },
+  {
+    "id": 78802,
+    "name": "현충원",
+    "en": "National  Cemetery",
+    "line": "대전1",
+    "icon": "🚇",
+    "region": "대전",
+    "lat": 36.359021,
+    "lng": 127.321525
+  },
+  {
+    "id": 8971,
+    "name": "월드컵경기장",
+    "en": "World Cup  Stadium",
+    "line": "대전1",
+    "icon": "🚇",
+    "region": "대전",
+    "lat": 36.366825,
+    "lng": 127.317859
+  },
+  {
+    "id": 29305,
+    "name": "노은",
+    "en": "Noeun",
+    "line": "대전1",
+    "icon": "🚇",
+    "region": "대전",
+    "lat": 36.37415,
+    "lng": 127.317835
+  },
+  {
+    "id": 10477,
+    "name": "지족",
+    "en": "Jijok",
+    "line": "대전1",
+    "icon": "🚇",
+    "region": "대전",
+    "lat": 36.384106,
+    "lng": 127.319501
+  },
+  {
+    "id": 32948,
+    "name": "반석",
+    "en": "Banseok",
+    "line": "대전1",
+    "icon": "🚇",
+    "region": "대전",
+    "lat": 36.392128,
+    "lng": 127.314581
+  },
+  {
+    "id": 76393,
+    "name": "까치울",
+    "en": "Kkachiul",
+    "line": "도시철도 7호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.506236,
+    "lng": 126.81095
+  },
+  {
+    "id": 50376,
+    "name": "부천종합운동장",
+    "en": "Bucheon Stadium",
+    "line": "도시철도 7호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.505381,
+    "lng": 126.79735
+  },
+  {
+    "id": 89332,
+    "name": "춘의",
+    "en": "Chunui",
+    "line": "도시철도 7호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.50365,
+    "lng": 126.787069
+  },
+  {
+    "id": 85792,
+    "name": "신중동",
+    "en": "Sinjung-dong",
+    "line": "도시철도 7호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.503081,
+    "lng": 126.776161
+  },
+  {
+    "id": 98281,
+    "name": "부천시청",
+    "en": "Bucheon City Hall",
+    "line": "도시철도 7호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.504611,
+    "lng": 126.763561
+  },
+  {
+    "id": 57952,
+    "name": "상동",
+    "en": "Sang-dong",
+    "line": "도시철도 7호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.505769,
+    "lng": 126.753081
+  },
+  {
+    "id": 59819,
+    "name": "삼산체육관",
+    "en": "Samsan Gymnasium",
+    "line": "도시철도 7호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.506431,
+    "lng": 126.742081
+  },
+  {
+    "id": 51514,
+    "name": "굴포천",
+    "en": "Gulpocheon",
+    "line": "도시철도 7호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.50695,
+    "lng": 126.731481
+  },
+  {
+    "id": 62586,
+    "name": "부평구청",
+    "en": "Bupyeong-gu office",
+    "line": "도시철도 7호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.507523,
+    "lng": 126.721356
+  },
+  {
+    "id": 20041,
+    "name": "산곡",
+    "en": "Sangok",
+    "line": "도시철도 7호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.508547,
+    "lng": 126.70351
+  },
+  {
+    "id": 12482,
+    "name": "석남(거북시장)",
+    "en": "Seongnam(Geobuk Market)",
+    "line": "도시철도 7호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.506208,
+    "lng": 126.676213
+  },
+  {
+    "id": 11309,
+    "name": "부전역",
+    "en": "Bujeon",
+    "line": "동해선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 35.164668,
+    "lng": 129.06011
+  },
+  {
+    "id": 61373,
+    "name": "거제해맞이역",
+    "en": "Geojehaemaji",
+    "line": "동해선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 35.181197,
+    "lng": 129.069015
+  },
+  {
+    "id": 47323,
+    "name": "거제역",
+    "en": "Geoje",
+    "line": "동해선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 35.18958,
+    "lng": 129.074385
+  },
+  {
+    "id": 83258,
+    "name": "교대역",
+    "en": "Busan Nat’l Univ. of Edu",
+    "line": "동해선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 35.1938,
+    "lng": 129.07958
+  },
+  {
+    "id": 66161,
+    "name": "동래역",
+    "en": "Dongnae",
+    "line": "동해선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 35.204714,
+    "lng": 129.0773502
+  },
+  {
+    "id": 92117,
+    "name": "안락역",
+    "en": "Allak",
+    "line": "동해선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 35.196007,
+    "lng": 129.101062
+  },
+  {
+    "id": 64717,
+    "name": "재송역",
+    "en": "Jaesong",
+    "line": "동해선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 35.188,
+    "lng": 129.120109
+  },
+  {
+    "id": 93884,
+    "name": "센텀역",
+    "en": "Centum",
+    "line": "동해선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 35.1793,
+    "lng": 129.1245
+  },
+  {
+    "id": 48422,
+    "name": "벡스코역",
+    "en": "BEXCO",
+    "line": "동해선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 35.1717,
+    "lng": 129.135958
+  },
+  {
+    "id": 17645,
+    "name": "신해운대역",
+    "en": "Sinhaeundae",
+    "line": "동해선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 35.181832,
+    "lng": 129.176696
+  },
+  {
+    "id": 98076,
+    "name": "송정역",
+    "en": "Songjeong",
+    "line": "동해선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 35.187832,
+    "lng": 129.202069
+  },
+  {
+    "id": 76956,
+    "name": "오시리아역",
+    "en": "OSIRIA",
+    "line": "동해선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 35.196256,
+    "lng": 129.208291
+  },
+  {
+    "id": 81835,
+    "name": "기장역",
+    "en": "Gijang",
+    "line": "동해선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 35.244627,
+    "lng": 129.2188951
+  },
+  {
+    "id": 10284,
+    "name": "일광역",
+    "en": "Ilgwang",
+    "line": "동해선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 35.2675565,
+    "lng": 129.2330307
+  },
+  {
+    "id": 89136,
+    "name": "부산원동역",
+    "en": "Busanwondong",
+    "line": "동해선",
+    "icon": "🚉",
+    "region": "기타",
+    "lat": 35.1938,
+    "lng": 129.113709
+  },
+  {
+    "id": 41503,
+    "name": "좌천역",
+    "en": "Jwacheon",
+    "line": "동해선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 35.311838,
+    "lng": 129.245197
+  },
+  {
+    "id": 8865,
+    "name": "월내역",
+    "en": "Wollae",
+    "line": "동해선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 35.328177,
+    "lng": 129.276626
+  },
+  {
+    "id": 62114,
+    "name": "서생역",
+    "en": "Seosaeng",
+    "line": "동해선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 35.346121,
+    "lng": 129.29304
+  },
+  {
+    "id": 92345,
+    "name": "남창역",
+    "en": "Namchang",
+    "line": "동해선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 35.419713,
+    "lng": 129.28223
+  },
+  {
+    "id": 54474,
+    "name": "망양역",
+    "en": "Mangyang",
+    "line": "동해선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 35.456519,
+    "lng": 129.287856
+  },
+  {
+    "id": 59046,
+    "name": "덕하역",
+    "en": "Deokha",
+    "line": "동해선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 35.494007,
+    "lng": 129.303094
+  },
+  {
+    "id": 86479,
+    "name": "개운포역",
+    "en": "Gaeunpo",
+    "line": "동해선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 35.507884,
+    "lng": 129.321097
+  },
+  {
+    "id": 41068,
+    "name": "태화강역",
+    "en": "Taehwagang",
+    "line": "동해선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 35.538669,
+    "lng": 129.353269
+  },
+  {
+    "id": 57085,
+    "name": "미남",
+    "en": "Minam",
+    "line": "부산4",
+    "icon": "🚇",
+    "region": "부산",
+    "lat": 35.20643,
+    "lng": 129.06868
+  },
+  {
+    "id": 26087,
+    "name": "동래",
+    "en": "Dongnae",
+    "line": "부산4",
+    "icon": "🚇",
+    "region": "부산",
+    "lat": 35.20466,
+    "lng": 129.07741
+  },
+  {
+    "id": 22121,
+    "name": "수안",
+    "en": "Suan",
+    "line": "부산4",
+    "icon": "🚇",
+    "region": "부산",
+    "lat": 35.20183,
+    "lng": 129.08378
+  },
+  {
+    "id": 66427,
+    "name": "낙민",
+    "en": "Nangmin",
+    "line": "부산4",
+    "icon": "🚇",
+    "region": "부산",
+    "lat": 35.20025,
+    "lng": 129.09078
+  },
+  {
+    "id": 87079,
+    "name": "충렬사",
+    "en": "Chungnyeolsa",
+    "line": "부산4",
+    "icon": "🚇",
+    "region": "부산",
+    "lat": 35.19986,
+    "lng": 129.09764
+  },
+  {
+    "id": 95903,
+    "name": "명장",
+    "en": "Myeongjang",
+    "line": "부산4",
+    "icon": "🚇",
+    "region": "부산",
+    "lat": 35.20503,
+    "lng": 129.10161
+  },
+  {
+    "id": 91504,
+    "name": "서동",
+    "en": "Seo-dong",
+    "line": "부산4",
+    "icon": "🚇",
+    "region": "부산",
+    "lat": 35.21331,
+    "lng": 129.10769
+  },
+  {
+    "id": 55156,
+    "name": "금사",
+    "en": "Geumsa",
+    "line": "부산4",
+    "icon": "🚇",
+    "region": "부산",
+    "lat": 35.21583,
+    "lng": 129.11517
+  },
+  {
+    "id": 74751,
+    "name": "반여농산물시장",
+    "en": "Banyeo Agricultural Market",
+    "line": "부산4",
+    "icon": "🚇",
+    "region": "부산",
+    "lat": 35.21778,
+    "lng": 129.12397
+  },
+  {
+    "id": 7057,
+    "name": "석대",
+    "en": "Seokdae",
+    "line": "부산4",
+    "icon": "🚇",
+    "region": "부산",
+    "lat": 35.21825,
+    "lng": 129.13717
+  },
+  {
+    "id": 17605,
+    "name": "영산대",
+    "en": "Youngsan Univ.",
+    "line": "부산4",
+    "icon": "🚇",
+    "region": "부산",
+    "lat": 35.22578,
+    "lng": 129.14617
+  },
+  {
+    "id": 31155,
+    "name": "윗반송",
+    "en": "Witbansong",
+    "line": "부산4",
+    "icon": "🚇",
+    "region": "부산",
+    "lat": 35.2325,
+    "lng": 129.15403
+  },
+  {
+    "id": 86203,
+    "name": "고촌",
+    "en": "Gochon",
+    "line": "부산4",
+    "icon": "🚇",
+    "region": "부산",
+    "lat": 35.23603,
+    "lng": 129.1605
+  },
+  {
+    "id": 57980,
+    "name": "안평",
+    "en": "Anpyeong",
+    "line": "부산4",
+    "icon": "🚇",
+    "region": "부산",
+    "lat": 35.23733,
+    "lng": 129.17183
+  },
+  {
+    "id": 94201,
+    "name": "다대포해수욕장",
+    "en": "Dadaepo Beach",
+    "line": "부산1",
+    "icon": "🚇",
+    "region": "부산",
+    "lat": 35.048229,
+    "lng": 128.965919
+  },
+  {
+    "id": 43150,
+    "name": "다대포항",
+    "en": "Dadaepo Harbor",
+    "line": "부산1",
+    "icon": "🚇",
+    "region": "부산",
+    "lat": 35.057288,
+    "lng": 128.971151
+  },
+  {
+    "id": 57440,
+    "name": "낫개",
+    "en": "Natgae",
+    "line": "부산1",
+    "icon": "🚇",
+    "region": "부산",
+    "lat": 35.065179,
+    "lng": 128.979702
+  },
+  {
+    "id": 30331,
+    "name": "신장림",
+    "en": "Sinjangnim",
+    "line": "부산1",
+    "icon": "🚇",
+    "region": "부산",
+    "lat": 35.074222,
+    "lng": 128.976538
+  },
+  {
+    "id": 7100,
+    "name": "장림",
+    "en": "Jangnim",
+    "line": "부산1",
+    "icon": "🚇",
+    "region": "부산",
+    "lat": 35.081555,
+    "lng": 128.9773083
+  },
+  {
+    "id": 93427,
+    "name": "동매",
+    "en": "Dongmae",
+    "line": "부산1",
+    "icon": "🚇",
+    "region": "부산",
+    "lat": 35.089819,
+    "lng": 128.974029
+  },
+  {
+    "id": 83676,
+    "name": "신평",
+    "en": "Sinpyeong",
+    "line": "부산1",
+    "icon": "🚇",
+    "region": "부산",
+    "lat": 35.09556,
+    "lng": 128.96056
+  },
+  {
+    "id": 50816,
+    "name": "하단",
+    "en": "Hadan",
+    "line": "부산1",
+    "icon": "🚇",
+    "region": "부산",
+    "lat": 35.10611,
+    "lng": 128.96667
+  },
+  {
+    "id": 49023,
+    "name": "당리",
+    "en": "Dangni",
+    "line": "부산1",
+    "icon": "🚇",
+    "region": "부산",
+    "lat": 35.10333,
+    "lng": 128.97417
+  },
+  {
+    "id": 66703,
+    "name": "사하",
+    "en": "Saha",
+    "line": "부산1",
+    "icon": "🚇",
+    "region": "부산",
+    "lat": 35.09972,
+    "lng": 128.98333
+  },
+  {
+    "id": 63707,
+    "name": "괴정",
+    "en": "Goejeong",
+    "line": "부산1",
+    "icon": "🚇",
+    "region": "부산",
+    "lat": 35.1,
+    "lng": 128.9925
+  },
+  {
+    "id": 14063,
+    "name": "대티",
+    "en": "Daeti",
+    "line": "부산1",
+    "icon": "🚇",
+    "region": "부산",
+    "lat": 35.10306,
+    "lng": 128.99972
+  },
+  {
+    "id": 61305,
+    "name": "서대신",
+    "en": "Seodaesin",
+    "line": "부산1",
+    "icon": "🚇",
+    "region": "부산",
+    "lat": 35.11083,
+    "lng": 129.01194
+  },
+  {
+    "id": 75050,
+    "name": "동대신",
+    "en": "Dongdaesin",
+    "line": "부산1",
+    "icon": "🚇",
+    "region": "부산",
+    "lat": 35.11056,
+    "lng": 129.01757
+  },
+  {
+    "id": 33264,
+    "name": "토성",
+    "en": "Toseong",
+    "line": "부산1",
+    "icon": "🚇",
+    "region": "부산",
+    "lat": 35.10083,
+    "lng": 129.01972
+  },
+  {
+    "id": 17519,
+    "name": "자갈치",
+    "en": "Jagalchi",
+    "line": "부산1",
+    "icon": "🚇",
+    "region": "부산",
+    "lat": 35.0975,
+    "lng": 129.02694
+  },
+  {
+    "id": 91238,
+    "name": "남포",
+    "en": "Nampo",
+    "line": "부산1",
+    "icon": "🚇",
+    "region": "부산",
+    "lat": 35.09778,
+    "lng": 129.03472
+  },
+  {
+    "id": 53924,
+    "name": "중앙",
+    "en": "Jungang",
+    "line": "부산1",
+    "icon": "🚇",
+    "region": "부산",
+    "lat": 35.10389,
+    "lng": 129.03639
+  },
+  {
+    "id": 55337,
+    "name": "부산역",
+    "en": "Busan Station",
+    "line": "부산1",
+    "icon": "🚉",
+    "region": "부산",
+    "lat": 35.11528,
+    "lng": 129.03972
+  },
+  {
+    "id": 88889,
+    "name": "초량",
+    "en": "Choryang",
+    "line": "부산1",
+    "icon": "🚇",
+    "region": "부산",
+    "lat": 35.12111,
+    "lng": 129.04296
+  },
+  {
+    "id": 61036,
+    "name": "부산진",
+    "en": "Busanjin",
+    "line": "부산1",
+    "icon": "🚉",
+    "region": "부산",
+    "lat": 35.12778,
+    "lng": 129.04778
+  },
+  {
+    "id": 7143,
+    "name": "좌천",
+    "en": "Jwacheon",
+    "line": "부산1",
+    "icon": "🚇",
+    "region": "부산",
+    "lat": 35.13417,
+    "lng": 129.05417
+  },
+  {
+    "id": 74816,
+    "name": "범일",
+    "en": "Beomil",
+    "line": "부산1",
+    "icon": "🚇",
+    "region": "부산",
+    "lat": 35.14139,
+    "lng": 129.05944
+  },
+  {
+    "id": 129,
+    "name": "범내골",
+    "en": "Beomnaegol",
+    "line": "부산1",
+    "icon": "🚇",
+    "region": "부산",
+    "lat": 35.14722,
+    "lng": 129.05917
+  },
+  {
+    "id": 97406,
+    "name": "서면",
+    "en": "Seomyeon",
+    "line": "부산1",
+    "icon": "🚇",
+    "region": "부산",
+    "lat": 35.15778,
+    "lng": 129.05917
+  },
+  {
+    "id": 87272,
+    "name": "부전",
+    "en": "Bujeon",
+    "line": "부산1",
+    "icon": "🚇",
+    "region": "부산",
+    "lat": 35.1625,
+    "lng": 129.06278
+  },
+  {
+    "id": 27349,
+    "name": "양정",
+    "en": "Yangjeong",
+    "line": "부산1",
+    "icon": "🚇",
+    "region": "부산",
+    "lat": 35.17304,
+    "lng": 129.07119
+  },
+  {
+    "id": 68810,
+    "name": "시청",
+    "en": "City Hall",
+    "line": "부산1",
+    "icon": "🚇",
+    "region": "부산",
+    "lat": 35.17972,
+    "lng": 129.07667
+  },
+  {
+    "id": 91749,
+    "name": "연산",
+    "en": "Yeonsan",
+    "line": "부산1",
+    "icon": "🚇",
+    "region": "부산",
+    "lat": 35.18611,
+    "lng": 129.08167
+  },
+  {
+    "id": 84402,
+    "name": "교대",
+    "en": "Busan Nat'l Univ. of Edu",
+    "line": "부산1",
+    "icon": "🚇",
+    "region": "부산",
+    "lat": 35.19583,
+    "lng": 129.08
+  },
+  {
+    "id": 62328,
+    "name": "동래",
+    "en": "Dongnae",
+    "line": "부산1",
+    "icon": "🚇",
+    "region": "부산",
+    "lat": 35.20556,
+    "lng": 129.078461
+  },
+  {
+    "id": 51428,
+    "name": "명륜",
+    "en": "Myeongnyun",
+    "line": "부산1",
+    "icon": "🚇",
+    "region": "부산",
+    "lat": 35.21222,
+    "lng": 129.07944
+  },
+  {
+    "id": 14658,
+    "name": "온천장",
+    "en": "Oncheonjang",
+    "line": "부산1",
+    "icon": "🚇",
+    "region": "부산",
+    "lat": 35.22056,
+    "lng": 129.08667
+  },
+  {
+    "id": 88645,
+    "name": "부산대",
+    "en": "Pusan Nat’l Univ.",
+    "line": "부산1",
+    "icon": "🚉",
+    "region": "부산",
+    "lat": 35.23,
+    "lng": 129.08944
+  },
+  {
+    "id": 96643,
+    "name": "장전",
+    "en": "Jangjeon",
+    "line": "부산1",
+    "icon": "🚇",
+    "region": "부산",
+    "lat": 35.23806,
+    "lng": 129.08806
+  },
+  {
+    "id": 24628,
+    "name": "구서",
+    "en": "Guseo",
+    "line": "부산1",
+    "icon": "🚇",
+    "region": "부산",
+    "lat": 35.24722,
+    "lng": 129.09139
+  },
+  {
+    "id": 22609,
+    "name": "두실",
+    "en": "Dusil",
+    "line": "부산1",
+    "icon": "🚇",
+    "region": "부산",
+    "lat": 35.25694,
+    "lng": 129.09139
+  },
+  {
+    "id": 75554,
+    "name": "남산",
+    "en": "Namsan",
+    "line": "부산1",
+    "icon": "🚇",
+    "region": "부산",
+    "lat": 35.26528,
+    "lng": 129.0925
+  },
+  {
+    "id": 98548,
+    "name": "범어사",
+    "en": "Beomeosa",
+    "line": "부산1",
+    "icon": "🚇",
+    "region": "부산",
+    "lat": 35.27333,
+    "lng": 129.09268
+  },
+  {
+    "id": 82614,
+    "name": "노포",
+    "en": "Nopo",
+    "line": "부산1",
+    "icon": "🚇",
+    "region": "부산",
+    "lat": 35.28361,
+    "lng": 129.095
+  },
+  {
+    "id": 91240,
+    "name": "장산",
+    "en": "Jangsan",
+    "line": "부산2",
+    "icon": "🚇",
+    "region": "부산",
+    "lat": 35.17,
+    "lng": 129.17694
+  },
+  {
+    "id": 10092,
+    "name": "중동",
+    "en": "Jung-dong",
+    "line": "부산2",
+    "icon": "🚇",
+    "region": "부산",
+    "lat": 35.16669,
+    "lng": 129.16887
+  },
+  {
+    "id": 17439,
+    "name": "해운대",
+    "en": "Haeundae",
+    "line": "부산2",
+    "icon": "🚇",
+    "region": "부산",
+    "lat": 35.163518,
+    "lng": 129.158584
+  },
+  {
+    "id": 91176,
+    "name": "동백",
+    "en": "Dongbaek",
+    "line": "부산2",
+    "icon": "🚇",
+    "region": "부산",
+    "lat": 35.16147,
+    "lng": 129.147887
+  },
+  {
+    "id": 53487,
+    "name": "벡스코",
+    "en": "BEXCO",
+    "line": "부산2",
+    "icon": "🚇",
+    "region": "부산",
+    "lat": 35.16911,
+    "lng": 129.138431
+  },
+  {
+    "id": 71787,
+    "name": "센텀시티",
+    "en": "Centum City",
+    "line": "부산2",
+    "icon": "🚇",
+    "region": "부산",
+    "lat": 35.16892,
+    "lng": 129.131764
+  },
+  {
+    "id": 2487,
+    "name": "민락",
+    "en": "Millak",
+    "line": "부산2",
+    "icon": "🚇",
+    "region": "부산",
+    "lat": 35.16722,
+    "lng": 129.121878
+  },
+  {
+    "id": 13016,
+    "name": "수영",
+    "en": "Suyeong",
+    "line": "부산2",
+    "icon": "🚇",
+    "region": "부산",
+    "lat": 35.16578,
+    "lng": 129.114842
+  },
+  {
+    "id": 40658,
+    "name": "광안",
+    "en": "Gwangan",
+    "line": "부산2",
+    "icon": "🚇",
+    "region": "부산",
+    "lat": 35.15792,
+    "lng": 129.113197
+  },
+  {
+    "id": 99960,
+    "name": "금련산",
+    "en": "Geumnyeonsan",
+    "line": "부산2",
+    "icon": "🚇",
+    "region": "부산",
+    "lat": 35.14989,
+    "lng": 129.111008
+  },
+  {
+    "id": 86087,
+    "name": "남천",
+    "en": "Namcheon",
+    "line": "부산2",
+    "icon": "🚇",
+    "region": "부산",
+    "lat": 35.14217,
+    "lng": 129.10797
+  },
+  {
+    "id": 22672,
+    "name": "경성대·부경대",
+    "en": "Kyungsung Univ.·Pukyong Nat’l Univ.",
+    "line": "부산2",
+    "icon": "🚇",
+    "region": "부산",
+    "lat": 35.13757,
+    "lng": 129.10055
+  },
+  {
+    "id": 31500,
+    "name": "대연",
+    "en": "Daeyeon",
+    "line": "부산2",
+    "icon": "🚇",
+    "region": "부산",
+    "lat": 35.13512,
+    "lng": 129.09218
+  },
+  {
+    "id": 51464,
+    "name": "못골",
+    "en": "Motgol",
+    "line": "부산2",
+    "icon": "🚇",
+    "region": "부산",
+    "lat": 35.13472,
+    "lng": 129.08442
+  },
+  {
+    "id": 25441,
+    "name": "지게골",
+    "en": "Jigegol",
+    "line": "부산2",
+    "icon": "🚇",
+    "region": "부산",
+    "lat": 35.13558,
+    "lng": 129.07436
+  },
+  {
+    "id": 83224,
+    "name": "문현",
+    "en": "Munhyeon",
+    "line": "부산2",
+    "icon": "🚇",
+    "region": "부산",
+    "lat": 35.13911,
+    "lng": 129.06736
+  },
+  {
+    "id": 18449,
+    "name": "국제금융센터·부산은행",
+    "en": "Busan Int’l Finance Center·Busan Bank",
+    "line": "부산2",
+    "icon": "🚉",
+    "region": "부산",
+    "lat": 35.14583,
+    "lng": 129.06672
+  },
+  {
+    "id": 2122,
+    "name": "전포",
+    "en": "Jeonpo",
+    "line": "부산2",
+    "icon": "🚇",
+    "region": "부산",
+    "lat": 35.15311,
+    "lng": 129.06533
+  },
+  {
+    "id": 8382,
+    "name": "서면",
+    "en": "Seomyeon",
+    "line": "부산2",
+    "icon": "🚇",
+    "region": "부산",
+    "lat": 35.15768,
+    "lng": 129.058517
+  },
+  {
+    "id": 93502,
+    "name": "부암",
+    "en": "Buam",
+    "line": "부산2",
+    "icon": "🚇",
+    "region": "부산",
+    "lat": 35.15744,
+    "lng": 129.05019
+  },
+  {
+    "id": 380,
+    "name": "가야",
+    "en": "Gaya",
+    "line": "부산2",
+    "icon": "🚇",
+    "region": "부산",
+    "lat": 35.15589,
+    "lng": 129.04283
+  },
+  {
+    "id": 91010,
+    "name": "동의대",
+    "en": "Dong-eui Univ.",
+    "line": "부산2",
+    "icon": "🚇",
+    "region": "부산",
+    "lat": 35.15411,
+    "lng": 129.0325
+  },
+  {
+    "id": 56397,
+    "name": "개금",
+    "en": "Gaegeum",
+    "line": "부산2",
+    "icon": "🚇",
+    "region": "부산",
+    "lat": 35.15325,
+    "lng": 129.02056
+  },
+  {
+    "id": 67359,
+    "name": "냉정",
+    "en": "Naengjeong",
+    "line": "부산2",
+    "icon": "🚇",
+    "region": "부산",
+    "lat": 35.15125,
+    "lng": 129.01228
+  },
+  {
+    "id": 42175,
+    "name": "주례",
+    "en": "Jurye",
+    "line": "부산2",
+    "icon": "🚇",
+    "region": "부산",
+    "lat": 35.1505,
+    "lng": 129.00306
+  },
+  {
+    "id": 93268,
+    "name": "감전",
+    "en": "Gamjeon",
+    "line": "부산2",
+    "icon": "🚇",
+    "region": "부산",
+    "lat": 35.15553,
+    "lng": 128.99114
+  },
+  {
+    "id": 99177,
+    "name": "사상",
+    "en": "Sasang",
+    "line": "부산2",
+    "icon": "🚇",
+    "region": "부산",
+    "lat": 35.16218,
+    "lng": 128.98467
+  },
+  {
+    "id": 3276,
+    "name": "덕포",
+    "en": "Deokpo",
+    "line": "부산2",
+    "icon": "🚇",
+    "region": "부산",
+    "lat": 35.17378,
+    "lng": 128.98394
+  },
+  {
+    "id": 46909,
+    "name": "모덕",
+    "en": "Modeok",
+    "line": "부산2",
+    "icon": "🚇",
+    "region": "부산",
+    "lat": 35.18036,
+    "lng": 128.98561
+  },
+  {
+    "id": 83280,
+    "name": "모라",
+    "en": "Mora",
+    "line": "부산2",
+    "icon": "🚇",
+    "region": "부산",
+    "lat": 35.18967,
+    "lng": 128.98864
+  },
+  {
+    "id": 89970,
+    "name": "구남",
+    "en": "Gunam",
+    "line": "부산2",
+    "icon": "🚇",
+    "region": "부산",
+    "lat": 35.19681,
+    "lng": 128.99492
+  },
+  {
+    "id": 28654,
+    "name": "구명",
+    "en": "Gumyeong",
+    "line": "부산2",
+    "icon": "🚇",
+    "region": "부산",
+    "lat": 35.20253,
+    "lng": 128.99931
+  },
+  {
+    "id": 70410,
+    "name": "덕천",
+    "en": "Deokcheon",
+    "line": "부산2",
+    "icon": "🚇",
+    "region": "부산",
+    "lat": 35.21011,
+    "lng": 129.00533
+  },
+  {
+    "id": 51756,
+    "name": "수정",
+    "en": "Sujeong",
+    "line": "부산2",
+    "icon": "🚇",
+    "region": "부산",
+    "lat": 35.22336,
+    "lng": 129.00922
+  },
+  {
+    "id": 76997,
+    "name": "화명",
+    "en": "Hwamyeong",
+    "line": "부산2",
+    "icon": "🚇",
+    "region": "부산",
+    "lat": 35.23585,
+    "lng": 129.01387
+  },
+  {
+    "id": 35472,
+    "name": "율리",
+    "en": "Yulli",
+    "line": "부산2",
+    "icon": "🚇",
+    "region": "부산",
+    "lat": 35.24672,
+    "lng": 129.01292
+  },
+  {
+    "id": 57330,
+    "name": "동원",
+    "en": "Dongwon",
+    "line": "부산2",
+    "icon": "🚇",
+    "region": "부산",
+    "lat": 35.25864,
+    "lng": 129.01242
+  },
+  {
+    "id": 99668,
+    "name": "금곡",
+    "en": "Geumgok",
+    "line": "부산2",
+    "icon": "🚇",
+    "region": "부산",
+    "lat": 35.26733,
+    "lng": 129.01686
+  },
+  {
+    "id": 93520,
+    "name": "호포",
+    "en": "Hopo",
+    "line": "부산2",
+    "icon": "🚇",
+    "region": "부산",
+    "lat": 35.281,
+    "lng": 129.017525
+  },
+  {
+    "id": 74437,
+    "name": "증산",
+    "en": "Jeungsan",
+    "line": "부산2",
+    "icon": "🚇",
+    "region": "부산",
+    "lat": 35.30828,
+    "lng": 129.01028
+  },
+  {
+    "id": 64338,
+    "name": "부산대양산캠퍼스",
+    "en": "Pusan Nat’l Univ. Yangsan Campus",
+    "line": "부산2",
+    "icon": "🚉",
+    "region": "부산",
+    "lat": 35.31697,
+    "lng": 129.01383
+  },
+  {
+    "id": 67973,
+    "name": "남양산",
+    "en": "Namyangsan",
+    "line": "부산2",
+    "icon": "🚇",
+    "region": "부산",
+    "lat": 35.32533,
+    "lng": 129.01942
+  },
+  {
+    "id": 85205,
+    "name": "양산",
+    "en": "Yangsan",
+    "line": "부산2",
+    "icon": "🚇",
+    "region": "부산",
+    "lat": 35.33851,
+    "lng": 129.02643
+  },
+  {
+    "id": 742,
+    "name": "수영",
+    "en": "Suyeong",
+    "line": "부산3",
+    "icon": "🚇",
+    "region": "부산",
+    "lat": 35.16775,
+    "lng": 129.11458
+  },
+  {
+    "id": 19489,
+    "name": "망미",
+    "en": "Mangmi",
+    "line": "부산3",
+    "icon": "🚇",
+    "region": "부산",
+    "lat": 35.17153,
+    "lng": 129.10822
+  },
+  {
+    "id": 69722,
+    "name": "배산",
+    "en": "Baesan",
+    "line": "부산3",
+    "icon": "🚇",
+    "region": "부산",
+    "lat": 35.1735,
+    "lng": 129.0955
+  },
+  {
+    "id": 41769,
+    "name": "물만골",
+    "en": "Mulmangol",
+    "line": "부산3",
+    "icon": "🚇",
+    "region": "부산",
+    "lat": 35.17681,
+    "lng": 129.08575
+  },
+  {
+    "id": 67151,
+    "name": "연산",
+    "en": "Yeonsan",
+    "line": "부산3",
+    "icon": "🚇",
+    "region": "부산",
+    "lat": 35.18614,
+    "lng": 129.08147
+  },
+  {
+    "id": 35881,
+    "name": "거제",
+    "en": "Geoje",
+    "line": "부산3",
+    "icon": "🚇",
+    "region": "부산",
+    "lat": 35.18858,
+    "lng": 129.07394
+  },
+  {
+    "id": 3062,
+    "name": "종합운동장",
+    "en": "Sports Complex",
+    "line": "부산3",
+    "icon": "🚇",
+    "region": "부산",
+    "lat": 35.19125,
+    "lng": 129.0675
+  },
+  {
+    "id": 50099,
+    "name": "사직",
+    "en": "Sajik",
+    "line": "부산3",
+    "icon": "🚇",
+    "region": "부산",
+    "lat": 35.199,
+    "lng": 129.065
+  },
+  {
+    "id": 43849,
+    "name": "미남",
+    "en": "Minam",
+    "line": "부산3",
+    "icon": "🚇",
+    "region": "부산",
+    "lat": 35.2055,
+    "lng": 129.06806
+  },
+  {
+    "id": 75622,
+    "name": "만덕",
+    "en": "Mandeok",
+    "line": "부산3",
+    "icon": "🚇",
+    "region": "부산",
+    "lat": 35.213,
+    "lng": 129.0365
+  },
+  {
+    "id": 51138,
+    "name": "남산정",
+    "en": "Namsanjeong",
+    "line": "부산3",
+    "icon": "🚇",
+    "region": "부산",
+    "lat": 35.21333,
+    "lng": 129.02392
+  },
+  {
+    "id": 12659,
+    "name": "숙등",
+    "en": "Sukdeung",
+    "line": "부산3",
+    "icon": "🚇",
+    "region": "부산",
+    "lat": 35.21197,
+    "lng": 129.01275
+  },
+  {
+    "id": 57391,
+    "name": "덕천",
+    "en": "Deokcheon",
+    "line": "부산3",
+    "icon": "🚇",
+    "region": "부산",
+    "lat": 35.210139,
+    "lng": 129.005545
+  },
+  {
+    "id": 99084,
+    "name": "구포",
+    "en": "Gupo",
+    "line": "부산3",
+    "icon": "🚇",
+    "region": "부산",
+    "lat": 35.20644,
+    "lng": 128.99631
+  },
+  {
+    "id": 98512,
+    "name": "강서구청",
+    "en": "Gangseo-gu Office",
+    "line": "부산3",
+    "icon": "🚇",
+    "region": "부산",
+    "lat": 35.21125,
+    "lng": 128.98175
+  },
+  {
+    "id": 85410,
+    "name": "체육공원",
+    "en": "Sports Park",
+    "line": "부산3",
+    "icon": "🚇",
+    "region": "부산",
+    "lat": 35.21261,
+    "lng": 128.96894
+  },
+  {
+    "id": 75541,
+    "name": "대저",
+    "en": "Daejeo",
+    "line": "부산3",
+    "icon": "🚇",
+    "region": "부산",
+    "lat": 35.21343,
+    "lng": 128.96074
+  },
+  {
+    "id": 38938,
+    "name": "사상",
+    "en": "Sasang",
+    "line": "부산김해경전철",
+    "icon": "🚇",
+    "region": "부산",
+    "lat": 35.1623018,
+    "lng": 128.9859408
+  },
+  {
+    "id": 57953,
+    "name": "괘법르네시떼",
+    "en": "Gwaebeop Renecite",
+    "line": "부산김해경전철",
+    "icon": "🚇",
+    "region": "부산",
+    "lat": 35.1632616,
+    "lng": 128.9776836
+  },
+  {
+    "id": 64905,
+    "name": "서부산유통지구",
+    "en": "Seobusan Yutongjigu",
+    "line": "부산김해경전철",
+    "icon": "🚉",
+    "region": "부산",
+    "lat": 35.16640204,
+    "lng": 128.9548881
+  },
+  {
+    "id": 47093,
+    "name": "공항",
+    "en": "Gimhae International Airport",
+    "line": "부산김해경전철",
+    "icon": "🚇",
+    "region": "부산",
+    "lat": 35.171906,
+    "lng": 128.948586
+  },
+  {
+    "id": 37598,
+    "name": "덕두",
+    "en": "Deokdu",
+    "line": "부산김해경전철",
+    "icon": "🚇",
+    "region": "부산",
+    "lat": 35.182001,
+    "lng": 128.954198
+  },
+  {
+    "id": 99339,
+    "name": "등구",
+    "en": "Deunggu",
+    "line": "부산김해경전철",
+    "icon": "🚇",
+    "region": "부산",
+    "lat": 35.196143,
+    "lng": 128.963599
+  },
+  {
+    "id": 31479,
+    "name": "대저",
+    "en": "Daejeo",
+    "line": "부산김해경전철",
+    "icon": "🚇",
+    "region": "부산",
+    "lat": 35.213066,
+    "lng": 128.960562
+  },
+  {
+    "id": 54779,
+    "name": "평강",
+    "en": "Pyeonggang",
+    "line": "부산김해경전철",
+    "icon": "🚇",
+    "region": "부산",
+    "lat": 35.214105,
+    "lng": 128.950825
+  },
+  {
+    "id": 82776,
+    "name": "대사",
+    "en": "Daesa",
+    "line": "부산김해경전철",
+    "icon": "🚇",
+    "region": "부산",
+    "lat": 35.217657,
+    "lng": 128.938417
+  },
+  {
+    "id": 90073,
+    "name": "불암",
+    "en": "Buram",
+    "line": "부산김해경전철",
+    "icon": "🚇",
+    "region": "부산",
+    "lat": 35.222162,
+    "lng": 128.927893
+  },
+  {
+    "id": 92944,
+    "name": "지내",
+    "en": "Jinae",
+    "line": "부산김해경전철",
+    "icon": "🚇",
+    "region": "부산",
+    "lat": 35.2275,
+    "lng": 128.923721
+  },
+  {
+    "id": 72143,
+    "name": "김해대학",
+    "en": "Gimhae College",
+    "line": "부산김해경전철",
+    "icon": "🚇",
+    "region": "부산",
+    "lat": 35.22899,
+    "lng": 128.915612
+  },
+  {
+    "id": 57690,
+    "name": "인제대",
+    "en": "Inje Univ",
+    "line": "부산김해경전철",
+    "icon": "🚇",
+    "region": "부산",
+    "lat": 35.228099,
+    "lng": 128.901736
+  },
+  {
+    "id": 50437,
+    "name": "김해시청",
+    "en": "Gimhae City Hall",
+    "line": "부산김해경전철",
+    "icon": "🚇",
+    "region": "부산",
+    "lat": 35.227103,
+    "lng": 128.89041
+  },
+  {
+    "id": 48623,
+    "name": "부원",
+    "en": "Buwon",
+    "line": "부산김해경전철",
+    "icon": "🚇",
+    "region": "부산",
+    "lat": 35.22646624,
+    "lng": 128.8838997
+  },
+  {
+    "id": 77783,
+    "name": "봉황",
+    "en": "Bonghwang",
+    "line": "부산김해경전철",
+    "icon": "🚇",
+    "region": "부산",
+    "lat": 35.22726757,
+    "lng": 128.8743069
+  },
+  {
+    "id": 21759,
+    "name": "수로왕릉",
+    "en": "Royal Tomb of King Suro",
+    "line": "부산김해경전철",
+    "icon": "🚇",
+    "region": "부산",
+    "lat": 35.2328215,
+    "lng": 128.8721409
+  },
+  {
+    "id": 17010,
+    "name": "박물관",
+    "en": "museum",
+    "line": "부산김해경전철",
+    "icon": "🚇",
+    "region": "부산",
+    "lat": 35.24006467,
+    "lng": 128.8718628
+  },
+  {
+    "id": 37866,
+    "name": "연지공원",
+    "en": "Yeonji Park",
+    "line": "부산김해경전철",
+    "icon": "🚇",
+    "region": "부산",
+    "lat": 35.24965763,
+    "lng": 128.8692908
+  },
+  {
+    "id": 3921,
+    "name": "장신대",
+    "en": "presbyterian Univ.",
+    "line": "부산김해경전철",
+    "icon": "🚇",
+    "region": "부산",
+    "lat": 35.25955642,
+    "lng": 128.8671142
+  },
+  {
+    "id": 79009,
+    "name": "가야대",
+    "en": "Kaya Univ.",
+    "line": "부산김해경전철",
+    "icon": "🚇",
+    "region": "부산",
+    "lat": 35.26672721,
+    "lng": 128.8650703
+  },
+  {
+    "id": 98801,
+    "name": "왕십리역",
+    "en": "Wangsimni",
+    "line": "수인분당",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.5610128,
+    "lng": 127.038705
+  },
+  {
+    "id": 22386,
+    "name": "선릉역",
+    "en": "Seolleung",
+    "line": "수인분당",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.504479,
+    "lng": 127.048941
+  },
+  {
+    "id": 91157,
+    "name": "한티역",
+    "en": "Hanti",
+    "line": "수인분당",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.496208,
+    "lng": 127.052883
+  },
+  {
+    "id": 28607,
+    "name": "도곡역",
+    "en": "Dogok",
+    "line": "수인분당",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.490914,
+    "lng": 127.055393
+  },
+  {
+    "id": 53840,
+    "name": "구룡역",
+    "en": "Guryong",
+    "line": "수인분당",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.486985,
+    "lng": 127.059496
+  },
+  {
+    "id": 25285,
+    "name": "개포동역",
+    "en": "Gaepo-dong",
+    "line": "수인분당",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.489112,
+    "lng": 127.066027
+  },
+  {
+    "id": 1539,
+    "name": "대모산입구역",
+    "en": "Daemosan",
+    "line": "수인분당",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.491347,
+    "lng": 127.072702
+  },
+  {
+    "id": 39741,
+    "name": "수서역",
+    "en": "Suseo",
+    "line": "수인분당",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.487633,
+    "lng": 127.101118
+  },
+  {
+    "id": 52944,
+    "name": "복정역",
+    "en": "Bokjeong",
+    "line": "수인분당",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.469753,
+    "lng": 127.126627
+  },
+  {
+    "id": 39782,
+    "name": "수원역(분당)",
+    "en": "Suwon",
+    "line": "수인분당",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.266162,
+    "lng": 127.000082
+  },
+  {
+    "id": 67471,
+    "name": "서울숲역",
+    "en": "Seoul-forest",
+    "line": "수인분당",
+    "icon": "🏛️",
+    "region": "기타",
+    "lat": 37.543647,
+    "lng": 127.044686
+  },
+  {
+    "id": 95080,
+    "name": "압구정로데오역",
+    "en": "Apgujeongrodeo",
+    "line": "수인분당",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.527385,
+    "lng": 127.040555
+  },
+  {
+    "id": 32181,
+    "name": "강남구청역",
+    "en": "Gangnam-Gu Office",
+    "line": "수인분당",
+    "icon": "💼",
+    "region": "기타",
+    "lat": 37.516572,
+    "lng": 127.041575
+  },
+  {
+    "id": 52719,
+    "name": "선정릉역",
+    "en": "Seonjeongneung",
+    "line": "수인분당",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.510775,
+    "lng": 127.043717
+  },
+  {
+    "id": 2766,
+    "name": "가천대역",
+    "en": "Gachon Univ.",
+    "line": "수인분당",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.448784,
+    "lng": 127.126677
+  },
+  {
+    "id": 30921,
+    "name": "태평역",
+    "en": "Taepyeong",
+    "line": "수인분당",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.439842,
+    "lng": 127.127746
+  },
+  {
+    "id": 71989,
+    "name": "모란역",
+    "en": "Moran",
+    "line": "수인분당",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.432124,
+    "lng": 127.129064
+  },
+  {
+    "id": 91166,
+    "name": "야탑역",
+    "en": "Yatap",
+    "line": "수인분당",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.41132,
+    "lng": 127.128661
+  },
+  {
+    "id": 55854,
+    "name": "서현역",
+    "en": "Seohyeon",
+    "line": "수인분당",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.384931,
+    "lng": 127.123249
+  },
+  {
+    "id": 40315,
+    "name": "수내역",
+    "en": "Sunae",
+    "line": "수인분당",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.378435,
+    "lng": 127.114216
+  },
+  {
+    "id": 20386,
+    "name": "정자역",
+    "en": "Jeongja",
+    "line": "수인분당",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.366037,
+    "lng": 127.108091
+  },
+  {
+    "id": 28751,
+    "name": "미금역",
+    "en": "Migeum",
+    "line": "수인분당",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.350078,
+    "lng": 127.108952
+  },
+  {
+    "id": 79840,
+    "name": "오리역",
+    "en": "Ori",
+    "line": "수인분당",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.339832,
+    "lng": 127.108985
+  },
+  {
+    "id": 99980,
+    "name": "이매역",
+    "en": "Imae",
+    "line": "수인분당",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.395846,
+    "lng": 127.128272
+  },
+  {
+    "id": 42247,
+    "name": "보정역",
+    "en": "Bojeong",
+    "line": "수인분당",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.31274,
+    "lng": 127.108219
+  },
+  {
+    "id": 24768,
+    "name": "죽전역",
+    "en": "Jukjeon",
+    "line": "수인분당",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.324575,
+    "lng": 127.107385
+  },
+  {
+    "id": 37382,
+    "name": "구성역",
+    "en": "Guseong",
+    "line": "수인분당",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.299013,
+    "lng": 127.105664
+  },
+  {
+    "id": 52061,
+    "name": "신갈역",
+    "en": "Singal",
+    "line": "수인분당",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.286127,
+    "lng": 127.111311
+  },
+  {
+    "id": 59010,
+    "name": "기흥역",
+    "en": "Giheung",
+    "line": "수인분당",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.275657,
+    "lng": 127.115944
+  },
+  {
+    "id": 90473,
+    "name": "상갈역",
+    "en": "Sanggal",
+    "line": "수인분당",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.261797,
+    "lng": 127.108718
+  },
+  {
+    "id": 31010,
+    "name": "청명역",
+    "en": "Cheongmyeong",
+    "line": "수인분당",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.259485,
+    "lng": 127.078945
+  },
+  {
+    "id": 49363,
+    "name": "영통역",
+    "en": "Yeongtong",
+    "line": "수인분당",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.251521,
+    "lng": 127.071341
+  },
+  {
+    "id": 14723,
+    "name": "망포역",
+    "en": "Mangpo",
+    "line": "수인분당",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.245793,
+    "lng": 127.057367
+  },
+  {
+    "id": 92133,
+    "name": "매탄권선역",
+    "en": "Maetan Gwonseon",
+    "line": "수인분당",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.252458,
+    "lng": 127.040824
+  },
+  {
+    "id": 81582,
+    "name": "수원시청역",
+    "en": "Suwon City Hall",
+    "line": "수인분당",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.261941,
+    "lng": 127.030736
+  },
+  {
+    "id": 17836,
+    "name": "매교역",
+    "en": "Maegyo",
+    "line": "수인분당",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.265502,
+    "lng": 127.015657
+  },
+  {
+    "id": 99931,
+    "name": "개화",
+    "en": "Gaehwa",
+    "line": "9호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.578611,
+    "lng": 126.798333
+  },
+  {
+    "id": 86964,
+    "name": "김포공항",
+    "en": "Gimpo Int'l Airport",
+    "line": "9호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.562056,
+    "lng": 126.801633
+  },
+  {
+    "id": 16890,
+    "name": "공항시장",
+    "en": "Airport Market",
+    "line": "9호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.563611,
+    "lng": 126.810278
+  },
+  {
+    "id": 74880,
+    "name": "신방화",
+    "en": "Sinbanghwa",
+    "line": "9호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.5675,
+    "lng": 126.816667
+  },
+  {
+    "id": 49884,
+    "name": "마곡나루(서울식물원)",
+    "en": "Magongnaru(Seoul Botanic Park)",
+    "line": "9호선",
+    "icon": "🏛️",
+    "region": "서울",
+    "lat": 37.566717,
+    "lng": 126.8276071
+  },
+  {
+    "id": 19667,
+    "name": "양천향교",
+    "en": "Yangcheon Hyanggyo",
+    "line": "9호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.568333,
+    "lng": 126.841389
+  },
+  {
+    "id": 28639,
+    "name": "가양",
+    "en": "Gayang",
+    "line": "9호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.561111,
+    "lng": 126.855078
+  },
+  {
+    "id": 42095,
+    "name": "증미",
+    "en": "Jeungmi",
+    "line": "9호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.55785,
+    "lng": 126.861067
+  },
+  {
+    "id": 94821,
+    "name": "등촌",
+    "en": "Deungchon",
+    "line": "9호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.551111,
+    "lng": 126.864722
+  },
+  {
+    "id": 99836,
+    "name": "염창",
+    "en": "Yeomchang",
+    "line": "9호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.546944,
+    "lng": 126.874722
+  },
+  {
+    "id": 39246,
+    "name": "신목동",
+    "en": "Sinmokdong",
+    "line": "9호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.544167,
+    "lng": 126.883056
+  },
+  {
+    "id": 40344,
+    "name": "선유도",
+    "en": "Seonyudo",
+    "line": "9호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.537778,
+    "lng": 126.893889
+  },
+  {
+    "id": 61816,
+    "name": "당산",
+    "en": "Dangsan",
+    "line": "9호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.533844,
+    "lng": 126.902222
+  },
+  {
+    "id": 32812,
+    "name": "국회의사당",
+    "en": "National Assembly",
+    "line": "9호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.528611,
+    "lng": 126.9175
+  },
+  {
+    "id": 82198,
+    "name": "여의도",
+    "en": "Yeouido",
+    "line": "9호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.521744,
+    "lng": 126.924167
+  },
+  {
+    "id": 55200,
+    "name": "샛강",
+    "en": "Saetgang",
+    "line": "9호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.5173,
+    "lng": 126.9284
+  },
+  {
+    "id": 5214,
+    "name": "노량진",
+    "en": "Noryangjin",
+    "line": "9호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.513667,
+    "lng": 126.940917
+  },
+  {
+    "id": 84806,
+    "name": "노들",
+    "en": "Nodeul",
+    "line": "9호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.512726,
+    "lng": 126.953096
+  },
+  {
+    "id": 90207,
+    "name": "흑석(중앙대입구)",
+    "en": "Heukseok(Chung-Ang Univ.)",
+    "line": "9호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.508889,
+    "lng": 126.963611
+  },
+  {
+    "id": 28243,
+    "name": "동작(현충원)",
+    "en": "Dongjak(Seoul National Cemetery)",
+    "line": "9호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.502878,
+    "lng": 126.978278
+  },
+  {
+    "id": 93906,
+    "name": "구반포",
+    "en": "Gubanpo",
+    "line": "9호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.501389,
+    "lng": 126.987222
+  },
+  {
+    "id": 38629,
+    "name": "신반포",
+    "en": "Sinbanpo",
+    "line": "9호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.505933,
+    "lng": 127.004044
+  },
+  {
+    "id": 45931,
+    "name": "고속터미널",
+    "en": "Express Bus Terminal",
+    "line": "9호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.505933,
+    "lng": 127.004044
+  },
+  {
+    "id": 24844,
+    "name": "사평",
+    "en": "Sapyeong",
+    "line": "9호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.504161,
+    "lng": 127.015219
+  },
+  {
+    "id": 26330,
+    "name": "신논현",
+    "en": "Sinnonhyeon",
+    "line": "9호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.504444,
+    "lng": 127.024417
+  },
+  {
+    "id": 96522,
+    "name": "능곡역",
+    "en": "Neunggok",
+    "line": "서해선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.618741,
+    "lng": 126.820845
+  },
+  {
+    "id": 24257,
+    "name": "곡산역",
+    "en": "Goksan",
+    "line": "서해선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.645729,
+    "lng": 126.801877
+  },
+  {
+    "id": 23347,
+    "name": "백마역",
+    "en": "Baengma",
+    "line": "서해선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.658346,
+    "lng": 126.794401
+  },
+  {
+    "id": 37977,
+    "name": "풍산역",
+    "en": "Pungsan",
+    "line": "서해선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.672173,
+    "lng": 126.786355
+  },
+  {
+    "id": 72747,
+    "name": "일산역",
+    "en": "Ilsan",
+    "line": "서해선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.682231,
+    "lng": 126.769521
+  },
+  {
+    "id": 62383,
+    "name": "대곡역",
+    "en": "Daegok",
+    "line": "서해선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.631629,
+    "lng": 126.809802
+  },
+  {
+    "id": 70604,
+    "name": "김포공항역",
+    "en": "Gimpo Int'l Airport",
+    "line": "서해선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.5621179,
+    "lng": 126.804056
+  },
+  {
+    "id": 29297,
+    "name": "원종역",
+    "en": "Wonjong",
+    "line": "서해선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.5240628,
+    "lng": 126.8048386
+  },
+  {
+    "id": 72347,
+    "name": "부천종합운동장역",
+    "en": "Bucheon Stadium",
+    "line": "서해선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.505852,
+    "lng": 126.797498
+  },
+  {
+    "id": 67198,
+    "name": "소사역",
+    "en": "Sosa",
+    "line": "서해선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.482755,
+    "lng": 126.7950654
+  },
+  {
+    "id": 79608,
+    "name": "소새울역",
+    "en": "Sosaeul",
+    "line": "서해선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.4685046,
+    "lng": 126.797228
+  },
+  {
+    "id": 33709,
+    "name": "시흥대야역",
+    "en": "Siheung Daeya",
+    "line": "서해선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.4504787,
+    "lng": 126.793142
+  },
+  {
+    "id": 82511,
+    "name": "신천역",
+    "en": "Sincheon",
+    "line": "서해선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.4391147,
+    "lng": 126.786835
+  },
+  {
+    "id": 75680,
+    "name": "신현역",
+    "en": "Sinhyeon",
+    "line": "서해선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.4091399,
+    "lng": 126.78788
+  },
+  {
+    "id": 23910,
+    "name": "시흥시청역",
+    "en": "Siheung City Hall",
+    "line": "서해선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.3814109,
+    "lng": 126.805946
+  },
+  {
+    "id": 89391,
+    "name": "시흥능곡역",
+    "en": "Siheung Neunggok",
+    "line": "서해선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.3699903,
+    "lng": 126.808594
+  },
+  {
+    "id": 64114,
+    "name": "달미역",
+    "en": "Dalmi",
+    "line": "서해선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.3490003,
+    "lng": 126.809318
+  },
+  {
+    "id": 28684,
+    "name": "선부역",
+    "en": "Seonbu",
+    "line": "서해선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.33459,
+    "lng": 126.81
+  },
+  {
+    "id": 97496,
+    "name": "초지역",
+    "en": "Choji",
+    "line": "서해선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.320083,
+    "lng": 126.808051
+  },
+  {
+    "id": 8858,
+    "name": "시우역",
+    "en": "Siu",
+    "line": "서해선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.3130967,
+    "lng": 126.795503
+  },
+  {
+    "id": 31641,
+    "name": "원시역",
+    "en": "Wonsi",
+    "line": "서해선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.302654,
+    "lng": 126.7867897
+  },
+  {
+    "id": 16399,
+    "name": "언주",
+    "en": "Eonju",
+    "line": "9호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.507287,
+    "lng": 127.033868
+  },
+  {
+    "id": 60667,
+    "name": "선정릉",
+    "en": "Seonjeongneung",
+    "line": "9호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.51028,
+    "lng": 127.0437593
+  },
+  {
+    "id": 70377,
+    "name": "삼성중앙",
+    "en": "Samseongjungang",
+    "line": "9호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.513011,
+    "lng": 127.053282
+  },
+  {
+    "id": 67501,
+    "name": "봉은사",
+    "en": "Bongeunsa",
+    "line": "9호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.514219,
+    "lng": 127.060245
+  },
+  {
+    "id": 66093,
+    "name": "종합운동장",
+    "en": "Sports Complex",
+    "line": "9호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.511156,
+    "lng": 127.076917
+  },
+  {
+    "id": 70186,
+    "name": "삼전",
+    "en": "Samjeon",
+    "line": "9호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.504531,
+    "lng": 127.087211
+  },
+  {
+    "id": 69704,
+    "name": "석촌고분",
+    "en": "Seokchon Gobun",
+    "line": "9호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.502439,
+    "lng": 127.096611
+  },
+  {
+    "id": 76632,
+    "name": "석촌",
+    "en": "Seokchon",
+    "line": "9호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.505078,
+    "lng": 127.106944
+  },
+  {
+    "id": 63678,
+    "name": "송파나루",
+    "en": "Songpanaru",
+    "line": "9호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.51055,
+    "lng": 127.112451
+  },
+  {
+    "id": 28043,
+    "name": "한성백제",
+    "en": "Hanseong Baekje",
+    "line": "9호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.516369,
+    "lng": 127.116211
+  },
+  {
+    "id": 94720,
+    "name": "올림픽공원(한국체대)",
+    "en": "Olympic Park",
+    "line": "9호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.516111,
+    "lng": 127.130333
+  },
+  {
+    "id": 82432,
+    "name": "둔촌오륜",
+    "en": "Dunchon Oryun",
+    "line": "9호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.519339,
+    "lng": 127.138619
+  },
+  {
+    "id": 35072,
+    "name": "중앙보훈병원",
+    "en": "VHS Medical Center",
+    "line": "9호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.528807,
+    "lng": 127.148488
+  },
+  {
+    "id": 73481,
+    "name": "샛강",
+    "en": "Saetgang",
+    "line": "수도권 경량도시철도 신림선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.517219937,
+    "lng": 126.929403964
+  },
+  {
+    "id": 16173,
+    "name": "대방",
+    "en": "Daebang",
+    "line": "수도권 경량도시철도 신림선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.512840166,
+    "lng": 126.925316781
+  },
+  {
+    "id": 19912,
+    "name": "서울지방병무청",
+    "en": "Seoul Regional Office of Millitary Manpower",
+    "line": "수도권 경량도시철도 신림선",
+    "icon": "🏛️",
+    "region": "서울",
+    "lat": 37.50604687,
+    "lng": 126.922783404
+  },
+  {
+    "id": 72346,
+    "name": "보라매",
+    "en": "Boramae",
+    "line": "수도권 경량도시철도 신림선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.500312709,
+    "lng": 126.920485864
+  },
+  {
+    "id": 10596,
+    "name": "보라매공원",
+    "en": "Boramae Park",
+    "line": "수도권 경량도시철도 신림선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.495225405,
+    "lng": 126.918258811
+  },
+  {
+    "id": 47823,
+    "name": "보라매병원",
+    "en": "Boramae Medical Center",
+    "line": "수도권 경량도시철도 신림선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.4929607,
+    "lng": 126.923886
+  },
+  {
+    "id": 35412,
+    "name": "당곡",
+    "en": "Danggok",
+    "line": "수도권 경량도시철도 신림선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.490039105,
+    "lng": 126.927568759
+  },
+  {
+    "id": 67935,
+    "name": "신림",
+    "en": "Sillim",
+    "line": "수도권 경량도시철도 신림선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.484890755,
+    "lng": 126.92960992
+  },
+  {
+    "id": 97985,
+    "name": "서원",
+    "en": "Seowon",
+    "line": "수도권 경량도시철도 신림선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.47827336,
+    "lng": 126.933228219
+  },
+  {
+    "id": 8923,
+    "name": "서울대벤처타운",
+    "en": "Seoul National Univ. Venture Town",
+    "line": "수도권 경량도시철도 신림선",
+    "icon": "🏛️",
+    "region": "서울",
+    "lat": 37.47204068,
+    "lng": 126.933976556
+  },
+  {
+    "id": 96596,
+    "name": "관악산",
+    "en": "Gwanaksan",
+    "line": "수도권 경량도시철도 신림선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.46916896,
+    "lng": 126.944954837
+  },
+  {
+    "id": 2294,
+    "name": "별내역",
+    "en": "Byeollae",
+    "line": "수도권 광역철도 8호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.642517,
+    "lng": 127.1273
+  },
+  {
+    "id": 35881,
+    "name": "다산역",
+    "en": "Dasan",
+    "line": "수도권 광역철도 8호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.62437,
+    "lng": 127.1498
+  },
+  {
+    "id": 15171,
+    "name": "한대앞역",
+    "en": "Hangyang Univ. at Ansan",
+    "line": "수인분당",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.309985,
+    "lng": 126.853506
+  },
+  {
+    "id": 99750,
+    "name": "중앙역",
+    "en": "Jungang",
+    "line": "수인분당",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.316055,
+    "lng": 126.838532
+  },
+  {
+    "id": 8909,
+    "name": "고잔역",
+    "en": "Gojan",
+    "line": "수인분당",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.316821,
+    "lng": 126.823094
+  },
+  {
+    "id": 25360,
+    "name": "초지역",
+    "en": "Choji",
+    "line": "수인분당",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.320583,
+    "lng": 126.806151
+  },
+  {
+    "id": 99005,
+    "name": "안산역",
+    "en": "Ansan",
+    "line": "수인분당",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.327006,
+    "lng": 126.788748
+  },
+  {
+    "id": 26284,
+    "name": "능길역",
+    "en": "Neunggil",
+    "line": "수인분당",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.337488,
+    "lng": 126.767306
+  },
+  {
+    "id": 77865,
+    "name": "정왕역",
+    "en": "Jeongwang",
+    "line": "수인분당",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.351816,
+    "lng": 126.742844
+  },
+  {
+    "id": 17702,
+    "name": "오이도역",
+    "en": "Oido",
+    "line": "수인분당",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.361773,
+    "lng": 126.738437
+  },
+  {
+    "id": 25698,
+    "name": "고색역",
+    "en": "Gosaek",
+    "line": "수인분당",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.249829,
+    "lng": 126.9805899
+  },
+  {
+    "id": 27510,
+    "name": "오목천역",
+    "en": "Omokcheon",
+    "line": "수인분당",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.243011,
+    "lng": 126.9636354
+  },
+  {
+    "id": 43298,
+    "name": "어천역",
+    "en": "Eocheon",
+    "line": "수인분당",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.250076,
+    "lng": 126.908805
+  },
+  {
+    "id": 31735,
+    "name": "야목역",
+    "en": "Yamok",
+    "line": "수인분당",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.261211,
+    "lng": 126.884029
+  },
+  {
+    "id": 671,
+    "name": "사리역",
+    "en": "Sari",
+    "line": "수인분당",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.290809,
+    "lng": 126.857172
+  },
+  {
+    "id": 97439,
+    "name": "달월역",
+    "en": "Darwol",
+    "line": "수인분당",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.379993,
+    "lng": 126.745431
+  },
+  {
+    "id": 74018,
+    "name": "월곶역",
+    "en": "Wolgot",
+    "line": "수인분당",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.39189,
+    "lng": 126.742741
+  },
+  {
+    "id": 80569,
+    "name": "소래포구역",
+    "en": "Soraepogu",
+    "line": "수인분당",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.400963,
+    "lng": 126.733533
+  },
+  {
+    "id": 19105,
+    "name": "인천논현역",
+    "en": "Incheon Nonhyeon",
+    "line": "수인분당",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.400641,
+    "lng": 126.722495
+  },
+  {
+    "id": 5105,
+    "name": "호구포역",
+    "en": "Hogupo",
+    "line": "수인분당",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.401622,
+    "lng": 126.708682
+  },
+  {
+    "id": 17912,
+    "name": "남동인더스파크역",
+    "en": "Namdong Induspark",
+    "line": "수인분당",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.407668,
+    "lng": 126.695613
+  },
+  {
+    "id": 13914,
+    "name": "원인재역",
+    "en": "Woninjae",
+    "line": "수인분당",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.412921,
+    "lng": 126.686952
+  },
+  {
+    "id": 31107,
+    "name": "연수역",
+    "en": "Yeonsu",
+    "line": "수인분당",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.417769,
+    "lng": 126.678991
+  },
+  {
+    "id": 39012,
+    "name": "송도역",
+    "en": "Songdo",
+    "line": "수인분당",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.429714,
+    "lng": 126.654486
+  },
+  {
+    "id": 95259,
+    "name": "인하대역",
+    "en": "Inha Univ.",
+    "line": "수인분당",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.448191,
+    "lng": 126.649832
+  },
+  {
+    "id": 91948,
+    "name": "숭의역",
+    "en": "Sungui",
+    "line": "수인분당",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.460891,
+    "lng": 126.638035
+  },
+  {
+    "id": 6377,
+    "name": "신포역",
+    "en": "Sinpo",
+    "line": "수인분당",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.468442,
+    "lng": 126.624509
+  },
+  {
+    "id": 80865,
+    "name": "인천역",
+    "en": "Incheon",
+    "line": "수인분당",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.476364,
+    "lng": 126.6174236
+  },
+  {
+    "id": 58005,
+    "name": "신사",
+    "en": "Sinsa",
+    "line": "수인분당",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.51612526,
+    "lng": 127.0197609
+  },
+  {
+    "id": 41897,
+    "name": "논현",
+    "en": "Nonhyeon",
+    "line": "수인분당",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.5108115,
+    "lng": 127.0213658
+  },
+  {
+    "id": 8539,
+    "name": "신논현",
+    "en": "Sinnonhyeon",
+    "line": "수인분당",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.50405543,
+    "lng": 127.0247306
+  },
+  {
+    "id": 73300,
+    "name": "강남",
+    "en": "Gangnam",
+    "line": "수인분당",
+    "icon": "💼",
+    "region": "서울",
+    "lat": 37.49738544,
+    "lng": 127.0278789
+  },
+  {
+    "id": 90585,
+    "name": "양재(서초구청)",
+    "en": "Yangjae(Secho-gu Office)",
+    "line": "수인분당",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.48445352,
+    "lng": 127.0340995
+  },
+  {
+    "id": 43436,
+    "name": "양재시민의숲(매헌)",
+    "en": "Yangjae Citizen's Forest(Maeheon)",
+    "line": "수인분당",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.47096388,
+    "lng": 127.0384203
+  },
+  {
+    "id": 50827,
+    "name": "청계산입구",
+    "en": "Cheonggyesan",
+    "line": "수인분당",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.44871485,
+    "lng": 127.0543396
+  },
+  {
+    "id": 35480,
+    "name": "판교",
+    "en": "Pangyo(Pangyo Techno Valley)",
+    "line": "수인분당",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.39501475,
+    "lng": 127.1112107
+  },
+  {
+    "id": 91622,
+    "name": "정자",
+    "en": "Jeongja",
+    "line": "수인분당",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.36750101,
+    "lng": 127.1084859
+  },
+  {
+    "id": 41377,
+    "name": "미금",
+    "en": "Migeum",
+    "line": "수인분당",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.35058332,
+    "lng": 127.1088028
+  },
+  {
+    "id": 35006,
+    "name": "동천",
+    "en": "Dongcheon",
+    "line": "수인분당",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.338068413,
+    "lng": 127.1028937
+  },
+  {
+    "id": 32307,
+    "name": "수지구청",
+    "en": "Suji-gu Office",
+    "line": "수인분당",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.32250096,
+    "lng": 127.09477813
+  },
+  {
+    "id": 72130,
+    "name": "성복",
+    "en": "Seongbok",
+    "line": "수인분당",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.31374251,
+    "lng": 127.08057578
+  },
+  {
+    "id": 12637,
+    "name": "상현",
+    "en": "Sanghyeon",
+    "line": "수인분당",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.29808526,
+    "lng": 127.0694799
+  },
+  {
+    "id": 31734,
+    "name": "광교중앙(아주대)",
+    "en": "Gwanggyo Jungang",
+    "line": "수인분당",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.2884537,
+    "lng": 127.051609
+  },
+  {
+    "id": 15943,
+    "name": "광교(경기대)",
+    "en": "Gwanggyo (Kyonggi Univ.)",
+    "line": "수인분당",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.30173474,
+    "lng": 127.0448561
+  },
+  {
+    "id": 43158,
+    "name": "선바위역",
+    "en": "Seonbawi",
+    "line": "안산과천선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.451854,
+    "lng": 127.002164
+  },
+  {
+    "id": 17372,
+    "name": "경마공원역",
+    "en": "Seoul Racecourse park",
+    "line": "안산과천선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.443987,
+    "lng": 127.007899
+  },
+  {
+    "id": 46753,
+    "name": "대공원역",
+    "en": "Seoul Grand park",
+    "line": "안산과천선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.435724,
+    "lng": 127.006474
+  },
+  {
+    "id": 17944,
+    "name": "과천역",
+    "en": "Gwacheon",
+    "line": "안산과천선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.432805,
+    "lng": 126.996404
+  },
+  {
+    "id": 68122,
+    "name": "정부과천청사역",
+    "en": "Government Complex Gwacheon",
+    "line": "안산과천선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.426445,
+    "lng": 126.989802
+  },
+  {
+    "id": 48810,
+    "name": "인덕원역",
+    "en": "Indeogwon",
+    "line": "안산과천선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.401901,
+    "lng": 126.976718
+  },
+  {
+    "id": 14163,
+    "name": "평촌역",
+    "en": "Pyeongchon",
+    "line": "안산과천선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.394346,
+    "lng": 126.963881
+  },
+  {
+    "id": 40969,
+    "name": "범계역",
+    "en": "Beomgye",
+    "line": "안산과천선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.389783,
+    "lng": 126.950752
+  },
+  {
+    "id": 92694,
+    "name": "금정역",
+    "en": "Geumjeong",
+    "line": "안산과천선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.371957,
+    "lng": 126.943611
+  },
+  {
+    "id": 645,
+    "name": "산본역",
+    "en": "Sanbon",
+    "line": "안산과천선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.358019,
+    "lng": 126.932969
+  },
+  {
+    "id": 13901,
+    "name": "대야미역",
+    "en": "Daeyami",
+    "line": "안산과천선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.328304,
+    "lng": 126.917161
+  },
+  {
+    "id": 18353,
+    "name": "반월역",
+    "en": "Banwol",
+    "line": "안산과천선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.312244,
+    "lng": 126.903684
+  },
+  {
+    "id": 65187,
+    "name": "상록수역",
+    "en": "Sangnoksu",
+    "line": "안산과천선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.302845,
+    "lng": 126.866533
+  },
+  {
+    "id": 47240,
+    "name": "한대앞역",
+    "en": "Hanyang Univ. at Ansan",
+    "line": "안산과천선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.309685,
+    "lng": 126.853656
+  },
+  {
+    "id": 23946,
+    "name": "중앙역",
+    "en": "Jungang",
+    "line": "안산과천선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.316055,
+    "lng": 126.838532
+  },
+  {
+    "id": 20256,
+    "name": "고잔역",
+    "en": "Gojan",
+    "line": "안산과천선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.316821,
+    "lng": 126.823094
+  },
+  {
+    "id": 86330,
+    "name": "초지역",
+    "en": "Choji",
+    "line": "안산과천선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.320583,
+    "lng": 126.806151
+  },
+  {
+    "id": 6936,
+    "name": "안산역",
+    "en": "Ansan",
+    "line": "안산과천선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.327006,
+    "lng": 126.788748
+  },
+  {
+    "id": 16366,
+    "name": "능길역",
+    "en": "Neunggil",
+    "line": "안산과천선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.337488,
+    "lng": 126.767306
+  },
+  {
+    "id": 15620,
+    "name": "정왕역",
+    "en": "Jeongwang",
+    "line": "안산과천선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.351816,
+    "lng": 126.742844
+  },
+  {
+    "id": 24327,
+    "name": "오이도역",
+    "en": "Oido",
+    "line": "안산과천선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.361773,
+    "lng": 126.738437
+  },
+  {
+    "id": 87611,
+    "name": "수리산역",
+    "en": "Surisan",
+    "line": "안산과천선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.350297,
+    "lng": 126.925537
+  },
+  {
+    "id": 61679,
+    "name": "기흥(백남준아트센터)",
+    "en": "Giheung",
+    "line": "에버라인",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.27545288,
+    "lng": 127.1170465
+  },
+  {
+    "id": 67924,
+    "name": "강남대",
+    "en": "Kangnam Univ.",
+    "line": "에버라인",
+    "icon": "💼",
+    "region": "서울",
+    "lat": 37.27017073,
+    "lng": 127.1260669
+  },
+  {
+    "id": 16365,
+    "name": "지석",
+    "en": "Jiseok",
+    "line": "에버라인",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.26973732,
+    "lng": 127.1363256
+  },
+  {
+    "id": 35610,
+    "name": "어정",
+    "en": "Eojeong",
+    "line": "에버라인",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.27495132,
+    "lng": 127.1437499
+  },
+  {
+    "id": 9789,
+    "name": "동백(용인세브란스)",
+    "en": "Dongbaek",
+    "line": "에버라인",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.26910138,
+    "lng": 127.1526906
+  },
+  {
+    "id": 9514,
+    "name": "초당",
+    "en": "Chodang",
+    "line": "에버라인",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.26080647,
+    "lng": 127.1594692
+  },
+  {
+    "id": 50062,
+    "name": "삼가",
+    "en": "Samga",
+    "line": "에버라인",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.24205993,
+    "lng": 127.16818
+  },
+  {
+    "id": 34954,
+    "name": "시청·용인대",
+    "en": "Yongin City Hall·Yongin Univ.",
+    "line": "에버라인",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.23944203,
+    "lng": 127.1788851
+  },
+  {
+    "id": 77162,
+    "name": "명지대",
+    "en": "Myongji Univ.",
+    "line": "에버라인",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.23807629,
+    "lng": 127.1902913
+  },
+  {
+    "id": 48638,
+    "name": "김량장",
+    "en": "Gimnyangjang",
+    "line": "에버라인",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.23732377,
+    "lng": 127.1986109
+  },
+  {
+    "id": 45580,
+    "name": "용인중앙시장(용인예술과학대)",
+    "en": "Yongin Jungang Market",
+    "line": "에버라인",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.2379113,
+    "lng": 127.2090526
+  },
+  {
+    "id": 60410,
+    "name": "고진",
+    "en": "Gojin",
+    "line": "에버라인",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.24463834,
+    "lng": 127.2141836
+  },
+  {
+    "id": 70356,
+    "name": "보평",
+    "en": "Bopyeong",
+    "line": "에버라인",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.25896427,
+    "lng": 127.2184808
+  },
+  {
+    "id": 26203,
+    "name": "둔전",
+    "en": "Dunjeon",
+    "line": "에버라인",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.26721222,
+    "lng": 127.2136387
+  },
+  {
+    "id": 71866,
+    "name": "전대·에버랜드",
+    "en": "Jeondae·Everland",
+    "line": "에버라인",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.28541327,
+    "lng": 127.219509
+  },
+  {
+    "id": 42935,
+    "name": "북한산우이",
+    "en": "BukhansanUI",
+    "line": "우이신설선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.66284,
+    "lng": 127.01272
+  },
+  {
+    "id": 29946,
+    "name": "솔밭공원",
+    "en": "Solbat Park",
+    "line": "우이신설선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.65607,
+    "lng": 127.01326
+  },
+  {
+    "id": 70072,
+    "name": "4.19민주묘지",
+    "en": "April 19th National Cemetery",
+    "line": "우이신설선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.64954,
+    "lng": 127.01371
+  },
+  {
+    "id": 69676,
+    "name": "가오리",
+    "en": "Gaori",
+    "line": "우이신설선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.64162,
+    "lng": 127.01681
+  },
+  {
+    "id": 68171,
+    "name": "화계",
+    "en": "Hwagye",
+    "line": "우이신설선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.63428,
+    "lng": 127.0175
+  },
+  {
+    "id": 38934,
+    "name": "삼양",
+    "en": "Samyang",
+    "line": "우이신설선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.62706,
+    "lng": 127.01817
+  },
+  {
+    "id": 23801,
+    "name": "삼양사거리",
+    "en": "Samyang Sageori",
+    "line": "우이신설선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.62144,
+    "lng": 127.02049
+  },
+  {
+    "id": 29606,
+    "name": "솔샘",
+    "en": "Solsaem",
+    "line": "우이신설선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.62037,
+    "lng": 127.01357
+  },
+  {
+    "id": 73961,
+    "name": "북한산보국문",
+    "en": "Bukhansan Bogungmun",
+    "line": "우이신설선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.61233,
+    "lng": 127.00816
+  },
+  {
+    "id": 79387,
+    "name": "정릉",
+    "en": "Jeongneung",
+    "line": "우이신설선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.60278,
+    "lng": 127.01345
+  },
+  {
+    "id": 77742,
+    "name": "성신여대입구",
+    "en": "Sungshin Women's Univ",
+    "line": "우이신설선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.59247,
+    "lng": 127.01656
+  },
+  {
+    "id": 97310,
+    "name": "보문",
+    "en": "Bomun",
+    "line": "우이신설선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.58551,
+    "lng": 127.01939
+  },
+  {
+    "id": 81095,
+    "name": "신설동",
+    "en": "Sinseol-dong",
+    "line": "우이신설선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.57659,
+    "lng": 127.023221
+  },
+  {
+    "id": 42647,
+    "name": "발곡",
+    "en": "Balgok",
+    "line": "의정부",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.726983,
+    "lng": 127.052889
+  },
+  {
+    "id": 34504,
+    "name": "회룡",
+    "en": "Hoeryong",
+    "line": "의정부",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.72505255,
+    "lng": 127.0467864
+  },
+  {
+    "id": 29429,
+    "name": "범골",
+    "en": "Beomgol",
+    "line": "의정부",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.7287279,
+    "lng": 127.0437202
+  },
+  {
+    "id": 51596,
+    "name": "경전철의정부",
+    "en": "LRT Uijeongbu",
+    "line": "의정부",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.73729974,
+    "lng": 127.043321
+  },
+  {
+    "id": 68237,
+    "name": "의정부시청",
+    "en": "Uijeongbu City Hall",
+    "line": "의정부",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.73924874,
+    "lng": 127.034854
+  },
+  {
+    "id": 65493,
+    "name": "흥선",
+    "en": "Heungseon",
+    "line": "의정부",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.74322487,
+    "lng": 127.0371765
+  },
+  {
+    "id": 50762,
+    "name": "의정부중앙",
+    "en": "Uijeongbu Jung-ang",
+    "line": "의정부",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.74371903,
+    "lng": 127.0496332
+  },
+  {
+    "id": 81962,
+    "name": "동오",
+    "en": "Dong-o",
+    "line": "의정부",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.74519123,
+    "lng": 127.05703
+  },
+  {
+    "id": 89804,
+    "name": "새말",
+    "en": "Sae-mal",
+    "line": "의정부",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.74889941,
+    "lng": 127.063869
+  },
+  {
+    "id": 52600,
+    "name": "경기도청북부청사",
+    "en": "Northern Gyeonggi-do Government",
+    "line": "의정부",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.75073213,
+    "lng": 127.0714795
+  },
+  {
+    "id": 70893,
+    "name": "효자",
+    "en": "Hyoja",
+    "line": "의정부",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.75398452,
+    "lng": 127.0773155
+  },
+  {
+    "id": 33290,
+    "name": "곤제",
+    "en": "Gonjae",
+    "line": "의정부",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.75054343,
+    "lng": 127.0838651
+  },
+  {
+    "id": 9448,
+    "name": "어룡",
+    "en": "Eoryong",
+    "line": "의정부",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.74272184,
+    "lng": 127.0852045
+  },
+  {
+    "id": 79623,
+    "name": "송산",
+    "en": "Songsan",
+    "line": "의정부",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.7371698,
+    "lng": 127.0872755
+  },
+  {
+    "id": 59439,
+    "name": "탑석",
+    "en": "Tapseok",
+    "line": "의정부",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.73355362,
+    "lng": 127.0889064
+  },
+  {
+    "id": 63748,
+    "name": "서울",
+    "en": "Seoul",
+    "line": "공항철도",
+    "icon": "🏛️",
+    "region": "기타",
+    "lat": 37.55301784,
+    "lng": 126.9697643
+  },
+  {
+    "id": 55967,
+    "name": "공덕",
+    "en": "Gongdeok",
+    "line": "공항철도",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.54284055,
+    "lng": 126.9513301
+  },
+  {
+    "id": 20860,
+    "name": "홍대입구",
+    "en": "Hongik Univ.",
+    "line": "공항철도",
+    "icon": "🎸",
+    "region": "기타",
+    "lat": 37.55774103,
+    "lng": 126.9264939
+  },
+  {
+    "id": 99186,
+    "name": "디지털미디어시티",
+    "en": "Digital Media City",
+    "line": "공항철도",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.577355,
+    "lng": 126.898025
+  },
+  {
+    "id": 3463,
+    "name": "마곡나루",
+    "en": "Magongnaru",
+    "line": "공항철도",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.56581914,
+    "lng": 126.8276358
+  },
+  {
+    "id": 77633,
+    "name": "김포공항",
+    "en": "Gimpo Int'l Airport",
+    "line": "공항철도",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.56211652,
+    "lng": 126.8015442
+  },
+  {
+    "id": 70190,
+    "name": "계양",
+    "en": "Gyeyang",
+    "line": "공항철도",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.57160721,
+    "lng": 126.736023
+  },
+  {
+    "id": 55950,
+    "name": "검암",
+    "en": "Geomam",
+    "line": "공항철도",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.56915547,
+    "lng": 126.6735357
+  },
+  {
+    "id": 49945,
+    "name": "청라국제도시",
+    "en": "Cheongna Int'l City",
+    "line": "공항철도",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.556509,
+    "lng": 126.624725
+  },
+  {
+    "id": 70701,
+    "name": "영종",
+    "en": "Yeongjong",
+    "line": "공항철도",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.51209814,
+    "lng": 126.5242471
+  },
+  {
+    "id": 95071,
+    "name": "운서",
+    "en": "Unseo",
+    "line": "공항철도",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.49284463,
+    "lng": 126.4936619
+  },
+  {
+    "id": 85672,
+    "name": "공항화물청사",
+    "en": "Incheon Int'l Airport Cargo Terminal",
+    "line": "공항철도",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.45902611,
+    "lng": 126.4774333
+  },
+  {
+    "id": 67618,
+    "name": "인천공항1터미널",
+    "en": "Incheon Int'l Airport Terminal 1",
+    "line": "공항철도",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.44760672,
+    "lng": 126.4523433
+  },
+  {
+    "id": 71065,
+    "name": "인천공항2터미널",
+    "en": "Incheon Int'l Airport Terminal 2",
+    "line": "공항철도",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.46866,
+    "lng": 126.433415
+  },
+  {
+    "id": 55416,
+    "name": "검단호수공원",
+    "en": "Geomdan Lake Park",
+    "line": "인천지하철 1호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.6025,
+    "lng": 126.688056
+  },
+  {
+    "id": 91115,
+    "name": "신검단중앙",
+    "en": "Singeomdanjungang",
+    "line": "인천지하철 1호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.6026,
+    "lng": 126.698611
+  },
+  {
+    "id": 83460,
+    "name": "아라(북부법원, 검찰청)",
+    "en": "Ara(Northern District Court․Prosecutors' Office)",
+    "line": "인천지하철 1호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.592222,
+    "lng": 126.713333
+  },
+  {
+    "id": 86136,
+    "name": "계양",
+    "en": "Gyeyang",
+    "line": "인천지하철 1호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.571539,
+    "lng": 126.736319
+  },
+  {
+    "id": 41292,
+    "name": "귤현",
+    "en": "Gyulhyeon",
+    "line": "인천지하철 1호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.566362,
+    "lng": 126.742498
+  },
+  {
+    "id": 59743,
+    "name": "박촌",
+    "en": "Bakchon",
+    "line": "인천지하철 1호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.553525,
+    "lng": 126.744946
+  },
+  {
+    "id": 82081,
+    "name": "임학",
+    "en": "Imhak",
+    "line": "인천지하철 1호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.545058,
+    "lng": 126.738642
+  },
+  {
+    "id": 85286,
+    "name": "계산",
+    "en": "Gyesan",
+    "line": "인천지하철 1호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.543243,
+    "lng": 126.728436
+  },
+  {
+    "id": 78960,
+    "name": "경인교대입구",
+    "en": "Gyeongin Nat'l Univ of Education",
+    "line": "인천지하철 1호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.538272,
+    "lng": 126.722603
+  },
+  {
+    "id": 28894,
+    "name": "작전",
+    "en": "Jakjeon",
+    "line": "인천지하철 1호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.530271,
+    "lng": 126.722548
+  },
+  {
+    "id": 21030,
+    "name": "갈산",
+    "en": "Galsan",
+    "line": "인천지하철 1호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.517124,
+    "lng": 126.721566
+  },
+  {
+    "id": 52419,
+    "name": "부평구청",
+    "en": "Bupyeong-gu Office",
+    "line": "인천지하철 1호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.508768,
+    "lng": 126.720547
+  },
+  {
+    "id": 13470,
+    "name": "부평시장",
+    "en": "Bupyeong Market",
+    "line": "인천지하철 1호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.498495,
+    "lng": 126.722282
+  },
+  {
+    "id": 45032,
+    "name": "부평",
+    "en": "Bupyeong",
+    "line": "인천지하철 1호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.490541,
+    "lng": 126.723437
+  },
+  {
+    "id": 48538,
+    "name": "동수",
+    "en": "Dongsu",
+    "line": "인천지하철 1호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.485409,
+    "lng": 126.718464
+  },
+  {
+    "id": 43378,
+    "name": "부평삼거리",
+    "en": "Bupyeongsamgeori",
+    "line": "인천지하철 1호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.478267,
+    "lng": 126.710494
+  },
+  {
+    "id": 26348,
+    "name": "간석오거리",
+    "en": "Ganseogogeori",
+    "line": "인천지하철 1호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.466921,
+    "lng": 126.707861
+  },
+  {
+    "id": 32288,
+    "name": "인천시청",
+    "en": "Incheon City Hall",
+    "line": "인천지하철 1호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.457615,
+    "lng": 126.702216
+  },
+  {
+    "id": 64267,
+    "name": "예술회관",
+    "en": "Arts Center",
+    "line": "인천지하철 1호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.449334,
+    "lng": 126.700991
+  },
+  {
+    "id": 31355,
+    "name": "인천터미널",
+    "en": "Incheon Bus Terminal",
+    "line": "인천지하철 1호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.441917,
+    "lng": 126.699727
+  },
+  {
+    "id": 45209,
+    "name": "문학경기장",
+    "en": "Munhak Sports Complex",
+    "line": "인천지하철 1호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.434964,
+    "lng": 126.698373
+  },
+  {
+    "id": 46285,
+    "name": "선학",
+    "en": "Seonhak",
+    "line": "인천지하철 1호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.426985,
+    "lng": 126.698872
+  },
+  {
+    "id": 54176,
+    "name": "신연수",
+    "en": "Sinyeonsu",
+    "line": "인천지하철 1호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.418032,
+    "lng": 126.693853
+  },
+  {
+    "id": 34823,
+    "name": "원인재",
+    "en": "Woninjae",
+    "line": "인천지하철 1호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.412364,
+    "lng": 126.687893
+  },
+  {
+    "id": 72380,
+    "name": "동춘",
+    "en": "Dongchun",
+    "line": "인천지하철 1호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.404676,
+    "lng": 126.680835
+  },
+  {
+    "id": 9423,
+    "name": "동막",
+    "en": "Dongmak",
+    "line": "인천지하철 1호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.398173,
+    "lng": 126.673561
+  },
+  {
+    "id": 36407,
+    "name": "캠퍼스타운",
+    "en": "Campus Town",
+    "line": "인천지하철 1호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.388209,
+    "lng": 126.661985
+  },
+  {
+    "id": 5364,
+    "name": "테크노파크",
+    "en": "Technopark",
+    "line": "인천지하철 1호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.382311,
+    "lng": 126.656355
+  },
+  {
+    "id": 90034,
+    "name": "지식정보단지",
+    "en": "BIT Zone",
+    "line": "인천지하철 1호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.378021,
+    "lng": 126.645412
+  },
+  {
+    "id": 80320,
+    "name": "인천대입구",
+    "en": "Incheon National University",
+    "line": "인천지하철 1호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.386239,
+    "lng": 126.639351
+  },
+  {
+    "id": 47643,
+    "name": "센트럴파크",
+    "en": "Central Park",
+    "line": "인천지하철 1호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.392833,
+    "lng": 126.635002
+  },
+  {
+    "id": 82774,
+    "name": "국제업무지구",
+    "en": "Int'l Business District",
+    "line": "인천지하철 1호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.400464,
+    "lng": 126.630094
+  },
+  {
+    "id": 48291,
+    "name": "송도달빛축제공원",
+    "en": "Songdo Moonlight Festival Park",
+    "line": "인천지하철 1호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.40687495,
+    "lng": 126.6260537
+  },
+  {
+    "id": 9778,
+    "name": "검단오류",
+    "en": "Geomdan Oryu",
+    "line": "인천지하철 2호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.5950162,
+    "lng": 126.62801
+  },
+  {
+    "id": 89993,
+    "name": "왕길",
+    "en": "Wanggil",
+    "line": "인천지하철 2호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.5950191,
+    "lng": 126.642284
+  },
+  {
+    "id": 89859,
+    "name": "검단사거리",
+    "en": "Geomdan Sageori",
+    "line": "인천지하철 2호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.601693,
+    "lng": 126.656545
+  },
+  {
+    "id": 86206,
+    "name": "마전",
+    "en": "Majeon",
+    "line": "인천지하철 2호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.597756,
+    "lng": 126.667195
+  },
+  {
+    "id": 50543,
+    "name": "완정",
+    "en": "Wanjeong",
+    "line": "인천지하철 2호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.592867,
+    "lng": 126.672961
+  },
+  {
+    "id": 31156,
+    "name": "독정",
+    "en": "Dokjeong",
+    "line": "인천지하철 2호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.584927,
+    "lng": 126.675981
+  },
+  {
+    "id": 46083,
+    "name": "검암",
+    "en": "Geomam",
+    "line": "인천지하철 2호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.568611,
+    "lng": 126.675682
+  },
+  {
+    "id": 60716,
+    "name": "검바위",
+    "en": "Geombawi",
+    "line": "인천지하철 2호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.561091,
+    "lng": 126.677529
+  },
+  {
+    "id": 90777,
+    "name": "아시아드경기장",
+    "en": "Asiad Stadium",
+    "line": "인천지하철 2호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.551373,
+    "lng": 126.677075
+  },
+  {
+    "id": 42003,
+    "name": "서구청",
+    "en": "Seo-gu Office",
+    "line": "인천지하철 2호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.543839,
+    "lng": 126.676795
+  },
+  {
+    "id": 69406,
+    "name": "가정(루원시티)",
+    "en": "Gajeong",
+    "line": "인천지하철 2호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.524805,
+    "lng": 126.675387
+  },
+  {
+    "id": 40039,
+    "name": "가정중앙시장",
+    "en": "Gajeong Jungang Market",
+    "line": "인천지하철 2호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.517511,
+    "lng": 126.676784
+  },
+  {
+    "id": 77984,
+    "name": "석남(거북시장)",
+    "en": "Seongnam(Geobuk Market)",
+    "line": "인천지하철 2호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.507211,
+    "lng": 126.676304
+  },
+  {
+    "id": 71029,
+    "name": "서부여성회관",
+    "en": "West Woman’s Community Center",
+    "line": "인천지하철 2호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.500298,
+    "lng": 126.675875
+  },
+  {
+    "id": 16923,
+    "name": "인천가좌",
+    "en": "Incheon Gajwa",
+    "line": "인천지하철 2호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.489962,
+    "lng": 126.675284
+  },
+  {
+    "id": 92901,
+    "name": "가재울",
+    "en": "Gajaeul",
+    "line": "인천지하철 2호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.484152,
+    "lng": 126.683883
+  },
+  {
+    "id": 41089,
+    "name": "주안국가산단",
+    "en": "Juan National Industrial Complex",
+    "line": "인천지하철 2호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.473599,
+    "lng": 126.681102
+  },
+  {
+    "id": 1851,
+    "name": "주안",
+    "en": "Juan",
+    "line": "인천지하철 2호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.465234,
+    "lng": 126.679041
+  },
+  {
+    "id": 42740,
+    "name": "시민공원",
+    "en": "Citizens Park",
+    "line": "인천지하철 2호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.458339,
+    "lng": 126.6810091
+  },
+  {
+    "id": 38044,
+    "name": "석바위시장",
+    "en": "Seokbawi Market",
+    "line": "인천지하철 2호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.457659,
+    "lng": 126.692387
+  },
+  {
+    "id": 32099,
+    "name": "인천시청",
+    "en": "Incheon City Hall",
+    "line": "인천지하철 2호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.456904,
+    "lng": 126.701523
+  },
+  {
+    "id": 79965,
+    "name": "석천사거리",
+    "en": "Seokcheon Sageori",
+    "line": "인천지하철 2호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.4569323,
+    "lng": 126.710383
+  },
+  {
+    "id": 49557,
+    "name": "모래내시장",
+    "en": "Moraenae Market",
+    "line": "인천지하철 2호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.455842,
+    "lng": 126.719578
+  },
+  {
+    "id": 80304,
+    "name": "만수",
+    "en": "Mansu",
+    "line": "인천지하철 2호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.454962,
+    "lng": 126.731764
+  },
+  {
+    "id": 93084,
+    "name": "남동구청",
+    "en": "Namdong-gu Office",
+    "line": "인천지하철 2호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.448179,
+    "lng": 126.736581
+  },
+  {
+    "id": 16846,
+    "name": "인천대공원",
+    "en": "Incheon Grand Park",
+    "line": "인천지하철 2호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.448475,
+    "lng": 126.753051
+  },
+  {
+    "id": 90452,
+    "name": "운연",
+    "en": "Unyeon",
+    "line": "인천지하철 2호선",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.439533,
+    "lng": 126.759609
+  },
+  {
+    "id": 1472,
+    "name": "원흥역",
+    "en": "Wonheung",
+    "line": "일산선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.650709,
+    "lng": 126.873239
+  },
+  {
+    "id": 28613,
+    "name": "지축역",
+    "en": "Jichuk",
+    "line": "일산선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.648114,
+    "lng": 126.913746
+  },
+  {
+    "id": 69655,
+    "name": "삼송역",
+    "en": "Samsong",
+    "line": "일산선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.653096,
+    "lng": 126.895559
+  },
+  {
+    "id": 24817,
+    "name": "원당역",
+    "en": "Wondang",
+    "line": "일산선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.653103,
+    "lng": 126.842891
+  },
+  {
+    "id": 57246,
+    "name": "화정역",
+    "en": "Hwajeong",
+    "line": "일산선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.634708,
+    "lng": 126.832503
+  },
+  {
+    "id": 31376,
+    "name": "대곡역",
+    "en": "Daegok",
+    "line": "일산선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.631629,
+    "lng": 126.811025
+  },
+  {
+    "id": 10380,
+    "name": "백석역",
+    "en": "Baekseok",
+    "line": "일산선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.642973,
+    "lng": 126.788109
+  },
+  {
+    "id": 43787,
+    "name": "마두역",
+    "en": "Madu",
+    "line": "일산선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.652185,
+    "lng": 126.777641
+  },
+  {
+    "id": 41305,
+    "name": "정발산역",
+    "en": "Jeongbalsan",
+    "line": "일산선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.659709,
+    "lng": 126.773254
+  },
+  {
+    "id": 41142,
+    "name": "주엽역",
+    "en": "Juyeop",
+    "line": "일산선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.670138,
+    "lng": 126.761232
+  },
+  {
+    "id": 51991,
+    "name": "대화역",
+    "en": "Daehwa",
+    "line": "일산선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.675883,
+    "lng": 126.747756
+  },
+  {
+    "id": 27061,
+    "name": "인천국제공항역",
+    "en": "Incheon Airport Terminal 1 Station",
+    "line": "자기부상철도",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.447222,
+    "lng": 126.4525
+  },
+  {
+    "id": 96802,
+    "name": "장기주차장역",
+    "en": "Long Term Parking Station",
+    "line": "자기부상철도",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.44385,
+    "lng": 126.455671
+  },
+  {
+    "id": 99958,
+    "name": "합동청사역",
+    "en": "Administration Complex Station",
+    "line": "자기부상철도",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.440519,
+    "lng": 126.458654
+  },
+  {
+    "id": 26214,
+    "name": "파라다이스시티역",
+    "en": "Paradise City Station",
+    "line": "자기부상철도",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.437217,
+    "lng": 126.459858
+  },
+  {
+    "id": 50544,
+    "name": "워터파크역",
+    "en": "Water Park Station",
+    "line": "자기부상철도",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.429227,
+    "lng": 126.434183
+  },
+  {
+    "id": 63209,
+    "name": "용유역",
+    "en": "Yongyu Station",
+    "line": "자기부상철도",
+    "icon": "🚇",
+    "region": "서울",
+    "lat": 37.424805,
+    "lng": 126.423637
+  },
+  {
+    "id": 20530,
+    "name": "봉명역",
+    "en": "Bongmyeong",
+    "line": "장항선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 36.801578,
+    "lng": 127.136319
+  },
+  {
+    "id": 142,
+    "name": "쌍용(나사렛대)역",
+    "en": "Ssangyong(Korea Nazarene Univ.)",
+    "line": "장항선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 36.793745,
+    "lng": 127.121363
+  },
+  {
+    "id": 18288,
+    "name": "아산역",
+    "en": "Asan",
+    "line": "장항선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 36.792195,
+    "lng": 127.104384
+  },
+  {
+    "id": 42406,
+    "name": "탕정역",
+    "en": "Tangjeong",
+    "line": "장항선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 36.788272,
+    "lng": 127.084446
+  },
+  {
+    "id": 56648,
+    "name": "배방역",
+    "en": "Baebang",
+    "line": "장항선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 36.777541,
+    "lng": 127.052751
+  },
+  {
+    "id": 23337,
+    "name": "온양온천역",
+    "en": "Onyangoncheon",
+    "line": "장항선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 36.780419,
+    "lng": 127.003707
+  },
+  {
+    "id": 1421,
+    "name": "신창(순천향대)역",
+    "en": "Sinchang (Soonchunhyang Univ.)",
+    "line": "장항선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 36.769213,
+    "lng": 126.950129
+  },
+  {
+    "id": 88983,
+    "name": "진접역",
+    "en": "Jinjeop",
+    "line": "진접선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.720472,
+    "lng": 127.203167
+  },
+  {
+    "id": 36046,
+    "name": "오남역",
+    "en": "Onam",
+    "line": "진접선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.7054056,
+    "lng": 127.191644
+  },
+  {
+    "id": 80272,
+    "name": "별내별가람역",
+    "en": "ByeollaeByeolgaram",
+    "line": "진접선",
+    "icon": "🚇",
+    "region": "기타",
+    "lat": 37.667833,
+    "lng": 127.116167
+  }
+]
