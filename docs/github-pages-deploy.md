@@ -14,12 +14,12 @@
 
 처음 배포 후 **1~10분** 정도 지나야 URL이 살아날 수 있습니다.
 
-## 3) 공개 URL (저장소 이름이 `yeokjangnim`일 때)
-- 정책 목차(선택): `https://kjh96.github.io/yeokjangnim/`
-- 개인정보처리방침: `https://kjh96.github.io/yeokjangnim/privacy-policy.html`
-- 이용약관: `https://kjh96.github.io/yeokjangnim/terms.html`
+## 3) 공개 URL (예: 사용자 `kimjaehyeon221`, 저장소 `yeokjangnim`)
+- 정책 목차(선택): `https://kimjaehyeon221.github.io/yeokjangnim/`
+- 개인정보처리방침: `https://kimjaehyeon221.github.io/yeokjangnim/privacy-policy.html`
+- 이용약관: `https://kimjaehyeon221.github.io/yeokjangnim/terms.html`
 
-저장소 이름이 다르면 `...github.io/<저장소이름>/...` 만 바꿔서 쓰면 됩니다.
+GitHub 사용자명·저장소 이름이 다르면 `...github.io/<저장소이름>/...` 만 본인 것으로 바꿉니다.
 
 ---
 
@@ -44,7 +44,7 @@
 
 ## 4) 앱 링크와 일치 확인
 - `lib/main.dart`의 `kPrivacyPolicyUrl`, `kTermsUrl`이 **실제로 열리는 위 URL**과 문자 그대로 같아야 합니다.
-- 저장소를 `kjh96/yeokjangnim`이 아닌 다른 이름으로 쓰면, 앱 상수 URL도 그에 맞게 수정하세요.
+- GitHub 사용자명·저장소 이름이 바뀌면 `lib/main.dart`의 정책 URL과 Supabase Redirect도 같이 맞추세요.
 
 ## 5) 배포 직전 체크
 - 시크릿 창에서 약관·개인정보 URL 두 개 모두 열어보기

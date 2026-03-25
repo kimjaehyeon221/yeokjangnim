@@ -8,33 +8,146 @@ import 'dart:ui' as ui;
 import 'package:flutter_map/flutter_map.dart';
 import 'package:latlong2/latlong.dart';
 import 'package:share_plus/share_plus.dart';
+import 'package:geolocator/geolocator.dart';
 import 'models.dart';
 import 'app_state.dart';
 import 'open_external_url.dart';
 
-const kPrivacyPolicyUrl = 'https://kjh96.github.io/yeokjangnim/privacy-policy.html';
-const kTermsUrl = 'https://kjh96.github.io/yeokjangnim/terms.html';
+const kPrivacyPolicyUrl = 'https://kimjaehyeon221.github.io/yeokjangnim/privacy-policy.html';
+const kTermsUrl = 'https://kimjaehyeon221.github.io/yeokjangnim/terms.html';
 
 Future<void> _shareCollectionProgress(BuildContext context, AppState state) async {
-  final got = state.gotCount;
-  final total = state.totalStations;
-  final text = '철도 마스터에서 전국 역 스탬프 $got / $total개 모았어요! 🚉';
-  try {
-    final result = await Share.share(text);
-    if (!context.mounted) return;
-    if (result.status == ShareResultStatus.unavailable) {
-      await Clipboard.setData(ClipboardData(text: text));
-      if (!context.mounted) return;
+  await showDialog<void>(
+    context: context,
+    builder: (ctx) => _CollectionShareDialog(state: state),
+  );
+}
+
+/// 도감 공유 — 텍스트 복사·이미지 공유가 항상 보이도록 다이얼로그로 제공.
+class _CollectionShareDialog extends StatefulWidget {
+  final AppState state;
+  const _CollectionShareDialog({required this.state});
+
+  @override
+  State<_CollectionShareDialog> createState() => _CollectionShareDialogState();
+}
+
+class _CollectionShareDialogState extends State<_CollectionShareDialog> {
+  final GlobalKey _cardKey = GlobalKey();
+
+  String get _shareText {
+    final got = widget.state.gotCount;
+    final total = widget.state.totalStations;
+    return '철도 마스터에서 전국 역 스탬프 $got / $total개 모았어요! 🚉';
+  }
+
+  Future<void> _copyText() async {
+    await Clipboard.setData(ClipboardData(text: _shareText));
+    if (!mounted) return;
+    ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('복사했어요.')));
+  }
+
+  Future<void> _shareImage() async {
+    try {
+      final boundary = _cardKey.currentContext?.findRenderObject() as RenderRepaintBoundary?;
+      if (boundary == null) return;
+      final image = await boundary.toImage(pixelRatio: 3);
+      final byteData = await image.toByteData(format: ui.ImageByteFormat.png);
+      if (byteData == null) return;
+      final bytes = byteData.buffer.asUint8List();
+      final xf = XFile.fromData(
+        bytes,
+        mimeType: 'image/png',
+        name: 'cheoldo_master_stamps.png',
+      );
+      await Share.shareXFiles([xf], text: _shareText);
+    } catch (e) {
+      if (!mounted) return;
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('공유를 지원하지 않아 클립보드에 복사했어요.')),
+        SnackBar(content: Text('이미지 공유에 실패했어요: $e')),
       );
     }
-  } catch (_) {
-    if (!context.mounted) return;
-    await Clipboard.setData(ClipboardData(text: text));
-    if (!context.mounted) return;
-    ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(content: Text('클립보드에 복사했어요.')),
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final got = widget.state.gotCount;
+    final total = widget.state.totalStations;
+    final pct = total > 0 ? got / total : 0.0;
+    return Dialog(
+      backgroundColor: Colors.transparent,
+      insetPadding: const EdgeInsets.symmetric(horizontal: 20),
+      child: SingleChildScrollView(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            RepaintBoundary(
+              key: _cardKey,
+              child: Container(
+                width: 280,
+                padding: const EdgeInsets.all(22),
+                decoration: BoxDecoration(
+                  color: AC.paper,
+                  borderRadius: BorderRadius.circular(16),
+                  border: Border.all(color: AC.stamp, width: 2),
+                  boxShadow: const [BoxShadow(color: Color(0x331B3A6B), blurRadius: 16, offset: Offset(0, 6))],
+                ),
+                child: Column(
+                  children: [
+                    const Text('철도 마스터', style: TextStyle(fontSize: 13, fontWeight: FontWeight.w800, color: AC.stamp, letterSpacing: 1)),
+                    const SizedBox(height: 6),
+                    Text(widget.state.nickname, style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w900, color: AC.ink)),
+                    const SizedBox(height: 16),
+                    Text('$got / $total', style: const TextStyle(fontSize: 32, fontWeight: FontWeight.w900, color: AC.stamp, letterSpacing: -1)),
+                    Text('전국 역 스탬프', style: TextStyle(fontSize: 11, color: AC.ink3)),
+                    const SizedBox(height: 12),
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(6),
+                      child: LinearProgressIndicator(value: pct, minHeight: 8, backgroundColor: AC.paper2, color: AC.stamp),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            const SizedBox(height: 14),
+            SelectableText(_shareText, style: const TextStyle(fontSize: 12, color: AC.ink2, height: 1.4)),
+            const SizedBox(height: 14),
+            Row(
+              children: [
+                Expanded(
+                  child: OutlinedButton(
+                    onPressed: _copyText,
+                    style: OutlinedButton.styleFrom(
+                      padding: const EdgeInsets.symmetric(vertical: 12),
+                      side: const BorderSide(color: AC.border),
+                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                    ),
+                    child: const Text('텍스트 복사', style: TextStyle(fontWeight: FontWeight.w700, color: AC.ink2)),
+                  ),
+                ),
+                const SizedBox(width: 8),
+                Expanded(
+                  child: ElevatedButton(
+                    onPressed: _shareImage,
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: AC.stamp,
+                      foregroundColor: AC.paper,
+                      padding: const EdgeInsets.symmetric(vertical: 12),
+                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                      elevation: 0,
+                    ),
+                    child: const Text('이미지 공유', style: TextStyle(fontWeight: FontWeight.w900)),
+                  ),
+                ),
+              ],
+            ),
+            TextButton(
+              onPressed: () => Navigator.pop(context),
+              child: const Text('닫기', style: TextStyle(color: AC.ink3)),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
@@ -603,6 +716,7 @@ class _StampFAB extends StatelessWidget {
         backgroundColor: Colors.transparent,
         isScrollControlled: true,
         builder: (_) => NearbyStationPickerSheet(
+          userPosition: pos,
           candidates: nearest,
           onPick: (picked) async {
             Navigator.pop(context);
@@ -646,10 +760,13 @@ class _StampFAB extends StatelessWidget {
 }
 
 class NearbyStationPickerSheet extends StatefulWidget {
+  /// 스탬프 판정·거리 계산에 사용 (검색 시 전체 미스탬프 역 조회).
+  final Position userPosition;
   final List<StationDistance> candidates;
   final ValueChanged<StationDistance> onPick;
   const NearbyStationPickerSheet({
     super.key,
+    required this.userPosition,
     required this.candidates,
     required this.onPick,
   });
@@ -660,15 +777,15 @@ class NearbyStationPickerSheet extends StatefulWidget {
 
 class _NearbyStationPickerSheetState extends State<NearbyStationPickerSheet> {
   final TextEditingController _searchController = TextEditingController();
-  List<StationDistance> _all = [];
+  List<StationDistance> _nearestFive = [];
   List<StationDistance> _visible = [];
   bool _isRefreshing = false;
 
   @override
   void initState() {
     super.initState();
-    _all = List<StationDistance>.from(widget.candidates);
-    _visible = _all;
+    _nearestFive = List<StationDistance>.from(widget.candidates);
+    _visible = _nearestFive;
     _searchController.addListener(_applyFilter);
   }
 
@@ -680,17 +797,23 @@ class _NearbyStationPickerSheetState extends State<NearbyStationPickerSheet> {
   }
 
   void _applyFilter() {
+    final appState = context.read<AppState>();
     final q = _searchController.text.trim().toLowerCase();
     if (q.isEmpty) {
-      setState(() => _visible = _all);
+      setState(() => _visible = List<StationDistance>.from(_nearestFive));
       return;
     }
-    final filtered = _all.where((c) {
+    final full = appState.getNearestStationsFromPosition(
+      widget.userPosition,
+      limit: 800,
+      onlyUnstamped: true,
+    );
+    final filtered = full.where((c) {
       final s = c.station;
       return s.name.toLowerCase().contains(q) ||
           s.en.toLowerCase().contains(q) ||
           s.line.toLowerCase().contains(q);
-    }).toList(growable: false);
+    }).take(60).toList(growable: false);
     setState(() => _visible = filtered);
   }
 
@@ -714,9 +837,10 @@ class _NearbyStationPickerSheetState extends State<NearbyStationPickerSheet> {
     );
     setState(() {
       _isRefreshing = false;
-      _all = nearest;
+      _nearestFive = nearest;
+      _searchController.clear();
+      _visible = nearest;
     });
-    _applyFilter();
   }
 
   @override
@@ -731,7 +855,10 @@ class _NearbyStationPickerSheetState extends State<NearbyStationPickerSheet> {
         children: [
           const Text('가까운 역 선택', style: TextStyle(fontSize: 16, fontWeight: FontWeight.w900, color: AC.ink)),
           const SizedBox(height: 4),
-          Text('현재 위치 기준 가까운 역이에요', style: TextStyle(fontSize: 12, color: AC.ink3)),
+          Text(
+            '아래는 가까운 미스탬프 역 5곳이에요. 검색하면 전체 미스탬프 역에서 찾아요.',
+            style: TextStyle(fontSize: 12, color: AC.ink3, height: 1.35),
+          ),
           const SizedBox(height: 10),
           Row(
             children: [
@@ -746,7 +873,7 @@ class _NearbyStationPickerSheetState extends State<NearbyStationPickerSheet> {
                   child: TextField(
                     controller: _searchController,
                     decoration: const InputDecoration(
-                      hintText: '역 이름/노선 검색',
+                      hintText: '역 이름 · 노선 검색 (전체 미스탬프)',
                       border: InputBorder.none,
                       isDense: true,
                     ),
@@ -767,14 +894,18 @@ class _NearbyStationPickerSheetState extends State<NearbyStationPickerSheet> {
             ],
           ),
           const SizedBox(height: 12),
-          if (_visible.isEmpty)
-            Center(
-              child: Padding(
-                padding: const EdgeInsets.symmetric(vertical: 20),
-                child: Text('검색 결과가 없어요', style: TextStyle(fontSize: 12, color: AC.ink4)),
-              ),
-            ),
-          ..._visible.map((c) {
+          ConstrainedBox(
+            constraints: BoxConstraints(maxHeight: MediaQuery.sizeOf(context).height * 0.42),
+            child: _visible.isEmpty
+                ? Center(
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 20),
+                      child: Text('검색 결과가 없어요', style: TextStyle(fontSize: 12, color: AC.ink4)),
+                    ),
+                  )
+                : SingleChildScrollView(
+                    child: Column(
+                      children: _visible.map((c) {
             final lc = kLines[c.station.line]?.color ?? AC.ink4;
             final inRange = c.distanceMeters <= 100;
             return InkWell(
@@ -817,7 +948,10 @@ class _NearbyStationPickerSheetState extends State<NearbyStationPickerSheet> {
                 ),
               ),
             );
-          }),
+                      }).toList(),
+                    ),
+                  ),
+          ),
         ],
       ),
     );

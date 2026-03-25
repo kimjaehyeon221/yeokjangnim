@@ -17,11 +17,11 @@
 [복사용] Auth URL / Redirect (역장님 프로젝트 기준)
 ============================================================
 Site URL (한 줄)
-  https://kjh96.github.io/yeokjangnim/
+  https://kimjaehyeon221.github.io/yeokjangnim/
 
 Redirect URLs — 허용 목록에 각각 한 줄씩 추가
   io.supabase.flutter://login-callback/
-  https://kjh96.github.io/yeokjangnim/
+  https://kimjaehyeon221.github.io/yeokjangnim/
   http://localhost:8080/
   http://localhost:5000/
   http://localhost:3000/

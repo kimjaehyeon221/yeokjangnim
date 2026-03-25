@@ -9,11 +9,22 @@ import 'models.dart';
 
 final supabase = Supabase.instance.client;
 
-/// 이메일 인증·비밀번호 재설정 메일의 링크가 열릴 주소. 웹은 현재 탭 origin, 앱은 Supabase 딥링크.
+/// 이메일 인증·비밀번호 재설정 메일의 링크가 열릴 주소.
+/// 웹은 현재 앱 베이스(URL path 포함 — GitHub Pages `…/yeokjangnim/` 등), 앱은 Supabase 딥링크.
 String authEmailRedirectUri() {
   if (kIsWeb) {
-    final o = Uri.base.origin;
-    return o.endsWith('/') ? o : '$o/';
+    final u = Uri.base;
+    var path = u.path;
+    if (path.toLowerCase().endsWith('index.html')) {
+      path = path.substring(0, path.length - 'index.html'.length);
+    }
+    path = path.replaceAll(RegExp(r'/+$'), '');
+    path = path.isEmpty ? '/' : '$path/';
+    if (path == '/') {
+      final o = u.origin;
+      return o.endsWith('/') ? o : '$o/';
+    }
+    return '${u.origin}$path';
   }
   return 'io.supabase.flutter://login-callback/';
 }

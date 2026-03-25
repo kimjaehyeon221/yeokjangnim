@@ -8,6 +8,7 @@
 
 ## 2) 정책/문서
 - [ ] GitHub Pages 등 **공개 URL**에서 개인정보처리방침·이용약관이 200으로 열리는지 확인 (`docs/github-pages-deploy.md` 참고)
+- [ ] **Play Console 붙여넣기 URL**: `docs/PLAY_STORE_MANUAL_KO.md` 표 참고
 - [ ] 앱 내 `kPrivacyPolicyUrl`, `kTermsUrl`과 실제 URL 일치
 - [ ] 로그인 화면·나 탭에서 정책 링크 동작 확인
 
