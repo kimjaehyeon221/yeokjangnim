@@ -95,7 +95,7 @@ class StationOdcloudFetch {
 
     while (true) {
       final url = _buildUri(_korailUrl, page, perPage);
-      final res = await http.get(url, headers: {'Accept': 'application/json'});
+      final res = await http.get(url, headers: {'Accept': 'application/json'}).timeout(const Duration(seconds: 15));
       if (page == 1) {
         _logResponse(onDiagnostic, 'Korail (철도 역) page 1', url, res);
       }
@@ -132,7 +132,7 @@ class StationOdcloudFetch {
       }
 
       final total = json['totalCount'] as int? ?? 0;
-      if (out.length >= total) break;
+      if (page * perPage >= total) break;
       page++;
     }
     return out;
@@ -147,7 +147,7 @@ class StationOdcloudFetch {
 
     while (true) {
       final url = _buildUri(_metroUrl, page, perPage);
-      final res = await http.get(url, headers: {'Accept': 'application/json'});
+      final res = await http.get(url, headers: {'Accept': 'application/json'}).timeout(const Duration(seconds: 15));
       if (page == 1) {
         _logResponse(onDiagnostic, 'Metro (도시철도) page 1', url, res);
       }
@@ -202,10 +202,23 @@ class StationOdcloudFetch {
   }
 
   static int _generateId(String name, String line) {
-    return (name + line).hashCode.abs() % 100000;
+    return (name + line).hashCode.abs() % 10000000;
   }
 
   static String _parseMetroLine(String lineName, String operator) {
+    // 지역 메트로를 먼저 체크해야 서울 호선으로 잘못 분류되지 않는다.
+    if (operator.contains('부산') && lineName.contains('1호선')) return '부산1';
+    if (operator.contains('부산') && lineName.contains('2호선')) return '부산2';
+    if (operator.contains('부산') && lineName.contains('3호선')) return '부산3';
+    if (operator.contains('부산') && lineName.contains('4호선')) return '부산4';
+    if (operator.contains('대구') && lineName.contains('1호선')) return '대구1';
+    if (operator.contains('대구') && lineName.contains('2호선')) return '대구2';
+    if (operator.contains('대구') && lineName.contains('3호선')) return '대구3';
+    if (operator.contains('광주') && lineName.contains('1호선')) return '광주1';
+    if (operator.contains('광주') && lineName.contains('2호선')) return '광주2';
+    if (operator.contains('대전')) return '대전1';
+    if (lineName.contains('동해선')) return '동해선';
+
     if (lineName.contains('1호선') || lineName.contains('수도권 1')) return '1호선';
     if (lineName.contains('2호선')) return '2호선';
     if (lineName.contains('3호선')) return '3호선';
@@ -221,23 +234,15 @@ class StationOdcloudFetch {
     if (lineName.contains('신분당')) return '신분당선';
     if (lineName.contains('공항')) return '공항철도';
     if (lineName.contains('GTX') || lineName.contains('A선')) return 'GTX-A';
-    if (operator.contains('부산') && lineName.contains('1호선')) return '부산1';
-    if (operator.contains('부산') && lineName.contains('2호선')) return '부산2';
-    if (operator.contains('부산') && lineName.contains('3호선')) return '부산3';
-    if (operator.contains('부산') && lineName.contains('4호선')) return '부산4';
-    if (lineName.contains('동해선')) return '동해선';
-    if (operator.contains('대구') && lineName.contains('1호선')) return '대구1';
-    if (operator.contains('대구') && lineName.contains('2호선')) return '대구2';
-    if (operator.contains('대구') && lineName.contains('3호선')) return '대구3';
-    if (operator.contains('광주') && lineName.contains('1호선')) return '광주1';
-    if (operator.contains('광주') && lineName.contains('2호선')) return '광주2';
-    if (operator.contains('대전')) return '대전1';
     return lineName;
   }
 
   static String _parseKorailLine(String hub) {
-    if (hub.contains('수도권')) return 'KTX';
-    if (hub.contains('부산')) return 'KTX';
+    if (hub.contains('수도권') || hub.contains('서울')) return 'KTX';
+    if (hub.contains('강원')) return 'ITX';
+    if (hub.contains('전남') || hub.contains('광주') || hub.contains('전북')) return '무궁화';
+    if (hub.contains('경남') || hub.contains('부산')) return 'SRT';
+    if (hub.contains('충남') || hub.contains('대전') || hub.contains('충북')) return 'KTX';
     return 'KTX';
   }
 

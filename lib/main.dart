@@ -5,13 +5,14 @@ import 'package:provider/provider.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 import 'dart:async';
 import 'dart:ui' as ui;
-import 'package:flutter_map/flutter_map.dart';
-import 'package:latlong2/latlong.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:geolocator/geolocator.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'models.dart';
 import 'app_state.dart';
 import 'open_external_url.dart';
+import 'theme/app_theme.dart';
+import 'theme/app_tokens.dart';
 
 const kPrivacyPolicyUrl = 'https://kimjaehyeon221.github.io/yeokjangnim/privacy-policy.html';
 const kTermsUrl = 'https://kimjaehyeon221.github.io/yeokjangnim/terms.html';
@@ -38,7 +39,7 @@ class _CollectionShareDialogState extends State<_CollectionShareDialog> {
   String get _shareText {
     final got = widget.state.gotCount;
     final total = widget.state.totalStations;
-    return '철도 마스터에서 전국 역 스탬프 $got / $total개 모았어요! 🚉';
+    return 'Metro Collector에서 전국 역 스탬프 $got / $total개 모았어요! 🚉';
   }
 
   Future<void> _copyText() async {
@@ -58,7 +59,7 @@ class _CollectionShareDialogState extends State<_CollectionShareDialog> {
       final xf = XFile.fromData(
         bytes,
         mimeType: 'image/png',
-        name: 'cheoldo_master_stamps.png',
+        name: 'yeokjangnim_stamps.png',
       );
       await Share.shareXFiles([xf], text: _shareText);
     } catch (e) {
@@ -94,7 +95,7 @@ class _CollectionShareDialogState extends State<_CollectionShareDialog> {
                 ),
                 child: Column(
                   children: [
-                    const Text('철도 마스터', style: TextStyle(fontSize: 13, fontWeight: FontWeight.w800, color: AC.stamp, letterSpacing: 1)),
+                    const Text('METRO COLLECTOR', style: TextStyle(fontSize: 12, fontWeight: FontWeight.w900, color: AC.stamp, letterSpacing: 1.2)),
                     const SizedBox(height: 6),
                     Text(widget.state.nickname, style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w900, color: AC.ink)),
                     const SizedBox(height: 16),
@@ -186,7 +187,7 @@ Future<void> _confirmDeleteAccount(BuildContext context) async {
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
+  await SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
   await Supabase.initialize(
     url: 'https://qbfoomdzdssspkvbpdev.supabase.co',
     anonKey: 'sb_publishable_TsNqH8MaqBfqvsg16oACvw_wtvLdIsk',
@@ -196,25 +197,10 @@ void main() async {
   );
   runApp(
     ChangeNotifierProvider(
-      create: (_) => AppState()..init(),
+      create: (_) => AppState(),
       child: const YeokjangApp(),
     ),
   );
-}
-
-class AC {
-  static const paper   = Color(0xFFF5F0E8);
-  static const paper2  = Color(0xFFEDE8DC);
-  static const paper3  = Color(0xFFE0D9CC);
-  static const ink     = Color(0xFF1A1510);
-  static const ink2    = Color(0xFF3D342A);
-  static const ink3    = Color(0xFF7A6E62);
-  static const ink4    = Color(0xFFB8AFA3);
-  static const stamp   = Color(0xFF1B3A6B);
-  static const stampDim = Color(0x1A1B3A6B);
-  static const gold    = Color(0xFF8B6914);
-  static const goldDim = Color(0x1F8B6914);
-  static const border  = Color(0x1A1A1510);
 }
 
 class YeokjangApp extends StatelessWidget {
@@ -222,20 +208,9 @@ class YeokjangApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: '철도 마스터',
+      title: '역 컬렉터',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        useMaterial3: false,
-        scaffoldBackgroundColor: AC.paper,
-        colorScheme: const ColorScheme.light(primary: AC.stamp, surface: AC.paper),
-        appBarTheme: const AppBarTheme(
-          backgroundColor: AC.paper,
-          foregroundColor: AC.ink,
-          elevation: 0,
-          centerTitle: true,
-          titleTextStyle: TextStyle(fontSize: 16, fontWeight: FontWeight.w700, color: AC.ink),
-        ),
-      ),
+      theme: AppTheme.light,
       home: const SplashScreen(),
     );
   }
@@ -249,28 +224,69 @@ class SplashScreen extends StatefulWidget {
 }
 class _SplashState extends State<SplashScreen> with SingleTickerProviderStateMixin {
   late AnimationController _c;
+  static final _slideTween = Tween(begin: 0.0, end: 5.0);
   @override
   void initState() {
     super.initState();
     _c = AnimationController(vsync: this, duration: const Duration(milliseconds: 1200))..repeat(reverse: true);
-    Future.delayed(const Duration(milliseconds: 2200), () {
-      if (mounted) Navigator.pushReplacement(context, MaterialPageRoute(builder: (_) => const LoginScreen()));
-    });
+    WidgetsBinding.instance.addPostFrameCallback((_) => _initAndRoute());
+  }
+
+  Future<void> _initAndRoute() async {
+    final state = context.read<AppState>();
+    final minSplash = Future.delayed(const Duration(milliseconds: 1500));
+    await Future.wait([state.init(), minSplash]);
+    if (!mounted) return;
+    final session = Supabase.instance.client.auth.currentSession;
+    if (session != null) {
+      state.userId = session.user.id;
+      await state.retryPendingStamps();
+      await state.syncProfileFromRemote();
+      if (!mounted) return;
+      if (state.profileReady) {
+        if (state.onboardingSeen) {
+          Navigator.pushReplacement(context, MaterialPageRoute(builder: (_) => const MainScreen()));
+        } else {
+          Navigator.pushReplacement(context, MaterialPageRoute(builder: (_) => const OnboardingScreen()));
+        }
+      } else {
+        Navigator.pushReplacement(context, MaterialPageRoute(builder: (_) => const NicknameScreen()));
+      }
+      return;
+    }
+    Navigator.pushReplacement(context, MaterialPageRoute(builder: (_) => const LoginScreen()));
   }
   @override
   void dispose() { _c.dispose(); super.dispose(); }
   @override
   Widget build(BuildContext context) => Scaffold(
-    backgroundColor: AC.stamp,
-    body: Center(child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-      AnimatedBuilder(animation: _c, builder: (_, child) =>
-        Transform.translate(offset: Offset(Tween(begin: 0.0, end: 5.0).evaluate(_c), 0), child: child),
-        child: const Text('🚇', style: TextStyle(fontSize: 80))),
-      const SizedBox(height: 20),
-      const Text('철도 마스터', style: TextStyle(fontSize: 44, fontWeight: FontWeight.w700, color: AC.paper, letterSpacing: -2)),
-      const SizedBox(height: 8),
-      Text('전국 역을 모두 모아봐요', style: TextStyle(fontSize: 13, color: AC.paper.withValues(alpha: 0.4), letterSpacing: 3)),
-    ])),
+    body: Container(
+      decoration: const BoxDecoration(
+        gradient: LinearGradient(begin: Alignment.topLeft, end: Alignment.bottomRight, colors: [Color(0xFF1A1A2E), Color(0xFF16213E), Color(0xFF0F3460)]),
+      ),
+      child: Center(child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+        AnimatedBuilder(
+          animation: _c,
+          builder: (_, child) => Transform.translate(
+            offset: Offset(_slideTween.evaluate(_c), 0),
+            child: child,
+          ),
+          child: Container(
+            width: 100, height: 100,
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              color: Colors.white.withValues(alpha: 0.1),
+              border: Border.all(color: Colors.white24, width: 2),
+            ),
+            child: const Center(child: Text('🚂', style: TextStyle(fontSize: 44))),
+          ),
+        ),
+        const SizedBox(height: 32),
+        const Text('역 컬렉터', style: TextStyle(fontSize: 42, fontWeight: FontWeight.w900, color: Colors.white, letterSpacing: -2)),
+        const SizedBox(height: 8),
+        Text('머무르지 않아도, 여정은 기록됩니다', style: TextStyle(fontSize: 13, color: Colors.white.withValues(alpha: 0.4), letterSpacing: 1.8)),
+      ])),
+    ),
   );
 }
 
@@ -299,7 +315,11 @@ class _LoginScreenState extends State<LoginScreen> {
         await state.syncProfileFromRemote();
         if (!mounted) return;
         if (state.profileReady) {
-          _goMain(context);
+          if (state.onboardingSeen) {
+            _goMain(context);
+          } else {
+            _goOnboarding(context);
+          }
         } else {
           _goNickname(context);
         }
@@ -318,6 +338,11 @@ class _LoginScreenState extends State<LoginScreen> {
         MaterialPageRoute(builder: (_) => const MainScreen()),
       );
 
+  void _goOnboarding(BuildContext ctx) => Navigator.pushReplacement(
+        ctx,
+        MaterialPageRoute(builder: (_) => const OnboardingScreen()),
+      );
+
   void _goNickname(BuildContext ctx) => Navigator.pushReplacement(
         ctx,
         MaterialPageRoute(builder: (_) => const NicknameScreen()),
@@ -325,80 +350,55 @@ class _LoginScreenState extends State<LoginScreen> {
 
   @override
   Widget build(BuildContext context) => Scaffold(
-    backgroundColor: AC.stamp,
-    body: SafeArea(child: Padding(padding: const EdgeInsets.symmetric(horizontal: 28), child: Column(children: [
-      const Spacer(),
-      const Text('🚇', style: TextStyle(fontSize: 64)),
-      const SizedBox(height: 16),
-      const Text('철도 마스터', style: TextStyle(fontSize: 36, fontWeight: FontWeight.w700, color: AC.paper, letterSpacing: -2)),
-      const SizedBox(height: 8),
-      Text('전국 역을 모두 모아봐요', style: TextStyle(fontSize: 13, color: AC.paper.withValues(alpha: 0.4), letterSpacing: 2)),
-      const Spacer(),
-      _SocialBtn(
-        color: AC.paper2,
-        textColor: AC.ink2,
-        label: '이메일로 시작하기',
-        emoji: '✉️',
-        onTap: () => Navigator.push(
-          context,
-          MaterialPageRoute(builder: (_) => const EmailAuthScreen()),
+    body: Container(
+      decoration: const BoxDecoration(
+        gradient: LinearGradient(begin: Alignment.topLeft, end: Alignment.bottomRight, colors: [Color(0xFF1A1A2E), Color(0xFF16213E), Color(0xFF0F3460)]),
+      ),
+      child: SafeArea(child: Padding(padding: const EdgeInsets.symmetric(horizontal: 32), child: Column(children: [
+        const Spacer(flex: 3),
+        Container(
+          width: 80, height: 80,
+          decoration: BoxDecoration(shape: BoxShape.circle, color: Colors.white.withValues(alpha: 0.1), border: Border.all(color: Colors.white24)),
+          child: const Center(child: Text('🚂', style: TextStyle(fontSize: 36))),
         ),
-      ),
-      const SizedBox(height: 20),
-      Text('계속 진행하면 서비스 이용약관 및\n개인정보처리방침에 동의한 것으로 간주돼요',
-        textAlign: TextAlign.center,
-        style: TextStyle(fontSize: 11, color: AC.paper.withValues(alpha: 0.3), height: 1.7)),
-      const SizedBox(height: 6),
-      Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          TextButton(
-            onPressed: () => openExternalUrl(context, kTermsUrl),
-            child: Text(
-              '서비스 이용약관',
-              style: TextStyle(
-                fontSize: 11,
-                color: AC.paper.withValues(alpha: 0.8),
-                decoration: TextDecoration.underline,
-              ),
+        const SizedBox(height: 24),
+        const Text('역 컬렉터', style: TextStyle(fontSize: 36, fontWeight: FontWeight.w900, color: Colors.white, letterSpacing: -2)),
+        const SizedBox(height: 8),
+        Text('"모든 걸 다 이해할 필요가 없거든요."', style: TextStyle(fontSize: 13, color: Colors.white.withValues(alpha: 0.5), letterSpacing: 0.5, fontStyle: FontStyle.italic)),
+        const SizedBox(height: 4),
+        Text('— Jane Birkin', style: TextStyle(fontSize: 11, color: Colors.white.withValues(alpha: 0.3))),
+        const Spacer(flex: 2),
+        SizedBox(
+          width: double.infinity,
+          child: ElevatedButton(
+            onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const EmailAuthScreen())),
+            style: ElevatedButton.styleFrom(
+              backgroundColor: Colors.white,
+              foregroundColor: const Color(0xFF1A1A2E),
+              padding: const EdgeInsets.symmetric(vertical: 18),
+              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+              elevation: 0,
+              textStyle: const TextStyle(fontSize: 16, fontWeight: FontWeight.w800),
             ),
+            child: const Text('이메일로 시작하기'),
           ),
-          Text('·', style: TextStyle(color: AC.paper.withValues(alpha: 0.6))),
-          TextButton(
-            onPressed: () => openExternalUrl(context, kPrivacyPolicyUrl),
-            child: Text(
-              '개인정보처리방침',
-              style: TextStyle(
-                fontSize: 11,
-                color: AC.paper.withValues(alpha: 0.8),
-                decoration: TextDecoration.underline,
-              ),
-            ),
-          ),
-        ],
-      ),
-      const SizedBox(height: 32),
-    ]))),
+        ),
+        const SizedBox(height: 16),
+        Text('계속 진행하면 이용약관 및 개인정보처리방침에\n동의한 것으로 간주돼요',
+          textAlign: TextAlign.center,
+          style: TextStyle(fontSize: 11, color: Colors.white.withValues(alpha: 0.25), height: 1.7)),
+        const SizedBox(height: 6),
+        Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+          TextButton(onPressed: () => openExternalUrl(context, kTermsUrl), child: Text('서비스 이용약관', style: TextStyle(fontSize: 11, color: Colors.white.withValues(alpha: 0.6), decoration: TextDecoration.underline, decorationColor: Colors.white38))),
+          Text('  ·  ', style: TextStyle(color: Colors.white.withValues(alpha: 0.3))),
+          TextButton(onPressed: () => openExternalUrl(context, kPrivacyPolicyUrl), child: Text('개인정보처리방침', style: TextStyle(fontSize: 11, color: Colors.white.withValues(alpha: 0.6), decoration: TextDecoration.underline, decorationColor: Colors.white38))),
+        ]),
+        const SizedBox(height: 24),
+      ]))),
+    ),
   );
 }
 
-class _SocialBtn extends StatelessWidget {
-  final Color color, textColor;
-  final String label, emoji;
-  final VoidCallback onTap;
-  const _SocialBtn({required this.color, required this.textColor, required this.label, required this.emoji, required this.onTap});
-  @override
-  Widget build(BuildContext context) => SizedBox(width: double.infinity,
-    child: ElevatedButton(onPressed: onTap,
-      style: ElevatedButton.styleFrom(backgroundColor: color, foregroundColor: textColor,
-        padding: const EdgeInsets.symmetric(vertical: 16),
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)), elevation: 0),
-      child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-        Text(emoji, style: const TextStyle(fontSize: 18)),
-        const SizedBox(width: 10),
-        Text(label, style: TextStyle(fontSize: 15, fontWeight: FontWeight.w900, color: textColor)),
-      ])));
-}
 
 class EmailAuthScreen extends StatefulWidget {
   const EmailAuthScreen({super.key});
@@ -407,10 +407,36 @@ class EmailAuthScreen extends StatefulWidget {
 }
 
 class _EmailAuthScreenState extends State<EmailAuthScreen> {
+  static const _savedEmailKey = 'saved_login_email';
   final _email = TextEditingController();
   final _password = TextEditingController();
   bool _signupMode = false;
   bool _loading = false;
+  bool _saveEmail = true;
+
+  @override
+  void initState() {
+    super.initState();
+    _loadSavedEmail();
+  }
+
+  Future<void> _loadSavedEmail() async {
+    final prefs = await SharedPreferences.getInstance();
+    final saved = prefs.getString(_savedEmailKey);
+    if (saved != null && saved.isNotEmpty && mounted) {
+      _email.text = saved;
+      setState(() {});
+    }
+  }
+
+  Future<void> _persistEmail(String email) async {
+    final prefs = await SharedPreferences.getInstance();
+    if (_saveEmail && email.isNotEmpty) {
+      await prefs.setString(_savedEmailKey, email);
+    } else {
+      await prefs.remove(_savedEmailKey);
+    }
+  }
 
   @override
   void dispose() {
@@ -438,6 +464,39 @@ class _EmailAuthScreenState extends State<EmailAuthScreen> {
     setState(() => _loading = false);
 
     if (msg == null) {
+      await _persistEmail(email);
+      if (!mounted) return;
+      final state = context.read<AppState>();
+      final session = Supabase.instance.client.auth.currentSession;
+      if (session != null) {
+        state.userId = session.user.id;
+        await state.retryPendingStamps();
+        await state.syncProfileFromRemote();
+        if (!mounted) return;
+        if (state.profileReady) {
+          if (state.onboardingSeen) {
+            Navigator.pushAndRemoveUntil(
+              context,
+              MaterialPageRoute(builder: (_) => const MainScreen()),
+              (_) => false,
+            );
+          } else {
+            Navigator.pushAndRemoveUntil(
+              context,
+              MaterialPageRoute(builder: (_) => const OnboardingScreen()),
+              (_) => false,
+            );
+          }
+        } else {
+          Navigator.pushAndRemoveUntil(
+            context,
+            MaterialPageRoute(builder: (_) => const NicknameScreen()),
+            (_) => false,
+          );
+        }
+        return;
+      }
+      if (!mounted) return;
       Navigator.pop(context);
       return;
     }
@@ -450,13 +509,14 @@ class _EmailAuthScreenState extends State<EmailAuthScreen> {
       backgroundColor: AC.paper,
       appBar: AppBar(title: Text(_signupMode ? '이메일 회원가입' : '이메일 로그인')),
       body: SafeArea(
-        child: Padding(
+        child: SingleChildScrollView(
           padding: const EdgeInsets.fromLTRB(24, 20, 24, 24),
           child: Column(
             children: [
               TextField(
                 controller: _email,
                 keyboardType: TextInputType.emailAddress,
+                textInputAction: TextInputAction.next,
                 decoration: InputDecoration(
                   labelText: '이메일',
                   filled: true,
@@ -468,6 +528,8 @@ class _EmailAuthScreenState extends State<EmailAuthScreen> {
               TextField(
                 controller: _password,
                 obscureText: true,
+                textInputAction: TextInputAction.done,
+                onSubmitted: (_) => _loading ? null : _submit(),
                 decoration: InputDecoration(
                   labelText: '비밀번호',
                   filled: true,
@@ -475,7 +537,26 @@ class _EmailAuthScreenState extends State<EmailAuthScreen> {
                   border: OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
                 ),
               ),
-              const SizedBox(height: 18),
+              const SizedBox(height: 8),
+              Row(
+                children: [
+                  SizedBox(
+                    width: 24, height: 24,
+                    child: Checkbox(
+                      value: _saveEmail,
+                      onChanged: (v) => setState(() => _saveEmail = v ?? true),
+                      materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                      visualDensity: VisualDensity.compact,
+                    ),
+                  ),
+                  const SizedBox(width: 8),
+                  GestureDetector(
+                    onTap: () => setState(() => _saveEmail = !_saveEmail),
+                    child: const Text('이메일 저장', style: TextStyle(fontSize: 13, color: AC.ink3)),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 14),
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
@@ -539,38 +620,44 @@ class _NicknameState extends State<NicknameScreen> {
   final _c = TextEditingController();
   @override
   void dispose() { _c.dispose(); super.dispose(); }
+  static const _maxNickLength = 20;
   @override
   Widget build(BuildContext context) => Scaffold(
     backgroundColor: AC.paper,
-    body: SafeArea(child: Column(children: [
-      Expanded(child: Padding(padding: const EdgeInsets.symmetric(horizontal: 28),
-        child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-          const Text('🎫', style: TextStyle(fontSize: 64)),
-          const SizedBox(height: 20),
-          const Text('어떻게 불러드릴까요?', style: TextStyle(fontSize: 24, fontWeight: FontWeight.w700, color: AC.ink, letterSpacing: -1)),
-          const SizedBox(height: 8),
-          Text('철도 마스터에서 사용할\n닉네임을 정해주세요', textAlign: TextAlign.center,
-            style: TextStyle(fontSize: 14, color: AC.ink3, height: 1.6)),
-          const SizedBox(height: 32),
-          ValueListenableBuilder(valueListenable: _c, builder: (_, val, _) => Column(
-            crossAxisAlignment: CrossAxisAlignment.end,
-            children: [
-              TextField(controller: _c, maxLength: 10, textAlign: TextAlign.center,
-                style: const TextStyle(fontSize: 17, fontWeight: FontWeight.w700, color: AC.ink),
-                decoration: InputDecoration(
-                  hintText: '닉네임 입력', hintStyle: const TextStyle(color: AC.ink4),
-                  counterText: '', filled: true, fillColor: AC.paper2,
-                  border: OutlineInputBorder(borderRadius: BorderRadius.circular(14), borderSide: const BorderSide(color: AC.border)),
-                  focusedBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(14), borderSide: const BorderSide(color: AC.stamp, width: 2)),
-                  enabledBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(14), borderSide: const BorderSide(color: AC.border)),
-                )),
-              const SizedBox(height: 6),
-              Text('${val.text.length} / 10', style: const TextStyle(fontSize: 11, color: AC.ink3)),
-            ],
-          )),
-        ]))),
-      Padding(padding: const EdgeInsets.fromLTRB(28, 0, 28, 48),
-        child: SizedBox(width: double.infinity,
+    appBar: AppBar(backgroundColor: Colors.transparent, elevation: 0,
+      leading: BackButton(color: AC.ink3, onPressed: () {
+        Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (_) => const LoginScreen()), (_) => false);
+      })),
+    body: SafeArea(top: false, child: SingleChildScrollView(child: Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 28),
+      child: Column(children: [
+        const SizedBox(height: 40),
+        const Text('🎫', style: TextStyle(fontSize: 64)),
+        const SizedBox(height: 20),
+        const Text('어떻게 불러드릴까요?', style: TextStyle(fontSize: 24, fontWeight: FontWeight.w700, color: AC.ink, letterSpacing: -1)),
+        const SizedBox(height: 8),
+        Text('역 컬렉터에서 사용할 닉네임을 정해주세요', textAlign: TextAlign.center,
+          style: TextStyle(fontSize: 14, color: AC.ink3, height: 1.6)),
+        const SizedBox(height: 32),
+        ValueListenableBuilder(valueListenable: _c, builder: (_, val, child) => Column(
+          crossAxisAlignment: CrossAxisAlignment.end,
+          children: [
+            TextField(controller: _c, maxLength: _maxNickLength, textAlign: TextAlign.center,
+              textInputAction: TextInputAction.done,
+              style: const TextStyle(fontSize: 17, fontWeight: FontWeight.w700, color: AC.ink),
+              decoration: InputDecoration(
+                hintText: '닉네임 입력', hintStyle: const TextStyle(color: AC.ink4),
+                counterText: '', filled: true, fillColor: AC.paper2,
+                border: OutlineInputBorder(borderRadius: BorderRadius.circular(14), borderSide: const BorderSide(color: AC.border)),
+                focusedBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(14), borderSide: const BorderSide(color: AC.stamp, width: 2)),
+                enabledBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(14), borderSide: const BorderSide(color: AC.border)),
+              )),
+            const SizedBox(height: 6),
+            Text('${val.text.length} / $_maxNickLength', style: const TextStyle(fontSize: 11, color: AC.ink3)),
+          ],
+        )),
+        const SizedBox(height: 32),
+        SizedBox(width: double.infinity,
           child: ElevatedButton(
             onPressed: () async {
               final nick = _c.text.trim().isEmpty ? '철도인' : _c.text.trim();
@@ -581,8 +668,9 @@ class _NicknameState extends State<NicknameScreen> {
             style: ElevatedButton.styleFrom(backgroundColor: AC.stamp, foregroundColor: AC.paper,
               padding: const EdgeInsets.symmetric(vertical: 16),
               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)), elevation: 0),
-            child: const Text('다음', style: TextStyle(fontSize: 15, fontWeight: FontWeight.w900))))),
-    ])),
+            child: const Text('다음', style: TextStyle(fontSize: 15, fontWeight: FontWeight.w900)))),
+        const SizedBox(height: 48),
+      ])))),
   );
 }
 
@@ -596,10 +684,41 @@ class _OnboardState extends State<OnboardingScreen> {
   int _page = 0;
   final _ctrl = PageController();
   final _pages = const [
-    {'emoji':'🐦','title':'역에는 까치가 산다지...','desc':'지하철이 역에 서는 그 순간\n앱을 열면 스탬프가 찍혀요\n내리지 않아도 돼요','bg':AC.stamp,'light':true},
-    {'emoji':'🗺️','title':'전국 역을 모두\n철도 마스터가 되어보세요','desc':'역마다 다른 스탬프\n지도를 가득 채워봐요','bg':AC.paper,'light':false},
+    {
+      'emoji': '🚆',
+      'title': '모든 걸 다 이해할 필요가 없거든요.',
+      'desc': '여기 왔지만 머물러 있지는 않아요.\n지나가며 기록하는 철도 여정으로 시작해요.',
+      'caption': '출처: 제인 버킨(Jane Birkin) 인터뷰 발언',
+      'bg': AC.stamp,
+      'light': true,
+    },
+    {
+      'emoji': '🧭',
+      'title': '우리는 머무르기보다\n지나가며 남깁니다.',
+      'desc': '역마다 남는 스탬프와 노선 진행으로\n이동의 순간을 작은 컬렉션으로 만들어요.',
+      'caption': 'Metro Collector 온보딩',
+      'bg': Color(0xFF183252),
+      'light': true,
+    },
+    {
+      'emoji': '🗺️',
+      'title': '오늘의 노선을 고르고,\n다음 역으로 가볼까요?',
+      'desc': '도감 · 노선도 · 배지까지\n여정을 한 화면에서 단단하게 이어집니다.',
+      'caption': '역 컬렉터',
+      'bg': AC.paper,
+      'light': false,
+    },
   ];
-  void _goMain() => Navigator.pushReplacement(context, MaterialPageRoute(builder: (_) => const MainScreen()));
+
+  Future<void> _goMain() async {
+    await context.read<AppState>().markOnboardingSeen();
+    if (!mounted) return;
+    if (Navigator.of(context).canPop()) {
+      Navigator.pop(context);
+    } else {
+      Navigator.pushReplacement(context, MaterialPageRoute(builder: (_) => const MainScreen()));
+    }
+  }
   @override
   void dispose() { _ctrl.dispose(); super.dispose(); }
   @override
@@ -624,6 +743,24 @@ class _OnboardState extends State<OnboardingScreen> {
                 const SizedBox(height: 12),
                 Text(pg['desc']! as String, textAlign: TextAlign.center, style: TextStyle(
                   fontSize: 15, height: 1.7, color: lt ? AC.paper.withValues(alpha: 0.65) : AC.ink3)),
+                const SizedBox(height: 14),
+                Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 7),
+                  decoration: BoxDecoration(
+                    color: lt ? AC.paper.withValues(alpha: 0.12) : AC.paper2,
+                    borderRadius: BorderRadius.circular(999),
+                    border: Border.all(color: lt ? AC.paper.withValues(alpha: 0.22) : AC.border),
+                  ),
+                  child: Text(
+                    pg['caption']! as String,
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontSize: 11,
+                      fontWeight: FontWeight.w700,
+                      color: lt ? AC.paper.withValues(alpha: 0.78) : AC.ink3,
+                    ),
+                  ),
+                ),
                 const SizedBox(height: 160),
               ]));
           }),
@@ -651,10 +788,11 @@ class _OnboardState extends State<OnboardingScreen> {
                   child: Text(_page < _pages.length - 1 ? '다음' : '시작하기',
                     style: const TextStyle(fontSize: 15, fontWeight: FontWeight.w900)))),
             ]))),
-        Positioned(top: 52, right: 18,
-          child: GestureDetector(onTap: _goMain,
-            child: Text('건너뛰기', style: TextStyle(fontSize: 12, fontWeight: FontWeight.w700,
-              color: light ? AC.paper.withValues(alpha: 0.4) : AC.ink3)))),
+        Positioned(top: 44, right: 10,
+          child: GestureDetector(onTap: _goMain, behavior: HitTestBehavior.opaque,
+            child: Padding(padding: const EdgeInsets.all(12),
+              child: Text('건너뛰기', style: TextStyle(fontSize: 12, fontWeight: FontWeight.w700,
+                color: light ? AC.paper.withValues(alpha: 0.4) : AC.ink3))))),
       ]),
     );
   }
@@ -668,95 +806,35 @@ class MainScreen extends StatefulWidget {
 }
 class _MainState extends State<MainScreen> {
   int _tab = 0;
+  String? _focusedLine;
+
+  void _openLine(String line) {
+    setState(() {
+      _focusedLine = line;
+      _tab = 0;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     final state = context.watch<AppState>();
-    final tabs = [HomeTab(state: state), CollectionTab(state: state), MapTab(state: state), MeTab(state: state)];
+    final requestedLine = state.consumeRequestedLineFocus();
+    if (requestedLine != null && requestedLine != _focusedLine) {
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        if (!mounted) return;
+        _openLine(requestedLine);
+      });
+    }
+    final tabs = [
+      MapTab(state: state, focusedLine: _focusedLine),
+      MeTab(state: state, onOpenLine: _openLine),
+    ];
     return Scaffold(
-      backgroundColor: AC.paper,
+      backgroundColor: AC.paper2,
       body: IndexedStack(index: _tab, children: tabs),
       bottomNavigationBar: _BottomBar(current: _tab, onTap: (i) => setState(() => _tab = i)),
-      floatingActionButton: _StampFAB(state: state),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
   }
-}
-
-class _StampFAB extends StatelessWidget {
-  final AppState state;
-  const _StampFAB({required this.state});
-  @override
-  Widget build(BuildContext context) => GestureDetector(
-    onTap: () async {
-      if (state.stations.isEmpty) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(content: Text('역 데이터 로딩 중이에요. 잠시 후 다시 시도해주세요.')),
-        );
-        return;
-      }
-      final pos = await state.getCurrentPosition();
-      if (!context.mounted) return;
-      if (pos == null) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text(state.lastStampError ?? '현재 위치를 확인할 수 없어요.')),
-        );
-        return;
-      }
-
-      final nearest = state.getNearestStationsFromPosition(pos, limit: 5, onlyUnstamped: true);
-      if (nearest.isEmpty) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(content: Text('선택 가능한 역이 없어요.')),
-        );
-        return;
-      }
-
-      showModalBottomSheet(
-        context: context,
-        backgroundColor: Colors.transparent,
-        isScrollControlled: true,
-        builder: (_) => NearbyStationPickerSheet(
-          userPosition: pos,
-          candidates: nearest,
-          onPick: (picked) async {
-            Navigator.pop(context);
-            showModalBottomSheet(
-              context: context,
-              backgroundColor: Colors.transparent,
-              isScrollControlled: true,
-              builder: (_) => GpsSheet(station: picked.station, onConfirm: () async {
-                Navigator.pop(context);
-                final ok = await state.stampStation(picked.station);
-                if (!context.mounted) return;
-                if (ok) {
-                  await showDialog(context: context, builder: (_) => StampDialog(station: picked.station));
-                  if (!context.mounted) return;
-                  final unlocked = state.consumeRecentUnlockedBadges();
-                  if (unlocked.isNotEmpty) {
-                    await showDialog(
-                      context: context,
-                      builder: (_) => BadgeUnlockedDialog(badges: unlocked),
-                    );
-                  }
-                } else {
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(
-                      content: Text(
-                        state.lastStampError ?? '현재 위치가 역 반경 100m 이내일 때만 스탬프를 찍을 수 있어요.',
-                      ),
-                    ),
-                  );
-                }
-              }),
-            );
-          },
-        ),
-      );
-    },
-    child: Container(width: 58, height: 58,
-      decoration: const BoxDecoration(color: AC.stamp, shape: BoxShape.circle,
-        boxShadow: [BoxShadow(color: Color(0x401B3A6B), blurRadius: 16, offset: Offset(0, 4))]),
-      child: const Icon(Icons.my_location_rounded, color: AC.paper, size: 26)));
 }
 
 class NearbyStationPickerSheet extends StatefulWidget {
@@ -964,30 +1042,31 @@ class _BottomBar extends StatelessWidget {
   const _BottomBar({required this.current, required this.onTap});
   @override
   Widget build(BuildContext context) {
-    final items = [
-      (Icons.home_outlined, Icons.home_rounded, '홈'),
-      (Icons.grid_view_outlined, Icons.grid_view_rounded, '도감'),
-      (Icons.circle, Icons.circle, ''),
-      (Icons.map_outlined, Icons.map_rounded, '지도'),
-      (Icons.person_outline, Icons.person_rounded, '나'),
-    ];
-    return BottomAppBar(
-      color: AC.paper2, elevation: 12, notchMargin: 8,
-      shape: const CircularNotchedRectangle(),
-      child: SizedBox(height: 62, child: Row(
-        children: List.generate(items.length, (i) {
-          if (i == 2) return const Expanded(child: SizedBox());
-          final tabIdx = i < 2 ? i : i - 1;
-          final on = tabIdx == current;
-          return Expanded(child: InkWell(
-            onTap: () => onTap(tabIdx),
-            splashColor: Colors.transparent,
-            child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-              Icon(on ? items[i].$2 : items[i].$1, color: on ? AC.stamp : AC.ink4, size: 24),
-              const SizedBox(height: 2),
-              Text(items[i].$3, style: TextStyle(fontSize: 10, fontWeight: FontWeight.w700, color: on ? AC.stamp : AC.ink4)),
-            ])));
-        }))));
+    return Container(
+      decoration: BoxDecoration(
+        color: AC.paper.withValues(alpha: 0.94),
+        border: Border(top: BorderSide(color: AC.border.withValues(alpha: 0.7))),
+        boxShadow: const [
+          BoxShadow(color: Color(0x12000000), blurRadius: 20, offset: Offset(0, -4)),
+        ],
+      ),
+      child: NavigationBar(
+        selectedIndex: current,
+        onDestinationSelected: onTap,
+        destinations: const [
+          NavigationDestination(
+            icon: Icon(Icons.route_outlined),
+            selectedIcon: Icon(Icons.route_rounded),
+            label: '노선도',
+          ),
+          NavigationDestination(
+            icon: Icon(Icons.person_outline),
+            selectedIcon: Icon(Icons.person_rounded),
+            label: '나',
+          ),
+        ],
+      ),
+    );
   }
 }
 
@@ -1056,7 +1135,8 @@ class _GpsSheetState extends State<GpsSheet> {
       child: Column(mainAxisSize: MainAxisSize.min, children: [
         _GpsPulse(),
         const SizedBox(height: 20),
-        Text('위치 확인됨 ✓', style: TextStyle(fontSize: 11, color: AC.ink3, letterSpacing: 2)),
+        if (!_isChecking && _error == null)
+          Text('위치 확인됨 ✓', style: TextStyle(fontSize: 11, color: AC.ink3, letterSpacing: 2)),
         const SizedBox(height: 8),
         Text(station.name, style: const TextStyle(fontSize: 30, fontWeight: FontWeight.w700, color: AC.ink, letterSpacing: -1)),
         const SizedBox(height: 8),
@@ -1172,7 +1252,7 @@ class _StampDialogState extends State<StampDialog> with SingleTickerProviderStat
       );
       await Share.shareXFiles(
         [xf],
-        text: '철도 마스터에서 ${widget.station.name}역 스탬프를 획득했어요! 🚉',
+        text: 'Metro Collector에서 ${widget.station.name}역 스탬프를 획득했어요! 🚉',
       );
     } catch (e) {
       if (!mounted) return;
@@ -1185,6 +1265,7 @@ class _StampDialogState extends State<StampDialog> with SingleTickerProviderStat
   @override
   Widget build(BuildContext context) {
     final lc = kLines[widget.station.line]?.color ?? AC.stamp;
+    final state = context.read<AppState>();
     return Dialog(backgroundColor: Colors.transparent,
       child: ScaleTransition(scale: _s,
         child: Container(padding: const EdgeInsets.all(28),
@@ -1218,11 +1299,14 @@ class _StampDialogState extends State<StampDialog> with SingleTickerProviderStat
             Text('${widget.station.region} · ${widget.station.line}', style: TextStyle(fontSize: 13, color: AC.ink3)),
             const SizedBox(height: 24),
             Row(children: [
-              Expanded(child: OutlinedButton(onPressed: () => Navigator.pop(context),
+              Expanded(child: OutlinedButton(onPressed: () {
+                state.requestLineFocus(widget.station.line);
+                Navigator.pop(context);
+              },
                 style: OutlinedButton.styleFrom(padding: const EdgeInsets.symmetric(vertical: 14),
                   side: const BorderSide(color: AC.border),
                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12))),
-                child: Text('홈으로', style: TextStyle(color: AC.ink3, fontWeight: FontWeight.w700)))),
+                child: Text('노선 보기', style: TextStyle(color: AC.ink3, fontWeight: FontWeight.w700)))),
               const SizedBox(width: 10),
               Expanded(child: ElevatedButton(onPressed: _shareStampImage,
                 style: ElevatedButton.styleFrom(backgroundColor: AC.stamp, foregroundColor: AC.paper,
@@ -1283,709 +1367,1617 @@ class BadgeUnlockedDialog extends StatelessWidget {
   }
 }
 
-// ══ 홈 탭 ═════════════════════════════════════════════
-class HomeTab extends StatefulWidget {
+// ══ 노선도 탭 (메인) ══════════════════════════════════
+class MapTab extends StatefulWidget {
   final AppState state;
-  const HomeTab({super.key, required this.state});
-  @override
-  State<HomeTab> createState() => _HomeTabState();
-}
-class _HomeTabState extends State<HomeTab> {
-  bool _showAll = false;
-  @override
-  Widget build(BuildContext context) {
-    final state = widget.state;
-    final stats = state.lineStats;
-    final sorted = stats.keys.toList()
-      ..sort((a, b) {
-        final pA = stats[a]!['got']! / stats[a]!['total']!;
-        final pB = stats[b]!['got']! / stats[b]!['total']!;
-        return pB.compareTo(pA);
-      });
-    final display = _showAll ? sorted : sorted.take(6).toList();
+  final String? focusedLine;
+  const MapTab({super.key, required this.state, this.focusedLine});
 
-    return SafeArea(child: CustomScrollView(slivers: [
-      SliverToBoxAdapter(child: Padding(padding: const EdgeInsets.fromLTRB(18, 16, 18, 0),
-        child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-          Text('${state.nickname}님',
-            style: const TextStyle(fontSize: 22, fontWeight: FontWeight.w700, color: AC.ink, letterSpacing: -1)),
-          Text('전국 역을 하나씩 모아봐요', style: TextStyle(fontSize: 12, color: AC.ink3)),
-        ]))),
-      // 통계
-      SliverToBoxAdapter(child: Container(
-        margin: const EdgeInsets.only(top: 12),
-        decoration: BoxDecoration(border: Border.symmetric(horizontal: BorderSide(color: AC.border))),
-        child: Row(children: [
-          _Stat('${state.gotCount}', '찍은 역'),
-          _Stat('${state.totalStations}', '전체 역'),
-          _Stat('${state.completionPct.toStringAsFixed(1)}%', '완성도', last: true),
-        ]))),
-      // 노선별
-      SliverToBoxAdapter(child: Padding(padding: const EdgeInsets.fromLTRB(18, 16, 18, 0),
-        child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-          Text('노선별 현황', style: TextStyle(fontSize: 11, fontWeight: FontWeight.w700, color: AC.ink3, letterSpacing: 1)),
-          const SizedBox(height: 10),
-          ...display.map((line) {
-            final info = kLines[line];
-            final g = stats[line]!['got']!;
-            final t = stats[line]!['total']!;
-            return _LineRow(line: line, color: info?.color ?? AC.ink4, got: g, total: t, progress: t > 0 ? g / t : 0);
-          }),
-          const SizedBox(height: 8),
-          Center(child: GestureDetector(
-            onTap: () => setState(() => _showAll = !_showAll),
-            child: Text(_showAll ? '접기 ↑' : '노선 전체 보기 ↓',
-              style: const TextStyle(fontSize: 12, color: AC.stamp, fontWeight: FontWeight.w700)))),
-        ]))),
-      // 최근 찍은 역
-      SliverToBoxAdapter(child: Padding(padding: const EdgeInsets.fromLTRB(18, 20, 18, 8),
-        child: Text('최근에 찍은 역', style: TextStyle(fontSize: 11, fontWeight: FontWeight.w700, color: AC.ink3, letterSpacing: 1)))),
-      SliverToBoxAdapter(child: SizedBox(height: 118,
-        child: state.recentStations.isEmpty
-          ? Center(child: Text('첫 역을 찍어볼까요? 🚉', style: TextStyle(color: AC.ink4, fontSize: 13)))
-          : ListView.builder(
-              scrollDirection: Axis.horizontal,
-              padding: const EdgeInsets.symmetric(horizontal: 18),
-              itemCount: state.recentStations.length + 1,
-              itemBuilder: (_, i) => i == state.recentStations.length
-                ? _MoreCard()
-                : _RecentCard(station: state.recentStations[i])))),
-      const SliverToBoxAdapter(child: SizedBox(height: 100)),
-    ]));
+  @override
+  State<MapTab> createState() => _MapTabState();
+}
+
+class _MapTabState extends State<MapTab> {
+  String _region = '전체';
+  String? _selectedLine;
+  bool _showAllStations = false;
+  final _searchCtrl = TextEditingController();
+  String _searchQuery = '';
+
+  List<LineProgress> get _visibleLines {
+    final source = widget.state.lineProgressList;
+    List<LineProgress> filtered;
+    if (_region == '전체') {
+      filtered = source;
+    } else if (_region == '간선철도') {
+      filtered = source.where((line) => line.type == 'rail').toList(growable: false);
+    } else {
+      filtered = source.where((line) => line.region == _region).toList(growable: false);
+    }
+    if (_searchQuery.isNotEmpty) {
+      filtered = filtered.where((line) {
+        if (line.line.toLowerCase().contains(_searchQuery)) return true;
+        return line.stations.any((s) =>
+            s.name.toLowerCase().contains(_searchQuery) ||
+            s.en.toLowerCase().contains(_searchQuery));
+      }).toList(growable: false);
+    }
+    return filtered;
   }
-}
-
-class _Stat extends StatelessWidget {
-  final String v, l; final bool last;
-  const _Stat(this.v, this.l, {this.last = false});
-  @override
-  Widget build(BuildContext context) => Expanded(child: Container(
-    padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
-    decoration: BoxDecoration(border: Border(right: last ? BorderSide.none : BorderSide(color: AC.border))),
-    child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-      Text(v, style: const TextStyle(fontSize: 22, fontWeight: FontWeight.w900, color: AC.stamp)),
-      Text(l, style: const TextStyle(fontSize: 10, color: AC.ink3, letterSpacing: 0.3)),
-    ])));
-}
-
-class _LineRow extends StatelessWidget {
-  final String line; final Color color; final int got, total; final double progress;
-  const _LineRow({required this.line, required this.color, required this.got, required this.total, required this.progress});
-  @override
-  Widget build(BuildContext context) => Padding(padding: const EdgeInsets.only(bottom: 10),
-    child: Row(children: [
-      Container(width: 13, height: 13, decoration: BoxDecoration(color: color, shape: BoxShape.circle)),
-      const SizedBox(width: 10),
-      SizedBox(width: 68, child: Text(line, style: const TextStyle(fontSize: 13, fontWeight: FontWeight.w700, color: AC.ink), overflow: TextOverflow.ellipsis)),
-      Expanded(child: ClipRRect(borderRadius: BorderRadius.circular(3),
-        child: LinearProgressIndicator(value: progress, backgroundColor: AC.paper3,
-          valueColor: AlwaysStoppedAnimation(color), minHeight: 5))),
-      const SizedBox(width: 8),
-      SizedBox(width: 40, child: Text('$got/$total', textAlign: TextAlign.right,
-        style: const TextStyle(fontSize: 11, color: AC.ink3))),
-    ]));
-}
-
-class _RecentCard extends StatelessWidget {
-  final Station station;
-  const _RecentCard({required this.station});
-  @override
-  Widget build(BuildContext context) {
-    final lc = kLines[station.line]?.color ?? AC.ink4;
-    return Container(width: 90, margin: const EdgeInsets.only(right: 10),
-      child: Container(width: 90, height: 90,
-        decoration: BoxDecoration(color: AC.stampDim, borderRadius: BorderRadius.circular(10),
-          border: Border.all(color: AC.stamp, width: 1.5)),
-        child: Stack(children: [
-          Center(child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-            Text(station.icon, style: const TextStyle(fontSize: 28)),
-            const SizedBox(height: 2),
-            Text(station.name, style: const TextStyle(fontSize: 8, fontWeight: FontWeight.w700, color: AC.stamp)),
-          ])),
-          Positioned(top: 5, right: 5,
-            child: Container(width: 14, height: 14, decoration: BoxDecoration(color: lc, shape: BoxShape.circle))),
-        ])));
-  }
-}
-
-class _MoreCard extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) => Container(width: 90, margin: const EdgeInsets.only(right: 10),
-    child: Container(width: 90, height: 90,
-      decoration: BoxDecoration(color: AC.paper2, borderRadius: BorderRadius.circular(10), border: Border.all(color: AC.border)),
-      child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-        Text('＋', style: TextStyle(fontSize: 22, color: AC.ink3)),
-        Text('더 찍기', style: TextStyle(fontSize: 8, color: AC.ink3, fontWeight: FontWeight.w700)),
-      ])));
-}
-
-// ══ 도감 탭 ═══════════════════════════════════════════
-class CollectionTab extends StatefulWidget {
-  final AppState state;
-  const CollectionTab({super.key, required this.state});
-  @override
-  State<CollectionTab> createState() => _CollTabState();
-}
-class _CollTabState extends State<CollectionTab> {
-  String _filter = 'all';
-  final _sc = TextEditingController();
-  Timer? _searchDebounce;
-  List<Station> _filteredItems = [];
 
   @override
   void initState() {
     super.initState();
-    _sc.addListener(_onSearchChanged);
-    _recomputeFiltered();
+    _searchCtrl.addListener(() {
+      setState(() => _searchQuery = _searchCtrl.text.trim().toLowerCase());
+    });
   }
 
   @override
-  void didUpdateWidget(covariant CollectionTab oldWidget) {
+  void didUpdateWidget(covariant MapTab oldWidget) {
     super.didUpdateWidget(oldWidget);
-    if (!identical(oldWidget.state.stations, widget.state.stations)) {
-      _recomputeFiltered();
-    }
-  }
-
-  void _onSearchChanged() {
-    _searchDebounce?.cancel();
-    _searchDebounce = Timer(const Duration(milliseconds: 120), _recomputeFiltered);
-  }
-
-  void _setFilter(String value) {
-    setState(() => _filter = value);
-    _recomputeFiltered();
-  }
-
-  void _recomputeFiltered() {
-    final q = _sc.text.trim().toLowerCase();
-    final stations = widget.state.stations;
-    final lineFilter =
-        _filter.startsWith('line:') ? _filter.substring('line:'.length) : null;
-    final items = stations.where((s) {
-      if (q.isNotEmpty) {
-        final name = s.name.toLowerCase();
-        final en = s.en.toLowerCase();
-        final line = s.line.toLowerCase();
-        if (!name.contains(q) && !en.contains(q) && !line.contains(q)) return false;
+    if (widget.focusedLine != null && widget.focusedLine != oldWidget.focusedLine) {
+      final target = widget.state.lineProgressList.where((line) => line.line == widget.focusedLine).firstOrNull;
+      if (target != null) {
+        final nextRegion = target.type == 'rail' ? '간선철도' : target.region;
+        WidgetsBinding.instance.addPostFrameCallback((_) {
+          if (!mounted) return;
+          setState(() {
+            _region = nextRegion;
+            _selectedLine = target.line;
+            _searchCtrl.clear();
+          });
+        });
       }
-      if (lineFilter != null) return s.line == lineFilter;
-      switch (_filter) {
-        case 'got':
-          return s.got;
-        case '수도권':
-          return kLines[s.line]?.region == '수도권';
-        case 'KTX':
-          return ['KTX', 'SRT', 'ITX', '무궁화'].contains(s.line);
-        case '부산':
-          return kLines[s.line]?.region == '부산';
-        case '대구':
-          return kLines[s.line]?.region == '대구';
-        case '광주':
-          return kLines[s.line]?.region == '광주';
-        case '대전':
-          return kLines[s.line]?.region == '대전';
-        default:
-          return true;
-      }
-    }).toList(growable: false);
-    if (!mounted) return;
-    setState(() => _filteredItems = items);
-  }
-
-  /// kLines 정의 순서 우선, 데이터에만 있는 기타 노선은 뒤에 붙임.
-  List<String> _orderedLinesPresent() {
-    final present = widget.state.stations.map((s) => s.line).toSet();
-    final out = <String>[];
-    for (final k in kLines.keys) {
-      if (present.contains(k)) out.add(k);
     }
-    final rest = present.where((p) => !out.contains(p)).toList()..sort();
-    out.addAll(rest);
-    return out;
   }
 
   @override
   void dispose() {
-    _searchDebounce?.cancel();
-    _sc.removeListener(_onSearchChanged);
-    _sc.dispose();
+    _searchCtrl.dispose();
     super.dispose();
   }
 
-  @override
-  Widget build(BuildContext context) {
-    final items = _filteredItems;
-    final got = items.where((s) => s.got).length;
-    final prog = items.isEmpty ? 0.0 : got / items.length;
-    return SafeArea(child: Column(children: [
-      Padding(padding: const EdgeInsets.fromLTRB(14, 12, 14, 8), child: Column(children: [
-        Row(children: [
-          const Text('스탬프 도감', style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700, color: AC.ink, letterSpacing: -1)),
-          const Spacer(),
-          Text('$got개 모음', style: TextStyle(fontSize: 12, color: AC.ink3)),
-        ]),
-        const SizedBox(height: 8),
-        Container(
-          padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
-          decoration: BoxDecoration(color: AC.paper2, borderRadius: BorderRadius.circular(10), border: Border.all(color: AC.border)),
-          child: Row(children: [
-            const Icon(Icons.search, size: 16, color: AC.ink3),
-            const SizedBox(width: 8),
-            Expanded(child: TextField(controller: _sc,
-              decoration: InputDecoration(hintText: '역 이름, 노선 검색', hintStyle: TextStyle(color: AC.ink4, fontSize: 13),
-                border: InputBorder.none, isDense: true, contentPadding: EdgeInsets.zero),
-              style: const TextStyle(fontSize: 13, color: AC.ink))),
-            if (_sc.text.isNotEmpty)
-              GestureDetector(onTap: () { _sc.clear(); _recomputeFiltered(); },
-                child: const Icon(Icons.close, size: 16, color: AC.ink3)),
-          ]),
-        ),
-      ])),
-      Padding(
-        padding: const EdgeInsets.fromLTRB(14, 6, 14, 2),
-        child: Align(
-          alignment: Alignment.centerLeft,
-          child: Text('권역', style: TextStyle(fontSize: 10, fontWeight: FontWeight.w700, color: AC.ink3, letterSpacing: 0.8)),
-        ),
+  Future<void> _onGpsStamp(BuildContext context) async {
+    final state = widget.state;
+    if (state.stations.isEmpty) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('역 데이터 로딩 중이에요. 잠시 후 다시 시도해주세요.')),
+      );
+      return;
+    }
+    final pos = await state.getCurrentPosition();
+    if (!context.mounted) return;
+    if (pos == null) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text(state.lastStampError ?? '현재 위치를 확인할 수 없어요.')),
+      );
+      return;
+    }
+    final nearest = state.getNearestStationsFromPosition(pos, limit: 5, onlyUnstamped: true);
+    if (nearest.isEmpty) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('주변에 미인증 역이 없어요.')),
+      );
+      return;
+    }
+    if (!context.mounted) return;
+    showModalBottomSheet(
+      context: context,
+      backgroundColor: Colors.transparent,
+      isScrollControlled: true,
+      builder: (_) => NearbyStationPickerSheet(
+        userPosition: pos,
+        candidates: nearest,
+        onPick: (picked) async {
+          Navigator.pop(context);
+          if (!context.mounted) return;
+          showModalBottomSheet(
+            context: context,
+            backgroundColor: Colors.transparent,
+            isScrollControlled: true,
+            builder: (_) => GpsSheet(station: picked.station, onConfirm: () async {
+              Navigator.pop(context);
+              final ok = await state.stampStation(picked.station);
+              if (!context.mounted) return;
+              if (ok) {
+                HapticFeedback.heavyImpact();
+                state.requestLineFocus(picked.station.line);
+                await showDialog(context: context, builder: (_) => StampDialog(station: picked.station));
+                if (!context.mounted) return;
+                final unlocked = state.consumeRecentUnlockedBadges();
+                if (unlocked.isNotEmpty) {
+                  await showDialog(context: context, builder: (_) => BadgeUnlockedDialog(badges: unlocked));
+                }
+              } else {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(content: Text(state.lastStampError ?? '역 반경 100m 이내에서만 스탬프를 찍을 수 있어요.')),
+                );
+              }
+            }),
+          );
+        },
       ),
-      SizedBox(height: 38, child: ListView(scrollDirection: Axis.horizontal, padding: const EdgeInsets.symmetric(horizontal: 10),
-        children: [
-          _Chip('전체', 'all', _filter, _setFilter),
-          _Chip('수도권', '수도권', _filter, _setFilter),
-          _Chip('KTX·일반', 'KTX', _filter, _setFilter),
-          _Chip('부산', '부산', _filter, _setFilter),
-          _Chip('대구', '대구', _filter, _setFilter),
-          _Chip('광주', '광주', _filter, _setFilter),
-          _Chip('대전', '대전', _filter, _setFilter),
-          _Chip('✓ 모은 것', 'got', _filter, _setFilter),
-        ])),
-      Padding(
-        padding: const EdgeInsets.fromLTRB(14, 6, 14, 2),
-        child: Align(
-          alignment: Alignment.centerLeft,
-          child: Text('노선', style: TextStyle(fontSize: 10, fontWeight: FontWeight.w700, color: AC.ink3, letterSpacing: 0.8)),
-        ),
-      ),
-      SizedBox(
-        height: 38,
-        child: ListView(
-          scrollDirection: Axis.horizontal,
-          padding: const EdgeInsets.symmetric(horizontal: 10),
-          children: [
-            for (final line in _orderedLinesPresent())
-              _Chip(line, 'line:$line', _filter, _setFilter),
-          ],
-        ),
-      ),
-      LinearProgressIndicator(value: prog, backgroundColor: AC.paper3, valueColor: const AlwaysStoppedAnimation(AC.stamp), minHeight: 3),
-      Expanded(child: items.isEmpty
-        ? Center(child: Text('역을 찾을 수 없어요', style: TextStyle(color: AC.ink4, fontSize: 13)))
-        : GridView.builder(padding: const EdgeInsets.all(12),
-            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3, crossAxisSpacing: 8, mainAxisSpacing: 8),
-            itemCount: items.length,
-            itemBuilder: (_, i) => _GridItem(station: items[i]))),
-    ]));
+    );
   }
-}
-
-class _Chip extends StatelessWidget {
-  final String label, key_, current; final Function(String) onTap;
-  const _Chip(this.label, this.key_, this.current, this.onTap);
-  @override
-  Widget build(BuildContext context) {
-    final on = current == key_;
-    return GestureDetector(onTap: () => onTap(key_),
-      child: Container(margin: const EdgeInsets.symmetric(horizontal: 3),
-        padding: const EdgeInsets.symmetric(horizontal: 14),
-        decoration: BoxDecoration(border: Border(bottom: BorderSide(color: on ? AC.stamp : Colors.transparent, width: 2))),
-        child: Center(child: Text(label, style: TextStyle(fontSize: 12, fontWeight: FontWeight.w700, color: on ? AC.stamp : AC.ink3)))));
-  }
-}
-
-class _GridItem extends StatelessWidget {
-  final Station station;
-  const _GridItem({required this.station});
-  @override
-  Widget build(BuildContext context) {
-    final lc = kLines[station.line]?.color ?? AC.ink4;
-    return Opacity(opacity: station.got ? 1.0 : 0.45,
-      child: Container(
-        decoration: BoxDecoration(color: station.got ? AC.stampDim : AC.paper2,
-          borderRadius: BorderRadius.circular(12),
-          border: Border.all(color: station.got ? AC.stamp : AC.border, width: station.got ? 1.5 : 1)),
-        child: Stack(children: [
-          Center(child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-            Text(station.icon, style: const TextStyle(fontSize: 28)),
-            const SizedBox(height: 4),
-            Padding(padding: const EdgeInsets.symmetric(horizontal: 4),
-              child: Text(station.name, textAlign: TextAlign.center, maxLines: 2,
-                style: TextStyle(fontSize: 9, fontWeight: FontWeight.w700, color: station.got ? AC.stamp : AC.ink4))),
-          ])),
-          Positioned(top: 5, right: 5,
-            child: Container(width: 9, height: 9, decoration: BoxDecoration(color: lc, shape: BoxShape.circle))),
-          if (station.got)
-            Positioned(top: -3, left: -3,
-              child: Container(width: 18, height: 18, decoration: const BoxDecoration(color: AC.stamp, shape: BoxShape.circle),
-                child: const Center(child: Text('✓', style: TextStyle(fontSize: 10, color: AC.paper, fontWeight: FontWeight.w900))))),
-        ])));
-  }
-}
-
-// ══ 지도 탭 (OpenStreetMap 타일 + 역 위치) ═══════════════
-class MapTab extends StatelessWidget {
-  final AppState state;
-  const MapTab({super.key, required this.state});
 
   @override
   Widget build(BuildContext context) {
-    final got = state.stations.where((s) => s.got).length;
-    final total = state.stations.length;
-    final circles = state.stations
-        .map(
-          (s) => CircleMarker(
-            point: LatLng(s.lat, s.lng),
-            radius: s.got ? 7.2 : 4.0,
-            color: s.got ? const Color(0xDD1B3A6B) : Colors.transparent,
-            borderStrokeWidth: s.got ? 2.0 : 1.2,
-            borderColor: s.got ? const Color(0xFFF5F0E8) : AC.ink4,
-          ),
-        )
-        .toList(growable: false);
-
-    return SafeArea(
-      child: Column(
-        children: [
-          Padding(
-            padding: const EdgeInsets.fromLTRB(18, 12, 18, 10),
-            child: Row(
-              children: [
-                const Text('지도', style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700, color: AC.ink, letterSpacing: -1)),
-                const Spacer(),
-                RichText(
-                  text: TextSpan(
-                    children: [
-                      TextSpan(text: '$got', style: const TextStyle(fontWeight: FontWeight.w700, color: AC.stamp, fontSize: 14)),
-                      TextSpan(text: ' / $total', style: TextStyle(color: AC.ink3, fontSize: 12)),
-                      TextSpan(text: '  찍음', style: TextStyle(color: AC.ink3, fontSize: 12)),
-                    ],
-                  ),
-                ),
-              ],
+    final state = widget.state;
+    final allLines = _visibleLines;
+    final selected = _resolveSelectedLine(allLines);
+    final featured = state.featuredLines.take(6).toList(growable: false);
+    final regions = ['전체', '수도권', '부산', '대구', '광주', '대전', '간선철도'];
+    final pct = state.completionPct;
+    return RefreshIndicator(
+      onRefresh: () async {
+        await state.loadStamps();
+        await state.loadBadges();
+      },
+      color: AC.stamp,
+      child: CustomScrollView(
+      slivers: [
+        // 히어로: 컬렉션 메인
+        SliverToBoxAdapter(
+          child: Container(
+            decoration: const BoxDecoration(
+              gradient: LinearGradient(
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+                colors: [AC.night, AC.night2, AC.night3],
+              ),
             ),
-          ),
-          Expanded(
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 12),
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(12),
-                child: FlutterMap(
-                  options: MapOptions(
-                    initialCenter: LatLng(36.85, 127.95),
-                    initialZoom: 9.2,
-                    minZoom: 5,
-                    maxZoom: 18,
-                  ),
+            child: SafeArea(
+              bottom: false,
+              child: Padding(
+                padding: const EdgeInsets.fromLTRB(AppSpace.screen, 14, AppSpace.screen, 24),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    TileLayer(
-                      urlTemplate: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
-                      userAgentPackageName: 'io.github.kjh96.yeokjangnim',
+                    Row(
+                      children: [
+                        Expanded(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                '프리미엄 철도 컬렉션',
+                                style: Theme.of(context).textTheme.labelLarge?.copyWith(
+                                  color: Colors.white70,
+                                  letterSpacing: 0.2,
+                                ),
+                              ),
+                              const SizedBox(height: 6),
+                              Text(
+                                '${state.nickname}님의 노선도감',
+                                style: Theme.of(context).textTheme.headlineMedium?.copyWith(
+                                  color: Colors.white,
+                                ),
+                              ),
+                              const SizedBox(height: 8),
+                              Text(
+                                '오늘도 가까운 역 하나를 수집해 보세요. 진행 중인 노선과 다음 인증 후보를 한 번에 볼 수 있어요.',
+                                style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                                  color: Colors.white70,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        const SizedBox(width: 16),
+                        Container(
+                          width: 64,
+                          height: 64,
+                          decoration: BoxDecoration(
+                            color: Colors.white.withValues(alpha: 0.08),
+                            borderRadius: BorderRadius.circular(22),
+                            border: Border.all(color: Colors.white.withValues(alpha: 0.12)),
+                          ),
+                          child: const Icon(Icons.train_rounded, color: Colors.white, size: 30),
+                        ),
+                      ],
                     ),
-                    CircleLayer(circles: circles),
-                    SimpleAttributionWidget(
-                      source: const Text('OpenStreetMap contributors'),
-                      onTap: () => openExternalUrl(context, 'https://www.openstreetmap.org/copyright'),
-                      alignment: Alignment.bottomRight,
-                      backgroundColor: AC.paper.withValues(alpha: 0.92),
+                    const SizedBox(height: 18),
+                    _SurfaceCard(
+                      dark: true,
+                      padding: const EdgeInsets.all(18),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Row(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Expanded(
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      '${state.gotCount} / ${state.totalStations}역',
+                                      style: Theme.of(context).textTheme.displayMedium?.copyWith(
+                                        color: Colors.white,
+                                        fontSize: 32,
+                                      ),
+                                    ),
+                                    const SizedBox(height: 4),
+                                    Text(
+                                      '${pct.toStringAsFixed(1)}% 완료 · ${state.pendingStampCount > 0 ? '동기화 대기 ${state.pendingStampCount}개' : '동기화 완료'}',
+                                      style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                                        color: Colors.white70,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              const SizedBox(width: 12),
+                              SizedBox(
+                                width: 132,
+                                child: _PrimaryCTAButton(
+                                  label: 'GPS 인증',
+                                  icon: Icons.gps_fixed_rounded,
+                                  onTap: () => _onGpsStamp(context),
+                                ),
+                              ),
+                            ],
+                          ),
+                          const SizedBox(height: 14),
+                          ClipRRect(
+                            borderRadius: BorderRadius.circular(AppRadii.pill),
+                            child: LinearProgressIndicator(
+                              value: pct / 100,
+                              minHeight: 8,
+                              backgroundColor: Colors.white.withValues(alpha: 0.12),
+                              valueColor: const AlwaysStoppedAnimation(Colors.white),
+                            ),
+                          ),
+                          const SizedBox(height: 14),
+                          Row(
+                            children: [
+                              Expanded(child: _HeroStatChip(value: '${state.completedLineCount}', label: '완주 노선')),
+                              const SizedBox(width: 10),
+                              Expanded(child: _HeroStatChip(value: state.currentStreak > 0 ? '${state.currentStreak}일' : '시작', label: '연속 기록')),
+                              const SizedBox(width: 10),
+                              Expanded(child: _HeroStatChip(value: '${featured.length}', label: '진행 중')),
+                            ],
+                          ),
+                        ],
+                      ),
                     ),
                   ],
                 ),
               ),
             ),
           ),
-          Container(
-            padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 10),
-            decoration: BoxDecoration(border: Border(top: BorderSide(color: AC.border))),
-            child: Row(
+        ),
+        // 동기화 대기 알림
+        if (state.pendingStampCount > 0)
+          SliverToBoxAdapter(
+            child: Container(
+              margin: const EdgeInsets.fromLTRB(20, 12, 20, 0),
+              padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
+              decoration: BoxDecoration(color: const Color(0xFFFFF3E0), borderRadius: BorderRadius.circular(12)),
+              child: Row(children: [
+                const Icon(Icons.cloud_upload_outlined, size: 16, color: Color(0xFFE65100)),
+                const SizedBox(width: 8),
+                Text('동기화 대기 중 ${state.pendingStampCount}개', style: const TextStyle(fontSize: 12, color: Color(0xFFE65100), fontWeight: FontWeight.w600)),
+              ]),
+            ),
+          ),
+        // 검색 + 필터
+        SliverToBoxAdapter(
+          child: Padding(
+            padding: const EdgeInsets.fromLTRB(AppSpace.screen, 18, AppSpace.screen, 0),
+            child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+              const _SectionHeader(
+                title: '노선 탐색',
+                subtitle: '검색과 지역 필터로 지금 채울 컬렉션을 고르세요.',
+              ),
+              const SizedBox(height: 12),
+              TextField(
+                controller: _searchCtrl,
+                style: Theme.of(context).textTheme.bodyLarge,
+                decoration: InputDecoration(
+                  hintText: '역이름, 노선명으로 검색',
+                  prefixIcon: const Icon(Icons.search_rounded, size: 20),
+                  suffixIcon: _searchQuery.isNotEmpty
+                      ? GestureDetector(
+                          onTap: () => _searchCtrl.clear(),
+                          child: const Icon(Icons.close_rounded, size: 18),
+                        )
+                      : null,
+                ),
+              ),
+              const SizedBox(height: 12),
+              SizedBox(
+                height: 36,
+                child: ListView.separated(
+                  scrollDirection: Axis.horizontal,
+                  itemCount: regions.length,
+                  separatorBuilder: (_, _) => const SizedBox(width: 8),
+                  itemBuilder: (_, i) {
+                    final r = regions[i];
+                    final on = _region == r;
+                    return GestureDetector(
+                      onTap: () => setState(() { _region = r; _selectedLine = null; }),
+                      child: AnimatedContainer(
+                        duration: const Duration(milliseconds: 200),
+                        padding: const EdgeInsets.symmetric(horizontal: 16),
+                        alignment: Alignment.center,
+                        decoration: BoxDecoration(
+                          color: on ? AC.stamp : AC.paper,
+                          borderRadius: BorderRadius.circular(AppRadii.pill),
+                          border: Border.all(color: on ? AC.stamp : AC.border),
+                        ),
+                        child: Text(r, style: TextStyle(
+                          fontSize: 13, fontWeight: FontWeight.w700,
+                          color: on ? Colors.white : AC.ink3,
+                        )),
+                      ),
+                    );
+                  },
+                ),
+              ),
+              const SizedBox(height: 16),
+            ]),
+          ),
+        ),
+        // 진행 중인 노선
+        SliverToBoxAdapter(
+          child: Padding(
+            padding: const EdgeInsets.fromLTRB(AppSpace.screen, 8, AppSpace.screen, 0),
+            child: _SectionHeader(
+              title: '진행 중인 노선',
+              subtitle: selected == null ? '노선을 선택하면 상세 컬렉션이 열립니다.' : '${selected.line} 컬렉션을 보고 있어요.',
+              action: TextButton(
+                onPressed: () => setState(() => _selectedLine = null),
+                child: const Text('초기화'),
+              ),
+            ),
+          ),
+        ),
+        SliverToBoxAdapter(
+          child: SizedBox(
+            height: 126,
+            child: allLines.isEmpty
+                ? const _EmptyPanel(message: '조건에 맞는 노선이 없어요.')
+                : ListView.separated(
+                    padding: const EdgeInsets.symmetric(horizontal: AppSpace.screen),
+                    scrollDirection: Axis.horizontal,
+                    itemCount: allLines.length,
+                    separatorBuilder: (_, _) => const SizedBox(width: 10),
+                    itemBuilder: (_, index) {
+                      final line = allLines[index];
+                      final isSelected = selected?.line == line.line;
+                      return GestureDetector(
+                        onTap: () => setState(() => _selectedLine = line.line),
+                        child: AnimatedContainer(
+                          duration: const Duration(milliseconds: 200),
+                          width: 190,
+                          padding: const EdgeInsets.all(16),
+                          decoration: BoxDecoration(
+                            color: isSelected ? line.color.withValues(alpha: 0.12) : AC.paper,
+                            borderRadius: BorderRadius.circular(AppRadii.lg),
+                            border: Border.all(color: isSelected ? line.color : AC.border, width: isSelected ? 1.5 : 1),
+                            boxShadow: isSelected
+                                ? [BoxShadow(color: line.color.withValues(alpha: 0.15), blurRadius: 18, offset: const Offset(0, 8))]
+                                : AppShadows.card,
+                          ),
+                          child: Column(crossAxisAlignment: CrossAxisAlignment.start, mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+                            Row(children: [
+                              Container(width: 8, height: 8, decoration: BoxDecoration(color: line.color, shape: BoxShape.circle)),
+                              const SizedBox(width: 6),
+                              Expanded(child: Text(line.line, style: TextStyle(fontSize: 13, fontWeight: FontWeight.w800, color: isSelected ? AC.ink : AC.ink2), overflow: TextOverflow.ellipsis)),
+                            ]),
+                            Text(
+                              line.type == 'rail' ? '간선철도 컬렉션' : '${line.region} 도시철도',
+                              style: Theme.of(context).textTheme.labelMedium?.copyWith(color: AC.ink4),
+                            ),
+                            Row(children: [
+                              Text('${line.visited}/${line.total}', style: TextStyle(fontSize: 11, color: AC.ink3, fontWeight: FontWeight.w600)),
+                              const Spacer(),
+                              Text('${(line.ratio * 100).toStringAsFixed(0)}%', style: TextStyle(fontSize: 11, fontWeight: FontWeight.w800, color: line.color)),
+                            ]),
+                            ClipRRect(
+                              borderRadius: BorderRadius.circular(3),
+                              child: LinearProgressIndicator(value: line.ratio, minHeight: 4, backgroundColor: AC.border, valueColor: AlwaysStoppedAnimation(line.color)),
+                            ),
+                          ]),
+                        ),
+                      );
+                    },
+                  ),
+          ),
+        ),
+        // 선택한 노선 상세
+        if (selected != null)
+          SliverToBoxAdapter(
+            child: Padding(
+              padding: const EdgeInsets.fromLTRB(AppSpace.screen, 20, AppSpace.screen, 0),
+              child: _LineDetailCard(
+                progress: selected,
+                showAllStations: _showAllStations,
+                onToggleAllStations: () => setState(() => _showAllStations = !_showAllStations),
+              ),
+            ),
+          ),
+        if (selected == null && allLines.isNotEmpty)
+          const SliverToBoxAdapter(
+            child: Padding(
+              padding: EdgeInsets.all(40),
+              child: _EmptyPanel(message: '노선을 선택해주세요.'),
+            ),
+          ),
+        const SliverToBoxAdapter(child: SizedBox(height: 80)),
+      ],
+    ));
+  }
+
+  LineProgress? _resolveSelectedLine(List<LineProgress> visibleLines) {
+    if (visibleLines.isEmpty) return null;
+    if (_selectedLine == null) return visibleLines.first;
+    return visibleLines.where((line) => line.line == _selectedLine).firstOrNull ?? visibleLines.first;
+  }
+}
+
+// ══ 나 탭 ═════════════════════════════════════════════
+class MeTab extends StatelessWidget {
+  final AppState state;
+  final ValueChanged<String> onOpenLine;
+  const MeTab({super.key, required this.state, required this.onOpenLine});
+
+  @override
+  Widget build(BuildContext context) {
+    final allBadges = [...(kBadges['노선 완주'] ?? []), ...(kBadges['스토리'] ?? [])];
+    final earnedBadges = allBadges.where((badge) => badge.got).toList(growable: false);
+    final completedLines = state.completedLines;
+    final featuredBadges = (earnedBadges.isNotEmpty ? earnedBadges : allBadges).take(6).toList(growable: false);
+    return CustomScrollView(slivers: [
+      SliverToBoxAdapter(
+        child: Container(
+          decoration: const BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              colors: [AC.night, AC.night2],
+            ),
+          ),
+          child: SafeArea(
+            bottom: false,
+            child: Padding(
+              padding: const EdgeInsets.fromLTRB(24, 18, 24, 28),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'My Lounge',
+                    style: Theme.of(context).textTheme.labelLarge?.copyWith(
+                      color: Colors.white70,
+                      letterSpacing: 0.4,
+                    ),
+                  ),
+                  const SizedBox(height: 8),
+                  Text(
+                    '프로필 라운지',
+                    style: Theme.of(context).textTheme.headlineMedium?.copyWith(color: Colors.white),
+                  ),
+                  const SizedBox(height: 16),
+                  _ProfileOverviewCard(state: state),
+                  const SizedBox(height: 18),
+                  Row(children: [
+                    _MeStatChip(icon: Icons.approval_rounded, value: '${state.gotCount}', label: '스탬프'),
+                    const SizedBox(width: 10),
+                    _MeStatChip(icon: Icons.emoji_events_rounded, value: '${earnedBadges.length}', label: '배지'),
+                    const SizedBox(width: 10),
+                    _MeStatChip(icon: Icons.check_circle_rounded, value: '${completedLines.length}', label: '완주'),
+                  ]),
+                ],
+              ),
+            ),
+          ),
+        ),
+      ),
+      SliverToBoxAdapter(
+        child: Padding(
+          padding: const EdgeInsets.fromLTRB(AppSpace.screen, 24, AppSpace.screen, 0),
+          child: _SurfaceCard(
+            dark: true,
+            padding: const EdgeInsets.all(18),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                _Legend(color: AC.stamp, label: '찍은 역'),
-                const SizedBox(width: 16),
-                _Legend(color: Colors.transparent, label: '미방문', bordered: true, borderColor: AC.ink4),
-                const Spacer(),
-                Text('채움=찍은 역 · 빈 원=미방문', style: TextStyle(fontSize: 11, color: AC.ink4)),
+                _SectionHeader(
+                  title: '대표 배지',
+                  subtitle: earnedBadges.isNotEmpty ? '최근 획득하거나 대표로 보여줄 배지예요.' : '아직 배지가 없어요. 첫 인증을 시작해 보세요.',
+                  action: TextButton(
+                    onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const BadgesScreen())),
+                    child: const Text('전체 보기'),
+                  ),
+                ),
+                const SizedBox(height: 16),
+                if (featuredBadges.isEmpty)
+                  const _EmptyPanel(message: '배지가 아직 없어요.')
+                else
+                  SizedBox(
+                    height: 108,
+                    child: ListView.separated(
+                      scrollDirection: Axis.horizontal,
+                      itemCount: featuredBadges.length,
+                      separatorBuilder: (_, _) => const SizedBox(width: 10),
+                      itemBuilder: (_, index) => SizedBox(
+                        width: 96,
+                        child: _BadgePreviewCard(badge: featuredBadges[index]),
+                      ),
+                    ),
+                  ),
               ],
             ),
           ),
-          const SizedBox(height: 80),
+        ),
+      ),
+      SliverToBoxAdapter(
+        child: Padding(
+          padding: const EdgeInsets.fromLTRB(AppSpace.screen, 24, AppSpace.screen, 0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const _SectionHeader(
+                title: '완주 쇼케이스',
+                subtitle: '완주한 노선은 이곳에서 컬렉션처럼 정리됩니다.',
+              ),
+              const SizedBox(height: 12),
+              if (completedLines.isEmpty)
+                const _EmptyPanel(message: '아직 완주한 노선이 없어요.')
+              else
+                Wrap(
+                  spacing: 8,
+                  runSpacing: 8,
+                  children: completedLines
+                      .map((line) => _LineStatusPill(progress: line, compact: false, onTap: () => onOpenLine(line.line)))
+                      .toList(),
+                ),
+            ],
+          ),
+        ),
+      ),
+      SliverToBoxAdapter(
+        child: Padding(
+          padding: const EdgeInsets.fromLTRB(AppSpace.screen, 24, AppSpace.screen, 0),
+          child: _SurfaceCard(
+            padding: const EdgeInsets.all(18),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const _SectionHeader(
+                  title: '앱 설정',
+                  subtitle: '공유, 온보딩, 계정 관리를 여기서 할 수 있어요.',
+                ),
+                const SizedBox(height: 8),
+                _MeAction(icon: Icons.share_rounded, label: '진행 현황 공유', onTap: () => _shareCollectionProgress(context, state)),
+                _MeDivider(),
+                _MeAction(icon: Icons.play_circle_outline_rounded, label: '온보딩 다시 보기', onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const OnboardingScreen()))),
+                _MeDivider(),
+                _MeAction(icon: Icons.logout_rounded, label: '로그아웃', onTap: () async {
+                  await context.read<AppState>().signOut();
+                  if (!context.mounted) return;
+                  Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (_) => const LoginScreen()), (_) => false);
+                }),
+                _MeDivider(),
+                _MeAction(icon: Icons.delete_outline_rounded, label: '회원 탈퇴', color: AC.danger, onTap: () => _confirmDeleteAccount(context)),
+              ],
+            ),
+          ),
+        ),
+      ),
+      SliverToBoxAdapter(child: Padding(
+        padding: const EdgeInsets.fromLTRB(20, 20, 20, 8),
+        child: Text('"모든 걸 다 이해할 필요가 없거든요.\n여기 왔지만 머물러 있지는 않아요."\n— 제인 버킨(Jane Birkin)',
+          textAlign: TextAlign.center, style: TextStyle(fontSize: 12, color: AC.ink4, height: 1.6, fontStyle: FontStyle.italic)),
+      )),
+      SliverToBoxAdapter(child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+        TextButton(onPressed: () => openExternalUrl(context, kTermsUrl), child: const Text('이용약관', style: TextStyle(fontSize: 11))),
+        TextButton(onPressed: () => openExternalUrl(context, kPrivacyPolicyUrl), child: const Text('개인정보처리방침', style: TextStyle(fontSize: 11))),
+      ])),
+      const SliverToBoxAdapter(child: SizedBox(height: 100)),
+    ]);
+  }
+}
+
+class _MeStatChip extends StatelessWidget {
+  final IconData icon;
+  final String value, label;
+  const _MeStatChip({required this.icon, required this.value, required this.label});
+  @override
+  Widget build(BuildContext context) {
+    return Expanded(child: Container(
+      padding: const EdgeInsets.symmetric(vertical: 14),
+      decoration: BoxDecoration(color: Colors.white.withValues(alpha: 0.08), borderRadius: BorderRadius.circular(14), border: Border.all(color: Colors.white12)),
+      child: Column(children: [
+        Icon(icon, size: 18, color: Colors.white60),
+        const SizedBox(height: 6),
+        Text(value, style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w900, color: Colors.white)),
+        const SizedBox(height: 2),
+        Text(label, style: const TextStyle(fontSize: 10, color: Colors.white54, fontWeight: FontWeight.w600)),
+      ]),
+    ));
+  }
+}
+
+class _MeAction extends StatelessWidget {
+  final IconData icon;
+  final String label;
+  final VoidCallback onTap;
+  final Color? color;
+  const _MeAction({required this.icon, required this.label, required this.onTap, this.color});
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(onTap: onTap, borderRadius: BorderRadius.circular(12),
+      child: Padding(padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 16),
+        child: Row(children: [
+          Icon(icon, size: 20, color: color ?? AC.ink3),
+          const SizedBox(width: 14),
+          Expanded(child: Text(label, style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600, color: color ?? AC.ink2))),
+          Icon(Icons.chevron_right_rounded, size: 18, color: AC.ink4),
+        ])));
+  }
+}
+
+class _MeDivider extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) => Divider(height: 1, indent: 52, color: AC.border);
+}
+
+// --- Old MeTab body removed, replaced above ---
+
+
+class _LineDetailCard extends StatelessWidget {
+  final LineProgress progress;
+  final bool showAllStations;
+  final VoidCallback onToggleAllStations;
+  const _LineDetailCard({
+    required this.progress,
+    required this.showAllStations,
+    required this.onToggleAllStations,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    final nextTargets = progress.stations.where((station) => !station.got).take(3).toList(growable: false);
+    final visibleStations = showAllStations
+        ? progress.stations
+        : progress.stations.take(progress.type == 'rail' ? 8 : 12).toList(growable: false);
+    return _SurfaceCard(
+      padding: const EdgeInsets.all(20),
+      accent: progress.color,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            children: [
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(progress.line, style: const TextStyle(fontSize: 24, fontWeight: FontWeight.w900, color: AC.ink, letterSpacing: -0.8)),
+                    const SizedBox(height: 4),
+                    Text('${progress.region} · ${progress.type == 'rail' ? '간선철도' : '도시철도'}', style: TextStyle(fontSize: 12, color: AC.ink3)),
+                  ],
+                ),
+              ),
+              _InlinePill(label: '${progress.visited}/${progress.total}', tone: progress.color.withValues(alpha: 0.14), textColor: progress.color),
+            ],
+          ),
+          const SizedBox(height: 14),
+          ClipRRect(
+            borderRadius: BorderRadius.circular(99),
+            child: LinearProgressIndicator(
+              value: progress.ratio,
+              minHeight: 10,
+              backgroundColor: AC.paper3,
+              valueColor: AlwaysStoppedAnimation(progress.color),
+            ),
+          ),
+          const SizedBox(height: 18),
+          Wrap(
+            spacing: 8,
+            runSpacing: 8,
+            children: [
+              _InlinePill(
+                label: progress.type == 'rail' ? '간선철도 아카이브' : '도시철도 컬렉션',
+                tone: progress.color.withValues(alpha: 0.14),
+                textColor: progress.color,
+              ),
+              _InlinePill(
+                label: '남은 역 ${progress.total - progress.visited}',
+                tone: AC.paper2,
+                textColor: AC.ink3,
+              ),
+            ],
+          ),
+          if (nextTargets.isNotEmpty) ...[
+            const SizedBox(height: 16),
+            const _SectionHeader(
+              title: '다음 인증 추천',
+              subtitle: '지금 바로 찍기 좋은 역 3곳을 먼저 보여드려요.',
+            ),
+            const SizedBox(height: 10),
+            Wrap(
+              spacing: 8,
+              runSpacing: 8,
+              children: nextTargets
+                  .map(
+                    (station) => _NextTargetChip(
+                      station: station,
+                      color: progress.color,
+                      onTap: () => _showStationDetailSheet(context, station, progress.color),
+                    ),
+                  )
+                  .toList(),
+            ),
+          ],
+          const SizedBox(height: 16),
+          const _SectionHeader(
+            title: '노선 흐름',
+            subtitle: '탭해서 역 상태와 인증 정보를 확인할 수 있어요.',
+          ),
+          const SizedBox(height: 12),
+          if (progress.type == 'rail')
+            _RailStationStrip(progress: progress)
+          else
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  for (var index = 0; index < progress.stations.length; index++) ...[
+                    _StationNode(
+                      station: progress.stations[index],
+                      color: progress.color,
+                      onTap: () => _showStationDetailSheet(context, progress.stations[index], progress.color),
+                    ),
+                    if (index != progress.stations.length - 1)
+                      Container(
+                        width: 42,
+                        height: 2,
+                        margin: const EdgeInsets.only(top: 19),
+                        color: progress.stations[index].got && progress.stations[index + 1].got
+                            ? progress.color
+                            : AC.paper3,
+                      ),
+                  ],
+                ],
+              ),
+            ),
+          const SizedBox(height: 18),
+          Row(
+            children: [
+              Expanded(
+                child: Text(
+                  '전체 역 컬렉션',
+                  style: Theme.of(context).textTheme.titleMedium,
+                ),
+              ),
+              TextButton(
+                onPressed: onToggleAllStations,
+                child: Text(showAllStations ? '접기' : '더 보기'),
+              ),
+            ],
+          ),
+          const SizedBox(height: 8),
+          Wrap(
+            spacing: 8,
+            runSpacing: 8,
+            children: visibleStations
+                .map(
+                  (station) => _StationSummaryChip(
+                    station: station,
+                    color: progress.color,
+                    onTap: () => _showStationDetailSheet(context, station, progress.color),
+                  ),
+                )
+                .toList(),
+          ),
         ],
       ),
     );
   }
 }
 
-class _Legend extends StatelessWidget {
+class _StationNode extends StatelessWidget {
+  final Station station;
   final Color color;
-  final String label;
-  final bool bordered;
-  final Color borderColor;
-  const _Legend({
-    required this.color,
-    required this.label,
-    this.bordered = false,
-    this.borderColor = AC.border,
-  });
-  @override
-  Widget build(BuildContext context) => Row(children: [
-    Container(width: 9, height: 9, decoration: BoxDecoration(color: color, shape: BoxShape.circle,
-      border: bordered ? Border.all(color: borderColor) : null)),
-    const SizedBox(width: 5),
-    Text(label, style: TextStyle(fontSize: 11, color: AC.ink3)),
-  ]);
-}
-
-// ══ 나 탭 ═════════════════════════════════════════════
-class MeTab extends StatelessWidget {
-  final AppState state;
-  const MeTab({super.key, required this.state});
+  final VoidCallback onTap;
+  const _StationNode({required this.station, required this.color, required this.onTap});
 
   @override
   Widget build(BuildContext context) {
-    final allBadges = [...kBadges['노선 완주']!, ...kBadges['스토리']!];
-    return SafeArea(child: SingleChildScrollView(child: Column(children: [
-      // 프로필
-      Container(padding: const EdgeInsets.fromLTRB(18, 20, 18, 14),
-        decoration: BoxDecoration(border: Border(bottom: BorderSide(color: AC.border))),
-        child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-          Row(children: [
-            GestureDetector(
-              onTap: () async {
-                const icons = ['🧳', '🚉', '🚆', '🚊', '🗺️', '⭐', '✨', '🧡', '💛', '💚', '💙', '❤️'];
-                await showDialog<void>(
-                  context: context,
-                  builder: (ctx) => AlertDialog(
-                    title: const Text('프로필 아이콘'),
-                    content: SingleChildScrollView(
-                      child: Wrap(
-                        spacing: 10,
-                        runSpacing: 10,
-                        children: [
-                          for (final ic in icons)
-                            InkWell(
-                              onTap: () async {
-                                await state.setProfileIcon(ic);
-                                if (!ctx.mounted) return;
-                                Navigator.pop(ctx);
-                              },
-                              borderRadius: BorderRadius.circular(8),
-                              child: Container(
-                                padding: const EdgeInsets.all(6),
-                                decoration: BoxDecoration(
-                                  color: ic == state.profileIcon ? AC.stampDim : Colors.transparent,
-                                  shape: BoxShape.circle,
-                                ),
-                                child: Text(ic, style: const TextStyle(fontSize: 22)),
-                              ),
-                            )
-                        ],
-                      ),
-                    ),
-                  ),
-                );
-              },
-              child: Container(
-                width: 52,
-                height: 52,
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  color: AC.stampDim,
-                  border: Border.all(color: AC.stamp, width: 2),
-                ),
-                child: Center(
-                  child: Text(state.profileIcon, style: const TextStyle(fontSize: 26)),
-                ),
-              ),
-            ),
-            const SizedBox(width: 13),
-            Expanded(
-              child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                Text('${state.nickname}님',
-                  style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w700, color: AC.ink)),
-                const SizedBox(height: 2),
-                Text('전국 역을 모으는 중', style: TextStyle(fontSize: 11, color: AC.ink3)),
-              ]),
-            ),
-            OutlinedButton(
-              onPressed: () async {
-                final ctrl = TextEditingController(text: state.nickname);
-                await showDialog<void>(
-                  context: context,
-                  builder: (ctx) => AlertDialog(
-                    title: const Text('닉네임 변경'),
-                    content: TextField(
-                      controller: ctrl,
-                      maxLength: 20,
-                      decoration: const InputDecoration(
-                        hintText: '닉네임',
-                      ),
-                    ),
-                    actions: [
-                      TextButton(
-                        onPressed: () => Navigator.pop(ctx),
-                        child: const Text('취소'),
-                      ),
-                      ElevatedButton(
-                        onPressed: () async {
-                          await state.saveNickname(ctrl.text.trim());
-                          if (!ctx.mounted) return;
-                          Navigator.pop(ctx);
-                        },
-                        style: ElevatedButton.styleFrom(backgroundColor: AC.stamp, foregroundColor: AC.paper),
-                        child: const Text('저장'),
-                      ),
-                    ],
-                  ),
-                );
-                ctrl.dispose();
-              },
-              style: OutlinedButton.styleFrom(
-                padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
-                side: const BorderSide(color: AC.border),
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
-                minimumSize: Size.zero,
-              ),
-              child: Text('닉네임 변경',
-                style: TextStyle(fontSize: 12, color: AC.ink3)),
-            ),
-          ]),
-          const SizedBox(height: 12),
-          Row(children: [
-            Expanded(
-              child: OutlinedButton(
-                onPressed: () async {
-                  await context.read<AppState>().signOut();
-                  if (!context.mounted) return;
-                  Navigator.pushAndRemoveUntil(
-                    context,
-                    MaterialPageRoute(builder: (_) => const LoginScreen()),
-                    (_) => false,
-                  );
-                },
-                style: OutlinedButton.styleFrom(
-                  padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
-                  side: const BorderSide(color: AC.border),
-                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-                ),
-                child: Text('로그아웃', style: TextStyle(fontSize: 12, color: AC.ink3)),
-              ),
-            ),
-            const SizedBox(width: 10),
-            TextButton(
-              onPressed: () => _confirmDeleteAccount(context),
-              style: TextButton.styleFrom(
-                padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 10),
-                minimumSize: Size.zero,
-                tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-              ),
-              child: Text('회원 탈퇴', style: TextStyle(fontSize: 11, color: AC.ink4)),
-            ),
-          ]),
-        ])),
-      Padding(
-        padding: const EdgeInsets.fromLTRB(18, 8, 18, 8),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.end,
+    final visited = station.got;
+    return GestureDetector(
+      onTap: onTap,
+      child: SizedBox(
+        width: 72,
+        child: Column(
           children: [
-            TextButton(
-              onPressed: () => openExternalUrl(context, kTermsUrl),
-              child: const Text('이용약관', style: TextStyle(fontSize: 11)),
+            Container(
+              width: 38,
+              height: 38,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                color: visited ? color : AC.paper,
+                border: Border.all(color: visited ? color : AC.ink4, width: 2),
+                boxShadow: visited ? [BoxShadow(color: color.withValues(alpha: 0.25), blurRadius: 10, offset: const Offset(0, 5))] : null,
+              ),
+              child: Center(
+                child: visited
+                    ? const Icon(Icons.check_rounded, size: 18, color: Colors.white)
+                    : Text(station.icon, style: const TextStyle(fontSize: 16)),
+              ),
             ),
-            TextButton(
-              onPressed: () => openExternalUrl(context, kPrivacyPolicyUrl),
-              child: const Text('개인정보처리방침', style: TextStyle(fontSize: 11)),
+            const SizedBox(height: 8),
+            Text(
+              station.name,
+              textAlign: TextAlign.center,
+              maxLines: 2,
+              overflow: TextOverflow.ellipsis,
+              style: TextStyle(fontSize: 11, fontWeight: FontWeight.w700, color: visited ? AC.ink : AC.ink3, height: 1.35),
             ),
           ],
         ),
       ),
-      // 티켓 카드
-      Container(margin: const EdgeInsets.all(18),
-        decoration: BoxDecoration(color: AC.paper2, borderRadius: BorderRadius.circular(14), border: Border.all(color: AC.border)),
-        child: Column(children: [
-          Padding(padding: const EdgeInsets.all(16), child: Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
-            Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-              Text('TOTAL STAMPS', style: TextStyle(fontSize: 10, color: AC.ink3, letterSpacing: 1)),
-              const SizedBox(height: 8),
-              Text('${state.gotCount}', style: const TextStyle(fontSize: 36, fontWeight: FontWeight.w700, color: AC.stamp, letterSpacing: -1)),
-              Text('전국 ${state.totalStations}개 역 중', style: TextStyle(fontSize: 11, color: AC.ink3)),
-            ]),
-            const Spacer(),
-            ElevatedButton.icon(onPressed: () => _shareCollectionProgress(context, state),
-              icon: const Icon(Icons.share_rounded, size: 13), label: const Text('도감 공유'),
-              style: ElevatedButton.styleFrom(backgroundColor: AC.stamp, foregroundColor: AC.paper,
-                textStyle: const TextStyle(fontSize: 11, fontWeight: FontWeight.w700),
-                padding: const EdgeInsets.symmetric(horizontal: 13, vertical: 8),
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)), elevation: 0)),
-          ])),
-          Divider(height: 1, color: AC.border),
-          IntrinsicHeight(child: Row(children: [
-            Expanded(child: _TStat('${state.gotCount}', '이번 달')),
-            VerticalDivider(width: 1, color: AC.border),
-            Expanded(child: _TStat('${state.gotCount}', '총 역')),
-          ])),
-        ])),
-      // 뱃지
-      Padding(padding: const EdgeInsets.fromLTRB(18, 0, 18, 20), child: Column(children: [
-        Row(children: [
-          Text('획득한 뱃지', style: TextStyle(fontSize: 11, fontWeight: FontWeight.w700, color: AC.ink3, letterSpacing: 1)),
-          const Spacer(),
-          GestureDetector(onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const BadgesScreen())),
-            child: const Text('전체 보기 →', style: TextStyle(fontSize: 12, color: AC.stamp, fontWeight: FontWeight.w700))),
-        ]),
-        const SizedBox(height: 10),
-        Row(children: allBadges.take(5).map((b) => Expanded(child: Padding(padding: const EdgeInsets.symmetric(horizontal: 3),
-          child: Column(children: [
-            Container(height: 56,
-              decoration: BoxDecoration(color: b.got ? AC.goldDim : AC.paper2, borderRadius: BorderRadius.circular(14),
-                border: Border.all(color: b.got ? AC.gold : AC.border, width: 1.5)),
-              child: Center(child: Text(b.icon, style: TextStyle(fontSize: 26, color: b.got ? null : const Color(0x80000000))))),
-            const SizedBox(height: 4),
-            Text(b.name, textAlign: TextAlign.center, maxLines: 2,
-              style: TextStyle(fontSize: 8, fontWeight: FontWeight.w700, color: b.got ? AC.ink3 : AC.ink4)),
-          ])))).toList()),
-      ])),
-      // 최근 기록
-      Padding(padding: const EdgeInsets.fromLTRB(18, 0, 18, 20), child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-        Text('최근 기록', style: TextStyle(fontSize: 11, fontWeight: FontWeight.w700, color: AC.ink3, letterSpacing: 1)),
-        const SizedBox(height: 10),
-        ...state.recentStations.map((s) {
-          final lc = kLines[s.line]?.color ?? AC.ink4;
-          return Container(margin: const EdgeInsets.only(bottom: 7), padding: const EdgeInsets.all(12),
-            decoration: BoxDecoration(color: AC.paper2, borderRadius: BorderRadius.circular(10), border: Border.all(color: AC.border)),
-            child: Row(children: [
-              Text(s.icon, style: const TextStyle(fontSize: 20)),
-              const SizedBox(width: 11),
-              Expanded(child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                Text(s.name, style: const TextStyle(fontSize: 13, fontWeight: FontWeight.w700, color: AC.ink)),
-                Text(s.line, style: TextStyle(fontSize: 11, color: AC.ink3)),
-              ])),
-              Container(width: 10, height: 10, decoration: BoxDecoration(color: lc, shape: BoxShape.circle)),
-            ]));
-        }),
-        if (state.recentStations.isEmpty)
-          Center(child: Text('아직 기록이 없어요', style: TextStyle(color: AC.ink4, fontSize: 13))),
-      ])),
-      const SizedBox(height: 100),
-    ])));
+    );
   }
 }
 
-class _TStat extends StatelessWidget {
-  final String v, l; const _TStat(this.v, this.l);
+class _StationSummaryChip extends StatelessWidget {
+  final Station station;
+  final Color color;
+  final VoidCallback onTap;
+  const _StationSummaryChip({required this.station, required this.color, required this.onTap});
+
   @override
-  Widget build(BuildContext context) => Padding(padding: const EdgeInsets.symmetric(vertical: 12),
-    child: Column(children: [
-      Text(v, style: const TextStyle(fontSize: 20, fontWeight: FontWeight.w900, color: AC.ink)),
-      Text(l, style: TextStyle(fontSize: 9, color: AC.ink3, letterSpacing: 0.5)),
-    ]));
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
+        decoration: BoxDecoration(
+          color: station.got ? color.withValues(alpha: 0.12) : AC.paper2,
+          borderRadius: BorderRadius.circular(12),
+          border: Border.all(color: station.got ? color.withValues(alpha: 0.35) : AC.border),
+        ),
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Text(station.icon, style: const TextStyle(fontSize: 14)),
+            const SizedBox(width: 6),
+            Text(
+              station.name,
+              style: TextStyle(fontSize: 12, fontWeight: FontWeight.w700, color: station.got ? AC.ink : AC.ink3),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class _RailStationStrip extends StatelessWidget {
+  final LineProgress progress;
+  const _RailStationStrip({required this.progress});
+
+  @override
+  Widget build(BuildContext context) {
+    return SingleChildScrollView(
+      scrollDirection: Axis.horizontal,
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          for (var index = 0; index < progress.stations.length; index++) ...[
+            _RailStopCard(
+              station: progress.stations[index],
+              color: progress.color,
+              onTap: () => _showStationDetailSheet(context, progress.stations[index], progress.color),
+            ),
+            if (index != progress.stations.length - 1)
+              Padding(
+                padding: const EdgeInsets.fromLTRB(8, 22, 8, 0),
+                child: Icon(Icons.chevron_right_rounded, color: progress.color.withValues(alpha: 0.55)),
+              ),
+          ],
+        ],
+      ),
+    );
+  }
+}
+
+class _RailStopCard extends StatelessWidget {
+  final Station station;
+  final Color color;
+  final VoidCallback onTap;
+  const _RailStopCard({required this.station, required this.color, required this.onTap});
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        width: 110,
+        padding: const EdgeInsets.all(12),
+        decoration: BoxDecoration(
+          color: station.got ? color.withValues(alpha: 0.12) : AC.paper,
+          borderRadius: BorderRadius.circular(16),
+          border: Border.all(color: station.got ? color.withValues(alpha: 0.4) : AC.border),
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              children: [
+                Text(station.icon, style: const TextStyle(fontSize: 18)),
+                const Spacer(),
+                Icon(
+                  station.got ? Icons.check_circle_rounded : Icons.radio_button_unchecked_rounded,
+                  size: 16,
+                  color: station.got ? color : AC.ink4,
+                ),
+              ],
+            ),
+            const SizedBox(height: 18),
+            Text(
+              station.name,
+              maxLines: 2,
+              overflow: TextOverflow.ellipsis,
+              style: const TextStyle(fontSize: 13, fontWeight: FontWeight.w800, color: AC.ink),
+            ),
+            const SizedBox(height: 4),
+            Text(station.region, style: TextStyle(fontSize: 11, color: AC.ink4)),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+Future<void> _showStationDetailSheet(BuildContext context, Station station, Color color) async {
+  final state = context.read<AppState>();
+  final stampedAt = state.stampDates[station.id];
+  final lineProgress = state.lineProgressList.where((line) => line.line == station.line).firstOrNull;
+  final remaining = lineProgress == null ? 0 : lineProgress.total - lineProgress.visited;
+  await showModalBottomSheet<void>(
+    context: context,
+    backgroundColor: Colors.transparent,
+    isScrollControlled: true,
+    builder: (sheetContext) => Container(
+      margin: const EdgeInsets.all(12),
+      padding: const EdgeInsets.fromLTRB(24, 16, 24, 24),
+      decoration: BoxDecoration(
+        color: AC.paper,
+        borderRadius: BorderRadius.circular(28),
+        boxShadow: [BoxShadow(color: color.withValues(alpha: 0.08), blurRadius: 40, offset: const Offset(0, -8))],
+      ),
+      child: SafeArea(
+        top: false,
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Center(child: Container(width: 42, height: 4, margin: const EdgeInsets.only(bottom: 20), decoration: BoxDecoration(color: AC.border, borderRadius: BorderRadius.circular(99)))),
+            Row(children: [
+              Container(
+                width: 56, height: 56,
+                decoration: BoxDecoration(
+                  color: station.got ? color.withValues(alpha: 0.15) : AC.paper2,
+                  shape: BoxShape.circle,
+                  border: Border.all(color: station.got ? color.withValues(alpha: 0.3) : AC.border),
+                ),
+                child: Center(child: Text(station.icon, style: const TextStyle(fontSize: 26))),
+              ),
+              const SizedBox(width: 14),
+              Expanded(child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+                Text(station.name, style: const TextStyle(fontSize: 24, fontWeight: FontWeight.w900, color: AC.ink, letterSpacing: -0.5)),
+                const SizedBox(height: 4),
+                Row(children: [
+                  Container(
+                    padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
+                    decoration: BoxDecoration(color: color, borderRadius: BorderRadius.circular(6)),
+                    child: Text(station.line, style: const TextStyle(fontSize: 10, fontWeight: FontWeight.w700, color: Colors.white)),
+                  ),
+                  const SizedBox(width: 6),
+                  Text(station.en.isNotEmpty ? station.en : station.region, style: TextStyle(fontSize: 12, color: AC.ink4)),
+                ]),
+              ])),
+              if (station.got)
+                Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                  decoration: BoxDecoration(color: color.withValues(alpha: 0.1), borderRadius: BorderRadius.circular(8)),
+                  child: Text('✓ 인증', style: TextStyle(fontSize: 11, fontWeight: FontWeight.w800, color: color)),
+                ),
+            ]),
+            const SizedBox(height: 20),
+            // 인증 정보 카드
+            Container(
+              width: double.infinity,
+              padding: const EdgeInsets.all(16),
+              decoration: BoxDecoration(
+                color: station.got ? color.withValues(alpha: 0.05) : AC.paper2,
+                borderRadius: BorderRadius.circular(16),
+                border: Border.all(color: station.got ? color.withValues(alpha: 0.15) : AC.border),
+              ),
+              child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+                Row(children: [
+                  Icon(station.got ? Icons.check_circle_rounded : Icons.radio_button_unchecked_rounded, size: 16, color: station.got ? color : AC.ink4),
+                  const SizedBox(width: 6),
+                  Text(
+                    station.got
+                        ? stampedAt != null
+                            ? '${stampedAt.year}.${stampedAt.month.toString().padLeft(2, '0')}.${stampedAt.day.toString().padLeft(2, '0')} ${stampedAt.hour.toString().padLeft(2, '0')}:${stampedAt.minute.toString().padLeft(2, '0')} 인증'
+                            : '인증 완료'
+                        : '미인증 — 현장에서 GPS 스탬프를 찍어주세요',
+                    style: TextStyle(fontSize: 12, color: station.got ? AC.ink2 : AC.ink3, fontWeight: FontWeight.w600),
+                  ),
+                ]),
+                if (lineProgress != null) ...[
+                  const SizedBox(height: 10),
+                  Row(children: [
+                    Text('노선 진행 ', style: TextStyle(fontSize: 11, color: AC.ink4)),
+                    Text('${lineProgress.visited}/${lineProgress.total}', style: TextStyle(fontSize: 11, fontWeight: FontWeight.w800, color: AC.ink2)),
+                    Text('  ·  남은 역 $remaining', style: TextStyle(fontSize: 11, color: AC.ink4)),
+                  ]),
+                ],
+              ]),
+            ),
+            // 스탬프 찍기 버튼 (미방문 역만)
+            if (!station.got) ...[
+              const SizedBox(height: 16),
+              SizedBox(
+                width: double.infinity,
+                child: ElevatedButton.icon(
+                  onPressed: () async {
+                    Navigator.pop(sheetContext);
+                    if (!context.mounted) return;
+                    await showModalBottomSheet<void>(
+                      context: context,
+                      backgroundColor: Colors.transparent,
+                      isScrollControlled: true,
+                      builder: (_) => GpsSheet(
+                        station: station,
+                        onConfirm: () async {
+                          Navigator.pop(context);
+                          final success = await state.stampStation(station);
+                          if (!context.mounted) return;
+                          if (success) {
+                            HapticFeedback.heavyImpact();
+                            state.requestLineFocus(station.line);
+                            await showDialog<void>(
+                              context: context,
+                              builder: (_) => StampDialog(station: station),
+                            );
+                            if (!context.mounted) return;
+                            final unlocked = state.consumeRecentUnlockedBadges();
+                            if (unlocked.isNotEmpty) {
+                              await showDialog<void>(
+                                context: context,
+                                builder: (_) => BadgeUnlockedDialog(badges: unlocked),
+                              );
+                            }
+                          } else {
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              SnackBar(content: Text(state.lastStampError ?? '스탬프를 찍을 수 없어요. 역 반경 100m 이내인지 확인해주세요.')),
+                            );
+                          }
+                        },
+                      ),
+                    );
+                  },
+                  icon: const Icon(Icons.gps_fixed_rounded, size: 18),
+                  label: const Text('여기서 스탬프 찍기', style: TextStyle(fontWeight: FontWeight.w800, fontSize: 15)),
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: color,
+                    foregroundColor: Colors.white,
+                    padding: const EdgeInsets.symmetric(vertical: 16),
+                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
+                    elevation: 0,
+                  ),
+                ),
+              ),
+            ],
+          ],
+        ),
+      ),
+    ),
+  );
+}
+
+class _ProfileOverviewCard extends StatelessWidget {
+  final AppState state;
+  const _ProfileOverviewCard({required this.state});
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(children: [
+      GestureDetector(
+        onTap: () async {
+          const icons = ['🧳', '🚉', '🚆', '🚊', '🗺️', '⭐', '✨', '🧡', '💛', '💚', '💙', '❤️'];
+          await showModalBottomSheet<void>(
+            context: context,
+            backgroundColor: Colors.transparent,
+            builder: (ctx) => _PremiumBottomSheet(
+              title: '프로필 아이콘',
+              subtitle: '내 철도 여정을 대표할 아이콘을 골라보세요.',
+              child: Wrap(
+                spacing: 10,
+                runSpacing: 10,
+                children: [
+                  for (final ic in icons)
+                    InkWell(
+                      onTap: () async {
+                        await state.setProfileIcon(ic);
+                        if (!ctx.mounted) return;
+                        Navigator.pop(ctx);
+                      },
+                      borderRadius: BorderRadius.circular(16),
+                      child: Container(
+                        width: 56,
+                        height: 56,
+                        decoration: BoxDecoration(
+                          color: ic == state.profileIcon ? AC.stamp.withValues(alpha: 0.12) : AC.paper2,
+                          borderRadius: BorderRadius.circular(16),
+                          border: Border.all(color: ic == state.profileIcon ? AC.stamp : AC.border),
+                        ),
+                        child: Center(child: Text(ic, style: const TextStyle(fontSize: 24))),
+                      ),
+                    ),
+                ],
+              ),
+            ),
+          );
+        },
+        child: Container(
+          width: 64, height: 64,
+          decoration: BoxDecoration(shape: BoxShape.circle, color: Colors.white.withValues(alpha: 0.12), border: Border.all(color: Colors.white30, width: 2)),
+          child: Center(child: Text(state.profileIcon, style: const TextStyle(fontSize: 30))),
+        ),
+      ),
+      const SizedBox(width: 14),
+      Expanded(child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+        Text(state.nickname, style: const TextStyle(fontSize: 22, fontWeight: FontWeight.w900, color: Colors.white)),
+        const SizedBox(height: 4),
+        Text('전국 역을 모으는 중', style: TextStyle(fontSize: 12, color: Colors.white54)),
+      ])),
+      OutlinedButton(
+        onPressed: () async {
+          final ctrl = TextEditingController(text: state.nickname);
+          await showModalBottomSheet<void>(
+            context: context,
+            isScrollControlled: true,
+            backgroundColor: Colors.transparent,
+            builder: (ctx) => Padding(
+              padding: EdgeInsets.only(bottom: MediaQuery.viewInsetsOf(ctx).bottom),
+              child: _PremiumBottomSheet(
+                title: '닉네임 변경',
+                subtitle: '프로필 라운지와 컬렉션 화면에 표시됩니다.',
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    TextField(
+                      controller: ctrl,
+                      maxLength: 20,
+                      decoration: const InputDecoration(hintText: '닉네임'),
+                    ),
+                    const SizedBox(height: 12),
+                    Row(
+                      children: [
+                        Expanded(
+                          child: OutlinedButton(
+                            onPressed: () => Navigator.pop(ctx),
+                            child: const Text('취소'),
+                          ),
+                        ),
+                        const SizedBox(width: 10),
+                        Expanded(
+                          child: ElevatedButton(
+                            onPressed: () async {
+                              await state.saveNickname(ctrl.text.trim());
+                              if (!ctx.mounted) return;
+                              Navigator.pop(ctx);
+                            },
+                            child: const Text('저장'),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          );
+          ctrl.dispose();
+        },
+        style: OutlinedButton.styleFrom(side: const BorderSide(color: Colors.white24), shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12))),
+        child: const Text('편집', style: TextStyle(color: Colors.white60, fontSize: 12)),
+      ),
+    ]);
+  }
+}
+
+class _BadgePreviewCard extends StatelessWidget {
+  final Badge badge;
+  const _BadgePreviewCard({required this.badge});
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Expanded(
+          child: Container(
+            decoration: BoxDecoration(
+              color: badge.got ? AC.goldDim : AC.paper2,
+              borderRadius: BorderRadius.circular(AppRadii.lg),
+              border: Border.all(color: badge.got ? AC.gold : AC.border, width: 1.2),
+              boxShadow: badge.got ? AppShadows.card : null,
+            ),
+            child: Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    badge.icon,
+                    style: TextStyle(fontSize: 28, color: badge.got ? null : const Color(0x55000000)),
+                  ),
+                  if (badge.got) ...[
+                    const SizedBox(height: 6),
+                    Container(
+                      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
+                      decoration: BoxDecoration(
+                        color: AC.gold.withValues(alpha: 0.12),
+                        borderRadius: BorderRadius.circular(AppRadii.pill),
+                      ),
+                      child: const Text(
+                        '획득',
+                        style: TextStyle(fontSize: 10, fontWeight: FontWeight.w800, color: AC.gold),
+                      ),
+                    ),
+                  ],
+                ],
+              ),
+            ),
+          ),
+        ),
+        const SizedBox(height: 6),
+        Text(
+          badge.name,
+          textAlign: TextAlign.center,
+          maxLines: 2,
+          overflow: TextOverflow.ellipsis,
+          style: TextStyle(fontSize: 11, fontWeight: FontWeight.w800, color: badge.got ? AC.ink2 : AC.ink4, height: 1.2),
+        ),
+      ],
+    );
+  }
+}
+
+
+
+class _InlinePill extends StatelessWidget {
+  final String label;
+  final Color tone;
+  final Color? textColor;
+  const _InlinePill({required this.label, required this.tone, this.textColor});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
+      decoration: BoxDecoration(
+        color: tone,
+        borderRadius: BorderRadius.circular(999),
+      ),
+      child: Text(
+        label,
+        style: TextStyle(fontSize: 11, fontWeight: FontWeight.w800, color: textColor ?? AC.paper),
+      ),
+    );
+  }
+}
+
+class _LineStatusPill extends StatelessWidget {
+  final LineProgress progress;
+  final bool compact;
+  final VoidCallback? onTap;
+  const _LineStatusPill({required this.progress, this.compact = true, this.onTap});
+
+  @override
+  Widget build(BuildContext context) {
+    final label = progress.isComplete ? '완주' : '${(progress.ratio * 100).round()}%';
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        padding: EdgeInsets.symmetric(horizontal: compact ? 10 : 12, vertical: compact ? 6 : 8),
+        decoration: BoxDecoration(
+          color: progress.color.withValues(alpha: 0.14),
+          borderRadius: BorderRadius.circular(999),
+        ),
+        child: Text(
+          '${progress.line} $label',
+          style: TextStyle(fontSize: compact ? 11 : 12, fontWeight: FontWeight.w800, color: progress.color),
+        ),
+      ),
+    );
+  }
+}
+
+class _SectionHeader extends StatelessWidget {
+  final String title;
+  final String? subtitle;
+  final Widget? action;
+  const _SectionHeader({required this.title, this.subtitle, this.action});
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.end,
+      children: [
+        Expanded(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                title,
+                style: Theme.of(context).textTheme.titleLarge,
+              ),
+              if (subtitle != null) ...[
+                const SizedBox(height: 4),
+                Text(
+                  subtitle!,
+                  style: Theme.of(context).textTheme.bodyMedium,
+                ),
+              ],
+            ],
+          ),
+        ),
+        if (action case final widget?) widget,
+      ],
+    );
+  }
+}
+
+class _PrimaryCTAButton extends StatelessWidget {
+  final String label;
+  final IconData icon;
+  final VoidCallback onTap;
+  const _PrimaryCTAButton({
+    required this.label,
+    required this.icon,
+    required this.onTap,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      width: double.infinity,
+      child: ElevatedButton.icon(
+        onPressed: onTap,
+        icon: Icon(icon, size: 18),
+        label: Text(label),
+        style: ElevatedButton.styleFrom(
+          backgroundColor: AC.stamp,
+          foregroundColor: Colors.white,
+          padding: const EdgeInsets.symmetric(vertical: 16),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(AppRadii.md),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class _SurfaceCard extends StatelessWidget {
+  final Widget child;
+  final EdgeInsetsGeometry padding;
+  final Color? accent;
+  final bool dark;
+  const _SurfaceCard({
+    required this.child,
+    this.padding = const EdgeInsets.all(18),
+    this.accent,
+    this.dark = false,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    final bg = dark ? AC.surfaceDark : AC.paper;
+    final borderColor = dark
+        ? Colors.white.withValues(alpha: 0.08)
+        : accent?.withValues(alpha: 0.25) ?? AC.border;
+    final shadow = dark ? AppShadows.darkCard : AppShadows.card;
+
+    return Container(
+      decoration: BoxDecoration(
+        color: bg,
+        borderRadius: BorderRadius.circular(AppRadii.xl),
+        border: Border.all(color: borderColor),
+        boxShadow: shadow,
+      ),
+      child: Stack(
+        children: [
+          if (accent != null)
+            Positioned(
+              left: 0,
+              right: 0,
+              top: 0,
+              child: Container(
+                height: 4,
+                decoration: BoxDecoration(
+                  color: accent,
+                  borderRadius: const BorderRadius.only(
+                    topLeft: Radius.circular(AppRadii.xl),
+                    topRight: Radius.circular(AppRadii.xl),
+                  ),
+                ),
+              ),
+            ),
+          Padding(padding: padding, child: child),
+        ],
+      ),
+    );
+  }
+}
+
+class _HeroStatChip extends StatelessWidget {
+  final String value;
+  final String label;
+  const _HeroStatChip({
+    required this.value,
+    required this.label,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
+      decoration: BoxDecoration(
+        color: Colors.white.withValues(alpha: 0.08),
+        borderRadius: BorderRadius.circular(AppRadii.md),
+        border: Border.all(
+          color: Colors.white.withValues(alpha: 0.12),
+        ),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            value,
+            style: TextStyle(
+              fontSize: 18,
+              fontWeight: FontWeight.w900,
+              color: Colors.white,
+              letterSpacing: -0.4,
+            ),
+          ),
+          const SizedBox(height: 2),
+          Text(
+            label,
+            style: TextStyle(
+              fontSize: 11,
+              fontWeight: FontWeight.w700,
+              color: Colors.white70,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class _NextTargetChip extends StatelessWidget {
+  final Station station;
+  final Color color;
+  final VoidCallback onTap;
+  const _NextTargetChip({required this.station, required this.color, required this.onTap});
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
+        decoration: BoxDecoration(
+          color: color.withValues(alpha: 0.1),
+          borderRadius: BorderRadius.circular(14),
+          border: Border.all(color: color.withValues(alpha: 0.25)),
+        ),
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Text(station.icon, style: const TextStyle(fontSize: 15)),
+            const SizedBox(width: 8),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(station.name, style: const TextStyle(fontSize: 12, fontWeight: FontWeight.w800, color: AC.ink)),
+                Text(station.region, style: TextStyle(fontSize: 10, color: AC.ink4)),
+              ],
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class _PremiumBottomSheet extends StatelessWidget {
+  final String title;
+  final String? subtitle;
+  final Widget child;
+  const _PremiumBottomSheet({
+    required this.title,
+    this.subtitle,
+    required this.child,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: const EdgeInsets.all(12),
+      padding: const EdgeInsets.fromLTRB(22, 16, 22, 22),
+      decoration: BoxDecoration(
+        color: AC.paper,
+        borderRadius: BorderRadius.circular(AppRadii.xl),
+        boxShadow: AppShadows.elevated,
+      ),
+      child: SafeArea(
+        top: false,
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Center(
+              child: Container(
+                width: 42,
+                height: 4,
+                decoration: BoxDecoration(
+                  color: AC.border,
+                  borderRadius: BorderRadius.circular(AppRadii.pill),
+                ),
+              ),
+            ),
+            const SizedBox(height: 18),
+            Text(title, style: Theme.of(context).textTheme.titleLarge),
+            if (subtitle != null) ...[
+              const SizedBox(height: 6),
+              Text(subtitle!, style: Theme.of(context).textTheme.bodyMedium),
+            ],
+            const SizedBox(height: 16),
+            child,
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class _EmptyPanel extends StatelessWidget {
+  final String message;
+  const _EmptyPanel({required this.message});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: const EdgeInsets.symmetric(horizontal: 18),
+      padding: const EdgeInsets.all(22),
+      decoration: BoxDecoration(
+        color: AC.paper,
+        borderRadius: BorderRadius.circular(AppRadii.lg),
+        border: Border.all(color: AC.border),
+        boxShadow: AppShadows.card,
+      ),
+      child: Text(
+        message,
+        textAlign: TextAlign.center,
+        style: Theme.of(context).textTheme.bodyLarge?.copyWith(color: AC.ink3),
+      ),
+    );
+  }
 }
 
 // ══ 뱃지 전체 화면 ════════════════════════════════════
@@ -1993,7 +2985,7 @@ class BadgesScreen extends StatelessWidget {
   const BadgesScreen({super.key});
   @override
   Widget build(BuildContext context) {
-    final all = [...kBadges['노선 완주']!, ...kBadges['스토리']!];
+    final all = [...(kBadges['노선 완주'] ?? []), ...(kBadges['스토리'] ?? [])];
     final got = all.where((b) => b.got).length;
     return Scaffold(backgroundColor: AC.paper,
       appBar: AppBar(title: const Text('뱃지 컬렉션'),

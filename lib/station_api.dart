@@ -121,7 +121,7 @@ class StationApiService {
   static Future<List<Station>> loadStationsFromSupabase() async {
     try {
       final sb = Supabase.instance.client;
-      final rows = await sb.from(_supabaseTable).select();
+      final rows = await sb.from(_supabaseTable).select().limit(2000);
       if (rows.isEmpty) return [];
       return rows
           .map((e) => Station.fromJson(Map<String, dynamic>.from(e)))
@@ -135,6 +135,7 @@ class StationApiService {
     if (stations.isEmpty) return;
     try {
       final sb = Supabase.instance.client;
+      if (sb.auth.currentUser == null) return;
       final payload = stations
           .map((s) => {
                 'id': s.id,

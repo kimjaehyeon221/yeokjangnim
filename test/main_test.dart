@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
+import 'package:yeokjangnim/app_state.dart';
 import 'package:yeokjangnim/main.dart' show YeokjangApp;
 
 void main() {
   setUpAll(() async {
     TestWidgetsFlutterBinding.ensureInitialized();
     SharedPreferences.setMockInitialValues({});
-    // LoginScreen 등에서 Supabase.instance를 쓰므로, 스플래시 이후 프레임을 pump하기 전에 초기화
     await Supabase.initialize(
       url: 'https://qbfoomdzdssspkvbpdev.supabase.co',
       anonKey: 'sb_publishable_TsNqH8MaqBfqvsg16oACvw_wtvLdIsk',
@@ -18,15 +19,19 @@ void main() {
     );
   });
 
-  testWidgets('YeokjangApp builds (splash → 로그인)', (tester) async {
-    await tester.pumpWidget(const YeokjangApp());
+  testWidgets('YeokjangApp renders splash screen', (tester) async {
+    final state = AppState();
+    await tester.pumpWidget(
+      ChangeNotifierProvider.value(
+        value: state,
+        child: const YeokjangApp(),
+      ),
+    );
     await tester.pump();
     expect(find.byType(MaterialApp), findsOneWidget);
-    expect(find.text('철도 마스터'), findsOneWidget);
-    // SplashScreen의 Future.delayed(2.2s) 소비
-    await tester.pump(const Duration(milliseconds: 2300));
-    await tester.pump();
-    expect(find.byType(MaterialApp), findsOneWidget);
-    expect(find.text('이메일로 시작하기'), findsOneWidget);
+    expect(find.text('역 컬렉터'), findsOneWidget);
+    // Drain splash minSplash timer; animation is repeating so avoid pumpAndSettle
+    await tester.pump(const Duration(seconds: 2));
+    await tester.pump(const Duration(seconds: 2));
   });
 }

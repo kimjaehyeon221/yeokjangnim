@@ -1,11 +1,11 @@
 {
-    "name": "철도 마스터",
-    "short_name": "철도마스터",
+    "name": "역 컬렉터",
+    "short_name": "역 컬렉터",
     "start_url": ".",
     "display": "standalone",
-    "background_color": "#0175C2",
-    "theme_color": "#0175C2",
-    "description": "전국 역 스탬프 — 철도 마스터",
+    "background_color": "#1B3A6B",
+    "theme_color": "#1B3A6B",
+    "description": "Metro Collector — 전국 철도역 스탬프 수집 앱",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [

@@ -1,6 +1,6 @@
-# 철도 마스터 (yeokjangnim)
+# 역 컬렉터 (Metro Collector)
 
-전국 철도역 스탬프 수집 앱 (Flutter).
+전국 철도역 스탬프 수집 앱 (Flutter). 저장소·패키지 식별자: `yeokjangnim`.
 
 ## 문서
 

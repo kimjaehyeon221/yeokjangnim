@@ -1,6 +1,6 @@
 # Play Console — 복사용 URL & 본인이 할 일만
 
-앱 이름: **철도 마스터** · 패키지: `io.github.kjh96.yeokjangnim`
+앱 이름: **역 컬렉터** · 패키지: `io.github.kjh96.yeokjangnim`
 
 ---
 
@@ -20,7 +20,7 @@
 
 - `lib/main.dart` — `kPrivacyPolicyUrl`, `kTermsUrl` 위와 동일
 - 앱 내 로그인·나 탭 링크가 위 주소로 열림
-- Android 표시 이름: **철도 마스터** (`AndroidManifest` 등)
+- Android 표시 이름: **역 컬렉터** (`AndroidManifest` 등) · 스토어 영문 등: Metro Collector
 
 ---
 

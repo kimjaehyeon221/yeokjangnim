@@ -28,8 +28,8 @@ class Station {
   });
 
   factory Station.fromJson(Map<String, dynamic> json) => Station(
-    id: json['id'],
-    name: json['name'],
+    id: json['id'] as int? ?? 0,
+    name: json['name']?.toString() ?? '',
     en: json['en'] ?? '',
     line: json['line'] ?? '',
     icon: json['icon'] ?? '🚉',
@@ -62,6 +62,29 @@ class LineInfo {
   final String type;
   final String region;
   const LineInfo({required this.color, required this.type, required this.region});
+}
+
+class LineProgress {
+  final String line;
+  final List<Station> stations;
+  final int visited;
+  final int total;
+  final Color color;
+  final String type;
+  final String region;
+
+  const LineProgress({
+    required this.line,
+    required this.stations,
+    required this.visited,
+    required this.total,
+    required this.color,
+    required this.type,
+    required this.region,
+  });
+
+  double get ratio => total == 0 ? 0 : visited / total;
+  bool get isComplete => total > 0 && visited == total;
 }
 
 const Map<String, LineInfo> kLines = {
@@ -130,10 +153,9 @@ final Map<String, List<Badge>> kBadges = {
     Badge(id:'b-ldj', icon:'💛', name:'대전 완주', desc:'대전 지하철 전 역 인증', got:false),
   ],
   '스토리': [
-    Badge(id:'b-first',  icon:'🌱', name:'첫 역',       desc:'첫 번째 스탬프 획득',        got:true),
+    Badge(id:'b-first',  icon:'🌱', name:'첫 역',       desc:'첫 번째 스탬프 획득',        got:false),
     Badge(id:'b-night',  icon:'🌙', name:'야행성',       desc:'자정~새벽 5시 사이 인증',    got:false),
     Badge(id:'b-xmas',   icon:'🎄', name:'크리스마스역', desc:'12월 25일 역 인증',          got:false),
-    Badge(id:'b-remote', icon:'🗺️', name:'오지역',       desc:'읍·면 단위 소도시 역 인증', got:false),
     Badge(id:'b-airport',icon:'✈️', name:'공항역',       desc:'공항 연결 역 인증',          got:false),
     Badge(id:'b-10',     icon:'🔟', name:'10개 달성',    desc:'스탬프 10개 획득',           got:false),
     Badge(id:'b-50',     icon:'🏅', name:'역장',         desc:'스탬프 50개 달성',           got:false),
