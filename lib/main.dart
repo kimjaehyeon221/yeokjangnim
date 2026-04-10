@@ -2734,7 +2734,7 @@ class _SectionHeader extends StatelessWidget {
             ],
           ),
         ),
-        if (action case final widget?) widget,
+        ?action,
       ],
     );
   }
