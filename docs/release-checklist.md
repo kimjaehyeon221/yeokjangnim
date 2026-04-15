@@ -1,4 +1,4 @@
-# 역 컬렉터 출시 체크리스트 (Android)
+# 지하철도 999 출시 체크리스트 (Android)
 
 ## 1) 필수 설정
 - [ ] `applicationId`를 고유 값으로 변경 (`com.example...` 금지)
