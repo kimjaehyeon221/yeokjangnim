@@ -2,7 +2,7 @@
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <application
-        android:label="지하철도 999"
+        android:label="역 도감"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

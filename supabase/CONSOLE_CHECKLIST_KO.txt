@@ -1,4 +1,4 @@
-지하철도 999 앱 — Supabase 콘솔에서 직접 할 일 (코드로 대체 불가)
+역 도감 앱 — Supabase 콘솔에서 직접 할 일 (코드로 대체 불가)
 ============================================================
 
 1) 회원 탈퇴 SQL (탈퇴 버튼 쓸 때만 필수)
@@ -14,7 +14,7 @@
    - 이미 assets/stations_metro_kric.json 등은 저장소에 포함된 상태면 추가 작업 없음.
    - 엑셀을 다시 받았을 때만: dart run tool/kric_xlsx_to_stations.dart "경로.xlsx"
 
-[복사용] Auth URL / Redirect (지하철도 999 프로젝트 기준)
+[복사용] Auth URL / Redirect (역 도감 프로젝트 기준)
 ============================================================
 Site URL (한 줄)
   https://kimjaehyeon221.github.io/yeokjangnim/

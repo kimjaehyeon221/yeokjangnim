@@ -29,7 +29,7 @@ void main() {
     );
     await tester.pump();
     expect(find.byType(MaterialApp), findsOneWidget);
-    expect(find.text('지하철도 999'), findsOneWidget);
+    expect(find.text('역 도감'), findsOneWidget);
     // Drain splash minSplash timer; animation is repeating so avoid pumpAndSettle
     await tester.pump(const Duration(seconds: 2));
     await tester.pump(const Duration(seconds: 2));

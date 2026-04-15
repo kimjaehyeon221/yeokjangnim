@@ -1,11 +1,11 @@
 {
-    "name": "지하철도 999",
-    "short_name": "지하철도 999",
+    "name": "역 도감",
+    "short_name": "역 도감",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#1B3A6B",
     "theme_color": "#1B3A6B",
-    "description": "지하철도 999 — 전국 철도역 스탬프 수집 앱",
+    "description": "역 도감 — 전국 철도역 스탬프 수집 앱",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [

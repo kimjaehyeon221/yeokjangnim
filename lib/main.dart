@@ -39,7 +39,7 @@ class _CollectionShareDialogState extends State<_CollectionShareDialog> {
   String get _shareText {
     final got = widget.state.gotCount;
     final total = widget.state.totalStations;
-    return '지하철도 999에서 전국 역 스탬프 $got / $total개 모았어요! 🚉';
+    return '역 도감에서 전국 역 스탬프 $got / $total개 모았어요! 🚉';
   }
 
   Future<void> _copyText() async {
@@ -208,7 +208,7 @@ class YeokjangApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: '지하철도 999',
+      title: '역 도감',
       debugShowCheckedModeBanner: false,
       theme: AppTheme.light,
       home: const SplashScreen(),
@@ -282,7 +282,7 @@ class _SplashState extends State<SplashScreen> with SingleTickerProviderStateMix
           ),
         ),
         const SizedBox(height: 32),
-        const Text('지하철도 999', style: TextStyle(fontSize: 42, fontWeight: FontWeight.w900, color: Colors.white, letterSpacing: -2)),
+        const Text('역 도감', style: TextStyle(fontSize: 42, fontWeight: FontWeight.w900, color: Colors.white, letterSpacing: -2)),
         const SizedBox(height: 8),
         Text('머무르지 않아도, 여정은 기록됩니다', style: TextStyle(fontSize: 13, color: Colors.white.withValues(alpha: 0.4), letterSpacing: 1.8)),
       ])),
@@ -362,7 +362,7 @@ class _LoginScreenState extends State<LoginScreen> {
           child: const Center(child: Text('🚂', style: TextStyle(fontSize: 36))),
         ),
         const SizedBox(height: 24),
-        const Text('지하철도 999', style: TextStyle(fontSize: 36, fontWeight: FontWeight.w900, color: Colors.white, letterSpacing: -2)),
+        const Text('역 도감', style: TextStyle(fontSize: 36, fontWeight: FontWeight.w900, color: Colors.white, letterSpacing: -2)),
         const SizedBox(height: 8),
         Text('"모든 걸 다 이해할 필요가 없거든요."', style: TextStyle(fontSize: 13, color: Colors.white.withValues(alpha: 0.5), letterSpacing: 0.5, fontStyle: FontStyle.italic)),
         const SizedBox(height: 4),
@@ -636,7 +636,7 @@ class _NicknameState extends State<NicknameScreen> {
         const SizedBox(height: 20),
         const Text('어떻게 불러드릴까요?', style: TextStyle(fontSize: 24, fontWeight: FontWeight.w700, color: AC.ink, letterSpacing: -1)),
         const SizedBox(height: 8),
-        Text('지하철도 999에서 사용할 닉네임을 정해주세요', textAlign: TextAlign.center,
+        Text('역 도감에서 사용할 닉네임을 정해주세요', textAlign: TextAlign.center,
           style: TextStyle(fontSize: 14, color: AC.ink3, height: 1.6)),
         const SizedBox(height: 32),
         ValueListenableBuilder(valueListenable: _c, builder: (_, val, child) => Column(
@@ -696,7 +696,7 @@ class _OnboardState extends State<OnboardingScreen> {
       'emoji': '🧭',
       'title': '우리는 머무르기보다\n지나가며 남깁니다.',
       'desc': '역마다 남는 스탬프와 노선 진행으로\n이동의 순간을 작은 컬렉션으로 만들어요.',
-      'caption': '지하철도 999 온보딩',
+      'caption': '역 도감 온보딩',
       'bg': Color(0xFF183252),
       'light': true,
     },
@@ -704,7 +704,7 @@ class _OnboardState extends State<OnboardingScreen> {
       'emoji': '🗺️',
       'title': '오늘의 노선을 고르고,\n다음 역으로 가볼까요?',
       'desc': '도감 · 노선도 · 배지까지\n여정을 한 화면에서 단단하게 이어집니다.',
-      'caption': '지하철도 999',
+      'caption': '역 도감',
       'bg': AC.paper,
       'light': false,
     },
@@ -1252,7 +1252,7 @@ class _StampDialogState extends State<StampDialog> with SingleTickerProviderStat
       );
       await Share.shareXFiles(
         [xf],
-        text: '지하철도 999에서 ${widget.station.name}역 스탬프를 획득했어요! 🚉',
+        text: '역 도감에서 ${widget.station.name}역 스탬프를 획득했어요! 🚉',
       );
     } catch (e) {
       if (!mounted) return;
