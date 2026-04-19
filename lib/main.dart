@@ -1015,9 +1015,9 @@ class _OnboardState extends State<OnboardingScreen> {
   final _pages = const [
     {
       'emoji': '🚆',
-      'title': '모든 걸 다 이해할 필요가 없거든요.',
-      'desc': '여기 왔지만 머물러 있지는 않아요.\n지나가며 기록하는 철도 여정으로 시작해요.',
-      'caption': '출처: 제인 버킨(Jane Birkin) 인터뷰 발언',
+      'title': '멈추지 않아도 괜찮아요',
+      'desc': '지나온 역은 도감에 남고,\n오늘의 한 줄이 쌓여요.',
+      'caption': '역 도감 온보딩',
       'bg': AC.stamp,
       'light': true,
     },
@@ -2965,13 +2965,12 @@ class MeTab extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.fromLTRB(20, 20, 20, 8),
             child: Text(
-              '"모든 걸 다 이해할 필요가 없거든요.\n여기 왔지만 머물러 있지는 않아요."\n— 제인 버킨(Jane Birkin)',
+              '지나친 역마다\n오늘이 한 줄씩 쌓여요.',
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontSize: 12,
                 color: AC.ink4,
                 height: 1.6,
-                fontStyle: FontStyle.italic,
               ),
             ),
           ),
