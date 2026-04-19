@@ -1,4 +1,4 @@
-# 역 도감 출시 체크리스트 (Android)
+# 역 도감 출시 체크리스트 (Android · iOS)
 
 ## 1) 필수 설정
 - [ ] `applicationId`를 고유 값으로 변경 (`com.example...` 금지)
@@ -19,7 +19,19 @@
 - [ ] 배지 획득/저장/재로그인 후 복원 확인
 - [ ] 공유(도감 공유 등) 동작 확인
 
-## 4) 빌드/배포
+## 4) iOS (App Store) — 코드에 반영된 것
+- `PRODUCT_BUNDLE_IDENTIFIER`: `io.github.kjh96.yeokjangnim` (Xcode에서 팀·서명만 연결)
+- `PrivacyInfo.xcprivacy`: UserDefaults / 파일 타임스탬프 / 디스크 여유 / 부팅 시각 등 **필수 사유 API** 선언 (ITMS-91053 대비)
+- `ITSAppUsesNonExemptEncryption` = `false` (HTTPS 등 면제 암호화만 쓰는 경우 일반적; 실제 암호화 사용 시 심사 전 재확인)
+- 최소 iOS **15.0** (`IPHONEOS_DEPLOYMENT_TARGET`)
+
+### iOS에서 직접 할 일 (Mac + Xcode)
+- [ ] Apple Developer Program 가입 후 **Signing & Capabilities**에 팀 선택, **Release** 서명 자동/수동 설정
+- [ ] App Store Connect에 앱 등록(번들 ID 동일), 개인정보·데이터 수집 설문(앱 내 URL과 일치)
+- [ ] Supabase **iOS 리다이렉트 URL**·Universal Link 필요 시 Associated Domains 추가
+- [ ] `flutter build ipa` 또는 Xcode **Archive → Distribute App**
+
+## 5) 빌드/배포 (Android)
 - [ ] `android/key.properties.example`를 복사해 `android/key.properties` 생성
 - [ ] `upload-keystore.jks` 파일 생성 후 `key.properties` 값 입력
 - [ ] `flutter pub get`
