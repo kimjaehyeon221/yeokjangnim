@@ -1,45 +1,50 @@
-# 역 도감
+# Station Archive · 역 도감
 
-전국 철도역 스탬프 수집 앱 (Flutter). 저장소·패키지 식별자: `yeokjangnim`.
+**직접 가본 철도역을 GPS로 인증하고 스탬프로 수집하는 위치 기반 아카이브 앱입니다.**
 
-## 문서
+지하철이나 기차역은 매일 지나치는 장소지만, 시간이 지나면 내가 어떤 역을 얼마나 경험했는지는 남지 않습니다. Station Archive는 실제 방문을 하나의 수집 경험으로 바꿔 **‘내가 직접 가본 도시의 흔적’**을 쌓아가는 앱입니다.
 
-- 개인정보처리방침(초안): `docs/privacy-policy.md` · 웹용 HTML: `docs/privacy-policy.html`
-- 이용약관(초안): `docs/terms.md` · 웹용 HTML: `docs/terms.html`
-- GitHub Pages 배포·**올라갔는지 확인하는 방법**: `docs/github-pages-deploy.md`
+> **Concept**  
+> 현실의 장소 방문을 디지털 수집 경험으로 바꾸면, 평범한 이동도 탐험이 될 수 있을까?
+
+## What it does
+
+- 전국 철도·도시철도 역 탐색
+- 현재 위치를 이용한 **역 방문 인증**
+- 방문한 역의 스탬프 수집
+- 내가 모은 역과 아직 가보지 않은 역 구분
+- 프로필과 수집 기록 저장
+- 역별 수집 데이터를 기반으로 한 장기적인 도감 경험
+
+## Product idea
+
+관광지 스탬프처럼 특별한 장소만 수집하는 대신, **일상적으로 이동하는 역 자체를 수집 단위**로 삼았습니다. 사용자가 실제로 이동해야만 빈칸이 채워지고, 시간이 지나면서 자신의 이동 범위가 하나의 개인적인 지도와 도감으로 남는 것이 핵심입니다.
+
+## Status
+
+**현재 개발 중**
+
+제품 구조와 UI를 계속 다듬고 있으며, 실제 위치 인증과 수집 경험을 중심으로 개발하고 있습니다.
+
+## Tech
+
+- Flutter
+- GPS / location verification
+- Supabase
+- Android / iOS
+
+## Screenshots
+
+현재 개발 중인 실제 화면을 이 섹션에 추가해 `역 발견 → 직접 방문 → 위치 인증 → 스탬프 수집` 흐름을 한눈에 보여줄 예정입니다.
+
+## Documents
+
+- 개인정보처리방침(초안): `docs/privacy-policy.md`
+- 이용약관(초안): `docs/terms.md`
 - 배포 체크리스트: `docs/release-checklist.md`
-- **Play 스토어 — 정책 URL 복사 & 본인이 할 일만**: `docs/PLAY_STORE_MANUAL_KO.md`
 - 역 데이터 갱신: `docs/STATION_DATA_UPDATE_KO.md`
 
-정책 공개 URL(저장소가 `kimjaehyeon221/yeokjangnim`이고 Pages 소스가 `/docs`일 때):
-
-- https://kimjaehyeon221.github.io/yeokjangnim/
-- https://kimjaehyeon221.github.io/yeokjangnim/privacy-policy.html
-- https://kimjaehyeon221.github.io/yeokjangnim/terms.html
-
-> **지금 404가 나오면** 저장소 Settings → Pages에서 **Branch + `/docs`** 를 켰는지, `main`에 `docs/*.html`이 push 됐는지 확인하세요. 자세한 절차는 `docs/github-pages-deploy.md`를 보세요.
-
-## 개발 실행
+## Development
 
 1. `flutter pub get`
 2. `flutter run`
-
-## 릴리즈 사전 점검
-
-- PowerShell: `./scripts/release_preflight.ps1 -ProjectRoot .`
-
-## Supabase SQL
-
-다음을 SQL Editor에서 프로젝트에 맞게 실행:
-
-1. `supabase/profiles_schema.sql`
-2. `supabase/stamps_schema.sql`
-3. `supabase/stations_schema.sql` (사용 시)
-4. `supabase/user_badges_schema.sql`
-5. 탈퇴 기능 사용 시: `supabase/delete_own_account.sql`
-
-Auth URL·Redirect·기타 콘솔 작업: `supabase/CONSOLE_CHECKLIST_KO.txt`
-
-## Android 식별자
-
-- `applicationId`: `io.github.kjh96.yeokjangnim`
